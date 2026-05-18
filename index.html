@@ -26,11 +26,13 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/images/pintura-canchas-deportivas-playko-hero.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   PLAYKO — Clever Cloud-inspired landing aesthetic
-   Mobile-first (375px base) → 768px → 1100px
+   PLAYKO — sportsbuilders.com.mx aesthetic
+   Clean white, traditional Mexican B2B sports construction look
+   Mobile-first → 768px → 1100px
    ============================================================ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,1114 +40,945 @@
 :root {
   --primary: #FF6B00;
   --primary-dark: #E65100;
-  --vino: #9A1B30;
-  --secondary: #0D47A1;
-  --whatsapp: #25D366;
-  --ink: #0A0A0A;
-  --gray: #525252;
-  --gray-soft: #F5F5F4;
-  --line: #E5E5E4;
-  --success: #22C55E;
+  --text: #1A1A1A;
+  --text-light: #666;
   --bg: #FFFFFF;
-  --green-eyebrow: #22C55E;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 12px;
+  --bg-light: #F8F9FA;
+  --border: #E5E5E4;
+  --whatsapp: #25D366;
+  --success: #22C55E;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.12);
 }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--ink);
+  color: var(--text);
   line-height: 1.6;
   background: var(--bg);
   overflow-x: hidden;
-  font-feature-settings: 'ss01', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; }
+input, select, textarea { font-family: inherit; font-size: 1rem; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
 @media (min-width: 768px) { .container { padding: 0 2rem; } }
 
-/* Eyebrow VERDE (regla memoria explícita) — naranja sobre cada H2 */
-.eyebrow-green {
+.container-narrow { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) { .container-narrow { padding: 0 2rem; } }
+
+/* ===== Eyebrow NARANJA (B2B brand) ===== */
+.eyebrow {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--green-eyebrow);
-  margin-bottom: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
 }
-.eyebrow-green::before {
+.eyebrow::before {
   content: '';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem;
+  width: 1.2rem;
   height: 2px;
-  background: var(--green-eyebrow);
+  background: var(--primary);
 }
+.eyebrow.eyebrow-white { color: rgba(255,255,255,.95); }
+.eyebrow.eyebrow-white::before { background: rgba(255,255,255,.95); }
 
-.eyebrow-orange { color: var(--primary); }
-.eyebrow-orange::before { background: var(--primary); }
-
-.eyebrow-white { color: rgba(255,255,255,0.9); }
-.eyebrow-white::before { background: rgba(255,255,255,0.9); }
-
-.eyebrow-gray { color: var(--gray); }
-.eyebrow-gray::before { background: var(--gray); }
-
-h2 {
-  font-size: clamp(1.85rem, 4.5vw, 3rem);
+/* ===== Section heads ===== */
+.section-head { margin-bottom: 3rem; }
+.section-head.center { text-align: center; }
+.section-head.center .eyebrow { padding-left: 0; }
+.section-head.center .eyebrow::before { display: none; }
+.section-head h2 {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
   font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  text-wrap: balance;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1rem;
 }
-h2 .em-accent {
+.section-head p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 700px;
+  line-height: 1.65;
+}
+.section-head.center p { margin-left: auto; margin-right: auto; }
+.em-accent { color: var(--primary); font-style: normal; }
+.em-italic { color: var(--primary); font-style: italic; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all .2s ease;
+  min-height: 48px;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255,107,0,.25);
+}
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(255,107,0,.35); }
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(37,211,102,.28);
+}
+.btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(37,211,102,.4); }
+.btn-outline {
+  background: transparent;
   color: var(--primary);
-  font-style: italic;
-  font-weight: 900;
+  border: 2px solid var(--primary);
 }
-
-h3 {
-  font-size: 1.15rem;
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
 }
-
-p { color: var(--gray); line-height: 1.65; }
-
-/* Section spacing */
-section { padding: 3.5rem 0; }
-@media (min-width: 768px) { section { padding: 5rem 0; } }
-
-.section-head { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
-.section-head h2 { margin-bottom: 0.75rem; }
-.section-head p { font-size: 1.05rem; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.2); }
+.btn-block { width: 100%; }
+@media (max-width: 600px) { .btn { max-width: 320px; width: 100%; } }
 
 /* ============================================================
-   1. STICKY NAVBAR
+   1. NAVBAR
    ============================================================ */
-header {
+.site-header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--line);
-  z-index: 999;
-  transition: padding 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: all .25s ease;
 }
-header.compact {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-  background: rgba(255,255,255,0.96);
+.site-header.compact {
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
 }
-nav.nav-row {
-  max-width: 1300px;
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.25rem;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0.9rem 1.25rem;
+  transition: padding .25s ease;
+}
+.site-header.compact .nav-inner { padding: 0.7rem 1.25rem; }
+@media (min-width: 768px) { .nav-inner { padding: 1.2rem 2rem; } .site-header.compact .nav-inner { padding: 0.75rem 2rem; } }
+
+.brand-mark {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+.brand-mark sup { font-size: 0.6rem; font-weight: 700; color: var(--text-light); margin-left: 0.2rem; }
+
+.nav-menu { display: none; }
+@media (min-width: 1024px) {
+  .nav-menu {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+  }
+  .nav-menu a {
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: color .15s;
+    position: relative;
+  }
+  .nav-menu a:hover { color: var(--primary); }
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform .2s ease;
+    transform-origin: left;
+  }
+  .nav-menu a:hover::after { transform: scaleX(1); }
+}
+
+.nav-cta-wrap { display: flex; align-items: center; gap: 0.75rem; }
+.nav-cta {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all .2s;
+}
+.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+@media (min-width: 768px) { .nav-cta { display: inline-flex; } }
+
+.nav-toggle {
+  background: transparent;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+@media (min-width: 1024px) { .nav-toggle { display: none; } }
+.nav-toggle span {
+  width: 22px; height: 2px;
+  background: var(--text);
+  display: block;
+  position: relative;
+}
+.nav-toggle span::before, .nav-toggle span::after {
+  content: ''; position: absolute; left: 0;
+  width: 22px; height: 2px; background: var(--text);
+}
+.nav-toggle span::before { top: -7px; }
+.nav-toggle span::after { top: 7px; }
+
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0;
+  width: 88%;
+  max-width: 340px;
+  height: 100vh;
+  background: #fff;
+  z-index: 200;
+  box-shadow: -20px 0 40px rgba(0,0,0,.15);
+  padding: 5rem 1.5rem 2rem;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  overflow-y: auto;
+}
+.mobile-menu.active { transform: translateX(0); }
+.mobile-menu a {
+  display: block;
+  padding: 1rem 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:hover { color: var(--primary); }
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 44px; height: 44px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.mobile-menu .mobile-cta {
+  margin-top: 1.5rem;
+  background: var(--whatsapp);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  border-bottom: 0;
+  padding: 1rem;
+}
+
+/* ============================================================
+   2. HERO — Clean white, NOT fullscreen photo
+   ============================================================ */
+.hero {
+  background: #fff;
+  padding: 3.5rem 0 3rem;
+  min-height: 60vh;
+  max-height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 5rem 0 4rem;
+    min-height: auto;
+    max-height: 70vh;
+  }
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4rem;
+  }
+}
+
+.hero-text .eyebrow { color: var(--primary); margin-bottom: 1.25rem; }
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.hero h1 .em-accent {
+  color: var(--primary);
+  display: inline;
+  white-space: nowrap;
+}
+.hero-sub {
+  font-size: 1.08rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+.hero-trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.86rem;
+  color: var(--text-light);
+  align-items: center;
+}
+.hero-trust-bar strong { color: var(--text); font-weight: 800; }
+.hero-trust-bar span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.hero-trust-bar .dot {
+  width: 4px; height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hero-photo {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
+  background: var(--bg-light);
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-photo-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(255,255,255,.97);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-photo-badge svg { color: var(--success); flex-shrink: 0; }
+
+/* ============================================================
+   3. TRUST AUTHORITY — Grid 4x3 fotos proyectos
+   ============================================================ */
+.trust-section {
+  padding: 5rem 0;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 767px) { .trust-section { padding: 3.5rem 0; } }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+@media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+
+.project-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-light);
+  cursor: pointer;
+}
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.project-card:hover img { transform: scale(1.06); }
+.project-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.85));
+  padding: 1.5rem 1rem 0.85rem;
+  color: #fff;
+}
+.project-caption strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.15rem;
+}
+.project-caption span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,.85);
+  font-weight: 500;
+}
+
+/* ============================================================
+   4. VALUE PROPOSITION — Compromiso y calidad
+   ============================================================ */
+.value-section {
+  padding: 5rem 0;
+  background: var(--bg-light);
+}
+@media (max-width: 767px) { .value-section { padding: 3.5rem 0; } }
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) { .value-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .value-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+
+.value-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  transition: all .25s ease;
+}
+.value-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.value-check {
+  width: 44px; height: 44px;
+  background: rgba(34,197,94,.12);
+  color: var(--success);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.value-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.value-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   5. SERVICES GRID — 6 deportes
+   ============================================================ */
+.services-section {
+  padding: 5rem 0;
+  background: #fff;
+}
+@media (max-width: 767px) { .services-section { padding: 3.5rem 0; } }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; } }
+
+.service-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all .25s ease;
+}
+.service-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.service-img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.service-card:hover .service-img img { transform: scale(1.05); }
+.service-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-body h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.service-body p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  transition: color .15s;
+}
+.service-cta:hover { color: var(--primary-dark); gap: 0.75rem; }
+.service-cta svg { transition: transform .2s; }
+.service-cta:hover svg { transform: translateX(3px); }
+
+/* ============================================================
+   6. WHAT'S INCLUDED — Checklist 2 cols
+   ============================================================ */
+.includes-section {
+  padding: 5rem 0;
+  background: var(--bg-light);
+}
+@media (max-width: 767px) { .includes-section { padding: 3.5rem 0; } }
+
+.includes-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 2.5rem 0 2rem;
+}
+@media (min-width: 768px) { .includes-list { grid-template-columns: repeat(2, 1fr); gap: 1rem 2rem; } }
+
+.includes-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.includes-check {
+  width: 28px; height: 28px;
+  background: var(--success);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+}
+.includes-item span { font-size: 0.97rem; color: var(--text); font-weight: 600; line-height: 1.45; }
+
+.includes-cta-wrap { text-align: center; margin-top: 2rem; }
+
+/* ============================================================
+   7. PORTAFOLIO GALLERY
+   ============================================================ */
+.portfolio-section {
+  padding: 5rem 0;
+  background: #fff;
+}
+@media (max-width: 767px) { .portfolio-section { padding: 3.5rem 0; } }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.portfolio-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-light);
+}
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.portfolio-card:hover img { transform: scale(1.05); }
+.portfolio-info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.88));
+  color: #fff;
+}
+.portfolio-info strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+.portfolio-info span {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.9);
+  font-weight: 500;
+}
+
+/* ============================================================
+   8. FORM SIMPLIFICADO (PRESERVED LOGIC)
+   ============================================================ */
+#cotizacion {
+  padding: 5rem 1.25rem;
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%);
+  position: relative;
+}
+@media (max-width: 767px) { #cotizacion { padding: 4rem 1.25rem; } }
+#cotizacion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,107,0,.18), transparent 50%);
+  pointer-events: none;
+}
+#cotizacion .container { position: relative; z-index: 1; }
+#cotizacion .section-head { text-align: center; margin-bottom: 2.5rem; }
+#cotizacion .section-head h2 { color: #fff; font-size: clamp(1.85rem, 4vw, 2.75rem); margin-bottom: 0.75rem; }
+#cotizacion .section-head p { color: rgba(255,255,255,.9); margin: 0 auto; max-width: 600px; }
+
+.quick-form-wrap {
+  max-width: 540px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,.25);
+}
+@media (min-width: 600px) { .quick-form-wrap { padding: 2.5rem 2.25rem; } }
+
+.qf-row { margin-bottom: 1.25rem; }
+.qf-row label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.01em;
+}
+.qf-row input[type="text"], .qf-row input[type="tel"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color .15s, box-shadow .15s;
+  background: #fff;
+  min-height: 48px;
+}
+.qf-row input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255,107,0,.15);
+}
+.qf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.qf-chip {
+  padding: 0.6rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  cursor: pointer;
+  transition: all .15s;
+  user-select: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.qf-chip:hover { border-color: var(--primary); color: var(--primary); }
+.qf-chip.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.qf-submit {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  transition: all .2s;
+  min-height: 52px;
+  box-shadow: 0 8px 20px rgba(255,107,0,.3);
+  margin-top: 0.5rem;
+}
+.qf-submit:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.qf-reassure {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+.qf-reassure span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.qf-reassure svg { width: 16px; height: 16px; color: var(--success); }
+
+/* ============================================================
+   9. FAQ
+   ============================================================ */
+.faq-section {
+  padding: 5rem 0;
+  background: #fff;
+}
+@media (max-width: 767px) { .faq-section { padding: 3.5rem 0; } }
+
+.faq-list { max-width: 820px; margin: 2.5rem auto 0; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: all .2s;
+}
+.faq-item[open] { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.25rem 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  transition: padding 0.25s ease;
-}
-header.compact nav.nav-row { padding: 0.5rem 1.25rem; }
-@media (min-width: 768px) {
-  nav.nav-row { padding: 1.1rem 2rem; }
-  header.compact nav.nav-row { padding: 0.65rem 2rem; }
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-@media (min-width: 768px) { .logo { font-size: 1.8rem; } }
-
-.nav-links {
-  display: none;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-.nav-links a {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink);
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--primary); }
-@media (min-width: 900px) { .nav-links { display: flex; } }
-
-.cta-header {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--primary);
-  color: #fff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  white-space: nowrap;
-  min-height: 44px;
-}
-.cta-header:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(255,107,0,0.35); }
-
-.menu-toggle {
-  display: inline-flex;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--ink);
-  padding: 0.5rem;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-}
-.menu-toggle svg { width: 24px; height: 24px; }
-@media (min-width: 900px) { .menu-toggle { display: none; } }
-
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem 1.5rem;
-  border-top: 1px solid var(--line);
-  background: #fff;
-}
-.mobile-menu.active { display: flex; }
-.mobile-menu a {
-  padding: 0.85rem 0.5rem;
-  font-weight: 600;
-  color: var(--ink);
-  border-bottom: 1px solid var(--line);
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-@media (min-width: 900px) { .mobile-menu { display: none !important; } }
-
-/* ============================================================
-   2. HERO — 2-col grid, ≤70vh / ≤60vh mobile (NUNCA 100vh)
-   ============================================================ */
-.hero {
-  padding: 2rem 0 3rem;
-  max-height: 60vh;
-  min-height: 540px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  .hero { max-height: 70vh; min-height: 600px; padding: 3rem 0 4rem; }
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  .hero-grid { grid-template-columns: 55% 45%; gap: 3rem; }
-}
-
-.hero-eyebrow {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary);
-  padding: 0.45rem 0.9rem;
-  background: rgba(255,107,0,0.08);
-  border: 1px solid rgba(255,107,0,0.2);
-  border-radius: 999px;
-  margin-bottom: 1.25rem;
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 900;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  margin-bottom: 1.25rem;
-  text-wrap: balance;
-}
-.hero h1 .em-accent {
-  color: var(--primary);
-  font-style: italic;
-  font-weight: 900;
-  display: inline;
-}
-
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--gray);
-  line-height: 1.55;
-  margin-bottom: 1.75rem;
-  max-width: 540px;
-}
-@media (min-width: 768px) { .hero-sub { font-size: 1.15rem; } }
-
-.hero-ctas {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 1.75rem;
-}
-@media (min-width: 480px) { .hero-ctas { flex-direction: row; flex-wrap: wrap; } }
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  background: var(--primary);
-  color: #fff;
-  padding: 0.95rem 1.5rem;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 1rem;
-  transition: all 0.2s;
-  box-shadow: 0 10px 24px rgba(255,107,0,0.28);
-  min-height: 48px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(255,107,0,0.42); }
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  background: transparent;
-  color: var(--ink);
-  border: 2px solid var(--line);
-  padding: 0.85rem 1.4rem;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 1rem;
-  transition: all 0.2s;
-  min-height: 48px;
-}
-.btn-secondary:hover { border-color: var(--whatsapp); color: var(--whatsapp); transform: translateY(-2px); }
-.btn-secondary svg { color: var(--whatsapp); }
-
-.hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 0.75rem;
-  font-size: 0.85rem;
-  color: var(--gray);
-  align-items: center;
-}
-.hero-trust strong { color: var(--ink); font-weight: 700; }
-.hero-trust .dot { color: var(--line); }
-
-/* Hero visual right */
-.hero-visual {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.18);
-}
-.hero-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Floating live metrics card */
-.live-card {
-  position: absolute;
-  top: 1rem;
-  right: -0.5rem;
-  background: #fff;
-  border-radius: var(--radius-md);
-  padding: 1rem 1.1rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-  border: 1px solid var(--line);
-  width: 200px;
-  z-index: 3;
-}
-@media (min-width: 1024px) {
-  .live-card { top: 1.5rem; right: -1.25rem; width: 220px; padding: 1.1rem 1.2rem; }
-}
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: #FEE2E2;
-  color: #B91C1C;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  margin-bottom: 0.75rem;
-}
-.live-dot {
-  width: 6px; height: 6px; border-radius: 999px;
-  background: #DC2626;
-  animation: pulse-dot 1.5s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(220,38,38,0.6); }
-  50% { opacity: 1; box-shadow: 0 0 0 6px rgba(220,38,38,0); }
-}
-.live-stat {
-  font-size: 0.82rem;
-  color: var(--ink);
-  font-weight: 600;
-  line-height: 1.35;
-  padding: 0.45rem 0;
-  border-top: 1px solid var(--line);
-}
-.live-stat:first-of-type { border-top: none; padding-top: 0; }
-
-/* ============================================================
-   3. CONVERSATION / TESTIMONIO REAL
-   ============================================================ */
-.conversation {
-  background: var(--gray-soft);
-}
-.chat-card {
-  max-width: 720px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.25rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-  border: 1px solid var(--line);
-}
-@media (min-width: 768px) { .chat-card { padding: 2.25rem 2rem; } }
-
-.chat-msg {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  align-items: flex-start;
-}
-.chat-msg:last-of-type { margin-bottom: 0; }
-.chat-msg.user { flex-direction: row; }
-.chat-msg.brand { flex-direction: row-reverse; }
-
-.chat-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.85rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-.chat-avatar.user-av { background: var(--secondary); }
-.chat-avatar.brand-av { background: var(--primary); }
-
-.chat-bubble {
-  background: var(--gray-soft);
-  padding: 0.85rem 1.1rem;
-  border-radius: 16px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--ink);
-  max-width: 78%;
-}
-.chat-msg.brand .chat-bubble {
-  background: rgba(255,107,0,0.08);
-  border: 1px solid rgba(255,107,0,0.15);
-  color: var(--ink);
-}
-
-.chat-attribution {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-.chat-attribution strong { color: var(--ink); }
-
-/* ============================================================
-   4. REGLAMENTOS ROW (lockups typography)
-   ============================================================ */
-.federations {
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: #fff;
-}
-.federations-eyebrow {
-  text-align: center;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 1.5rem;
-}
-.fed-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-@media (min-width: 600px) { .fed-row { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 900px) { .fed-row { grid-template-columns: repeat(6, 1fr); gap: 1rem; } }
-
-.fed-item {
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--gray);
-  transition: color 0.25s;
-  padding: 0.65rem 0.25rem;
-}
-.fed-item:hover { color: var(--primary); }
-.fed-item small { display: block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; opacity: 0.7; margin-top: 0.15rem; }
-
-/* ============================================================
-   5. PROBLEM STATEMENT — pain points grid
-   ============================================================ */
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
-}
-@media (min-width: 1024px) { .problem-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
-
-.pain-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.1rem;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-}
-.pain-card:hover { border-left-color: var(--primary); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,0.06); }
-.pain-icon {
-  width: 36px; height: 36px;
-  background: #FEE2E2;
-  color: #DC2626;
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 0.85rem;
-}
-.pain-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-.pain-card p { font-size: 0.9rem; line-height: 1.5; }
-
-/* ============================================================
-   6. TIPOS DE CANCHA (use cases grid)
-   ============================================================ */
-.tipos-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-@media (min-width: 640px) { .tipos-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .tipos-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
-
-.tipo-card {
-  display: block;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: all 0.3s;
-  text-decoration: none;
-  color: inherit;
-}
-.tipo-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.tipo-img {
-  aspect-ratio: 16/10;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s;
-}
-.tipo-card:hover .tipo-img { transform: scale(1.05); }
-.tipo-body { padding: 1.25rem 1.25rem 1.5rem; }
-.tipo-body h3 {
-  font-size: 1.15rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-}
-.tipo-body p { font-size: 0.92rem; line-height: 1.55; color: var(--gray); margin-bottom: 0.75rem; }
-.tipo-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 0.9rem;
-}
-.tipo-cta::after { content: '→'; transition: transform 0.2s; }
-.tipo-card:hover .tipo-cta::after { transform: translateX(4px); }
-
-.tipo-cta-card {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
-  border: none;
-  color: #fff !important;
-}
-.tipo-cta-card:hover { border: none; box-shadow: 0 24px 50px rgba(255,107,0,0.4); }
-.tipo-cta-card .tipo-body { padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
-.tipo-cta-card h3 { color: #fff; font-size: 1.4rem; line-height: 1.2; }
-.tipo-cta-card p { color: rgba(255,255,255,0.92); }
-.tipo-cta-card .tipo-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #fff;
-  color: var(--primary);
-  font-weight: 800;
-  padding: 0.7rem 1.2rem;
-  border-radius: 10px;
-  font-size: 0.92rem;
-  align-self: flex-start;
-  margin-top: auto;
-}
-
-/* ============================================================
-   7. PRICING TIERS
-   ============================================================ */
-.pricing { background: var(--gray-soft); }
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-@media (min-width: 640px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
-
-.price-card {
-  position: relative;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 1.75rem 1.4rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.price-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.07); }
-.price-card.featured {
-  border: 2px solid var(--primary);
-  transform: scale(1.02);
-  box-shadow: 0 18px 40px rgba(255,107,0,0.18);
-}
-@media (min-width: 1100px) { .price-card.featured { transform: scale(1.03); } }
-.price-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-.price-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem; }
-.price-tag {
-  font-size: 1.85rem;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-  line-height: 1;
-  margin-bottom: 0.35rem;
-}
-.price-unit { font-size: 0.82rem; color: var(--gray); margin-bottom: 1.1rem; }
-.price-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  margin-bottom: 1.5rem;
-  flex: 1;
-}
-.price-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  font-size: 0.88rem;
-  color: var(--ink);
-  line-height: 1.4;
-}
-.price-features li::before {
-  content: '✓';
-  color: var(--success);
-  font-weight: 800;
-  flex-shrink: 0;
-  margin-top: 0.05rem;
-}
-.price-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  font-weight: 800;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  font-size: 0.92rem;
-  transition: all 0.2s;
-  min-height: 44px;
-  margin: 0 auto;
-  width: calc(100% - 0.5rem);
-  max-width: 100%;
-}
-.price-cta:hover { background: var(--primary); color: #fff; }
-.price-card.featured .price-cta { background: var(--primary); color: #fff; }
-.price-card.featured .price-cta:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
-
-.pricing-callout {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 1rem;
-  color: var(--ink);
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 1.1rem 1.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.pricing-callout a { color: var(--primary); font-weight: 800; }
-.pricing-callout a:hover { text-decoration: underline; }
-
-/* ============================================================
-   9. PROCESO (How it works)
-   ============================================================ */
-.process-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  position: relative;
-  margin-top: 1.5rem;
-}
-@media (min-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-}
-
-.process-step { position: relative; }
-.process-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  box-shadow: 0 10px 24px rgba(255,107,0,0.32);
-  position: relative;
-  z-index: 2;
-}
-.process-step h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-.process-step p { font-size: 0.92rem; line-height: 1.55; }
-
-@media (min-width: 1024px) {
-  .process-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 28px;
-    left: 70px;
-    right: -1rem;
-    border-top: 2px dashed var(--line);
-    z-index: 1;
-  }
-}
-
-/* ============================================================
-   10. COMPARISON TABLE
-   ============================================================ */
-.compare-wrap { max-width: 1000px; margin: 1rem auto 0; }
-.compare-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: #fff;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  display: none;
-}
-@media (min-width: 768px) { .compare-table { display: table; } }
-
-.compare-table thead th {
-  background: var(--gray-soft);
-  padding: 1rem 1.25rem;
-  text-align: left;
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: var(--ink);
-  border-bottom: 1px solid var(--line);
-}
-.compare-table thead th.featured-col {
-  background: rgba(255,107,0,0.08);
-  color: var(--primary);
-}
-.compare-table tbody td {
-  padding: 0.85rem 1.25rem;
-  font-size: 0.92rem;
-  border-bottom: 1px solid var(--line);
-  vertical-align: middle;
-}
-.compare-table tbody tr:last-child td { border-bottom: none; }
-.compare-table tbody tr td:first-child { font-weight: 700; color: var(--ink); }
-.compare-table tbody td.featured-cell { background: rgba(255,107,0,0.04); }
-.compare-yes { color: var(--success); font-weight: 800; margin-right: 0.35rem; }
-.compare-no { color: #DC2626; font-weight: 800; margin-right: 0.35rem; }
-
-/* Mobile stacked cards */
-.compare-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-@media (min-width: 768px) { .compare-mobile { display: none; } }
-
-.compare-mobile-row {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-}
-.compare-mobile-row .cmp-criteria {
-  font-weight: 800;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-  font-size: 0.92rem;
-}
-.compare-mobile-row .cmp-line {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.4rem;
-  font-size: 0.88rem;
-  margin-bottom: 0.3rem;
-  color: var(--ink);
-}
-.compare-mobile-row .cmp-line.brand { background: rgba(255,107,0,0.06); padding: 0.4rem 0.55rem; border-radius: 8px; }
-.compare-mobile-row .cmp-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.1rem; display: block; }
-
-/* ============================================================
-   11. LIMITED OFFER (CTA gradient)
-   ============================================================ */
-.limited-offer {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--vino) 100%);
-  color: #fff;
-  padding: 3rem 0;
-}
-@media (min-width: 768px) { .limited-offer { padding: 4rem 0; } }
-
-.limited-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-}
-@media (min-width: 900px) { .limited-grid { grid-template-columns: 1.4fr 1fr; gap: 2.5rem; } }
-
-.limited-offer h3 {
-  color: #fff;
-  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
-}
-.limited-offer h3 .em-accent { color: #FFD9B3; font-style: italic; }
-.limited-offer p { color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5; }
-
-.limited-cta-wrap { text-align: left; }
-@media (min-width: 900px) { .limited-cta-wrap { text-align: right; } }
-
-.btn-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: #fff;
-  color: var(--primary);
-  font-weight: 800;
-  padding: 1rem 1.6rem;
-  border-radius: 12px;
-  font-size: 1rem;
-  transition: all 0.2s;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
-  min-height: 48px;
-}
-.btn-light:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
-
-/* ============================================================
-   12. FAQ
-   ============================================================ */
-.faq-section { background: var(--gray-soft); }
-.faq-list {
-  max-width: 820px;
-  margin: 1.5rem auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.faq-item {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.faq-item[open] { border-color: rgba(255,107,0,0.3); }
-.faq-item summary {
-  cursor: pointer;
-  padding: 1.1rem 3rem 1.1rem 1.25rem;
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--ink);
-  list-style: none;
-  position: relative;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
+  min-height: 56px;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary::after {
   content: '+';
-  position: absolute;
-  right: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--primary);
-  transition: transform 0.25s;
-  line-height: 1;
+  transition: transform .2s;
+  flex-shrink: 0;
 }
-.faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-item[open] summary::after { content: '−'; }
 .faq-content {
   padding: 0 1.25rem 1.25rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-  font-size: 0.94rem;
-  color: var(--gray);
+  color: var(--text-light);
   line-height: 1.65;
+  font-size: 0.97rem;
 }
 
 /* ============================================================
-   13. FINAL CTA (oscuro)
+   10. COBERTURA strip
    ============================================================ */
-.cta-dark {
-  background: var(--ink);
-  color: #fff;
-  padding: 4rem 0;
+#cobertura {
+  background: var(--bg-light);
+  padding: 2.5rem 1.25rem;
   text-align: center;
 }
-@media (min-width: 768px) { .cta-dark { padding: 6rem 0; } }
-.cta-dark-inner { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
-.cta-dark h2 {
-  color: #fff;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  margin: 0.75rem 0 1rem;
+.cobertura-text {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.85;
 }
-.cta-dark h2 .em-accent { color: var(--primary); }
-.cta-dark p { color: rgba(255,255,255,0.75); font-size: 1.1rem; margin-bottom: 2rem; }
-.cta-dark-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--primary);
-  color: #fff;
-  padding: 1.1rem 1.8rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 800;
-  transition: all 0.2s;
-  box-shadow: 0 14px 36px rgba(255,107,0,0.4);
-  min-height: 56px;
-}
-.cta-dark-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-.cta-dark-reassure {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.5rem;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
-}
-.cta-dark-reassure span::before { content: '✓ '; color: var(--success); font-weight: 800; }
+.cobertura-text strong { color: var(--text); font-weight: 800; }
 
 /* ============================================================
-   14. FOOTER
+   11. FINAL CTA — Orange gradient
+   ============================================================ */
+.cta-final {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 5rem 1.25rem;
+  text-align: center;
+  color: #fff;
+}
+@media (max-width: 767px) { .cta-final { padding: 4rem 1.25rem; } }
+.cta-final-inner { max-width: 720px; margin: 0 auto; }
+.cta-final .eyebrow {
+  color: rgba(255,255,255,.95);
+  padding-left: 0;
+}
+.cta-final .eyebrow::before { display: none; }
+.cta-final h2 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.cta-final h2 em {
+  color: #FFE5CC;
+  font-style: italic;
+  font-weight: 900;
+}
+.cta-final p {
+  color: rgba(255,255,255,.95);
+  font-size: 1.08rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.cta-final .btn-white { font-size: 1.05rem; padding: 1.1rem 2rem; }
+.cta-final-reassure {
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,.88);
+  font-weight: 500;
+}
+
+/* ============================================================
+   12. FOOTER
    ============================================================ */
 footer {
-  background: var(--ink);
-  color: rgba(255,255,255,0.7);
-  padding: 3.5rem 0 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #1A1A1A;
+  color: #d1d5db;
+  padding: 4rem 0 2rem;
 }
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
 }
-@media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; } }
+@media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 3rem; } }
 
+.footer-brand {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.footer-col p { color: #9ca3af; font-size: 0.92rem; line-height: 1.65; }
 .footer-col h3 {
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 1rem;
+  letter-spacing: 0.12em;
+  color: #fff;
+  margin-bottom: 1.1rem;
 }
-.footer-col .footer-brand {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
-  display: inline-block;
-}
-.footer-col p { color: var(--gray-soft); font-size: 0.9rem; line-height: 1.6; }
 .footer-col a {
   display: block;
-  color: var(--gray-soft);
-  font-size: 0.9rem;
-  padding: 0.35rem 0;
-  transition: color 0.2s;
+  color: #d1d5db;
+  font-size: 0.93rem;
+  padding: 0.4rem 0;
+  transition: color .15s;
 }
-.footer-col a:hover { color: #fff; }
+.footer-col a:hover { color: var(--primary); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.25rem;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 1.5rem;
   text-align: center;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.83rem;
+  color: #9ca3af;
 }
 
 /* ============================================================
-   15. COTIZACIÓN FORM (preserved, only re-themed coherently)
-   ============================================================ */
-#cotizacion {
-  background: linear-gradient(135deg, var(--secondary), #1565C0);
-  padding: 4rem 0;
-}
-#cotizacion .section-head h2 { color: #fff; }
-#cotizacion .section-head p { color: rgba(255,255,255,0.85); }
-.quick-form-wrap {
-  max-width: 560px;
-  margin: 2rem auto 0;
-  background: #fff;
-  border-radius: 22px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
-}
-@media (min-width: 600px) { .quick-form-wrap { padding: 2.2rem 2rem; } }
-.qf-row { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
-.qf-row label { font-size: 0.85rem; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
-.qf-row input {
-  width: 100%; padding: 1rem 1.1rem;
-  font-size: 1.05rem; font-family: inherit;
-  border: 2px solid var(--line); border-radius: 12px;
-  background: #fafafa; transition: all 0.2s;
-  -webkit-appearance: none;
-  min-height: 48px;
-  color: var(--ink);
-}
-.qf-row input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(255,107,0,0.12); }
-.qf-row input::placeholder { color: #B0B0B0; }
-.qf-chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.55rem; }
-@media (min-width: 480px) { .qf-chips { grid-template-columns: repeat(3, 1fr); } }
-.qf-chip {
-  display: flex; align-items: center; justify-content: center;
-  padding: 0.85rem 0.5rem;
-  font-size: 0.92rem; font-weight: 700;
-  background: #fafafa; border: 2px solid var(--line); border-radius: 12px;
-  cursor: pointer; transition: all 0.2s;
-  text-align: center; line-height: 1.2;
-  user-select: none;
-  color: var(--ink);
-  min-height: 44px;
-}
-.qf-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); }
-.qf-chip.selected { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 6px 16px rgba(255,107,0,0.32); }
-.qf-submit {
-  width: 100%; padding: 1.2rem 1.5rem;
-  background: var(--primary); color: #fff;
-  border: none; border-radius: 14px;
-  font-size: 1.1rem; font-weight: 800; letter-spacing: 0.01em;
-  font-family: inherit; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-  box-shadow: 0 10px 24px rgba(255,107,0,0.35);
-  transition: all 0.2s;
-  margin-top: 0.5rem;
-  min-height: 52px;
-}
-.qf-submit:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(255,107,0,0.45); }
-.qf-submit:active { transform: translateY(0); }
-.qf-reassure { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.1rem; font-size: 0.82rem; color: var(--gray); flex-wrap: wrap; }
-.qf-reassure span { display: inline-flex; align-items: center; gap: 0.3rem; }
-.qf-reassure svg { width: 14px; height: 14px; color: var(--success); }
-
-/* ============================================================
-   WHATSAPP FLOAT + STICKY MOBILE CTA
+   WhatsApp Float + Sticky CTA Mobile
    ============================================================ */
 .whatsapp-float {
   position: fixed;
-  bottom: 90px;
+  bottom: 1.25rem;
   right: 1.25rem;
   width: 56px;
   height: 56px;
@@ -1154,26 +987,29 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 998;
-  box-shadow: 0 10px 30px rgba(37,211,102,0.42);
-  transition: transform 0.2s;
+  z-index: 90;
+  box-shadow: 0 8px 24px rgba(37,211,102,.45);
+  transition: transform .2s;
 }
 .whatsapp-float:hover { transform: scale(1.08); }
-@media (min-width: 900px) {
-  .whatsapp-float { bottom: 2rem; right: 2rem; width: 60px; height: 60px; }
+@media (min-width: 768px) {
+  .whatsapp-float {
+    width: 62px; height: 62px;
+    bottom: 1.5rem; right: 1.5rem;
+  }
 }
 
-/* Sticky CTA bar (mobile only) */
 .sticky-cta {
   position: fixed;
-  bottom: 0; left: 0; right: 0;
+  left: 0; right: 0;
+  bottom: 0;
   background: #fff;
-  border-top: 1px solid var(--line);
-  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
-  z-index: 997;
-  transform: translateY(110%);
-  transition: transform 0.3s;
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+  z-index: 80;
+  box-shadow: 0 -8px 22px rgba(0,0,0,.1);
+  transform: translateY(100%);
+  transition: transform .25s ease;
 }
 .sticky-cta.visible { transform: translateY(0); }
 .sticky-cta a {
@@ -1181,509 +1017,364 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: var(--primary);
+  background: var(--whatsapp);
   color: #fff;
-  font-weight: 800;
-  padding: 0.95rem 1rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   min-height: 48px;
 }
+.sticky-cta a:hover { background: #1da851; }
 @media (min-width: 900px) { .sticky-cta { display: none; } }
+/* Avoid sticky CTA covering WhatsApp float on mobile */
+@media (max-width: 899px) {
+  .sticky-cta.visible ~ .whatsapp-float,
+  body:has(.sticky-cta.visible) .whatsapp-float { bottom: 5.2rem; }
+}
 
 /* ============================================================
-   FADE-IN SCROLL (Intersection Observer)
+   Fade-in scroll animations (default)
    ============================================================ */
 .fade-in {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
 }
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-  .fade-in { opacity: 1; transform: none; }
+  .fade-in { opacity: 1; transform: none; transition: none; }
 }
 
-/* Cobertura section */
-#cobertura {
-  padding: 2.5rem 0;
-  background: var(--gray-soft);
-  border-top: 1px solid var(--line);
+/* ============================================================
+   Util / accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
-.cobertura-text {
-  font-size: 0.82rem;
-  line-height: 1.85;
-  color: var(--gray);
-  text-align: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-.cobertura-text strong { color: var(--ink); }
+
+/* Stop hero from breaking accents — line-height already 1.06 */
+h1, h2, h3 { word-break: keep-all; hyphens: manual; }
 </style>
 </head>
 <body>
 
-<!-- ========== 1. STICKY NAVBAR ========== -->
-<header id="siteHeader">
-  <nav class="nav-row">
-    <a href="/" class="logo">PLAYKO</a>
-    <ul class="nav-links">
-      <li><a href="#problema">¿Por qué PLAYKO?</a></li>
-      <li><a href="#tipos-de-cancha">Servicios</a></li>
-      <li><a href="#proceso">Proceso</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" class="cta-header" target="_blank" rel="noopener">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-      Cotizar
-    </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#problema" onclick="closeMenu()">¿Por qué PLAYKO?</a>
-    <a href="#tipos-de-cancha" onclick="closeMenu()">Servicios</a>
-    <a href="#proceso" onclick="closeMenu()">Proceso</a>
-    <a href="/blog/" onclick="closeMenu()">Blog</a>
-    <a href="#faq" onclick="closeMenu()">FAQ</a>
-    <a href="#cotizacion" onclick="closeMenu()">Cotizar mi cancha</a>
+<!-- ========================================================
+     1. NAVBAR
+     ======================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="/" class="brand-mark" aria-label="PLAYKO — Inicio">PLAYKO</a>
+    <nav class="nav-menu" aria-label="Principal">
+      <a href="#por-que-playko">¿Por qué PLAYKO?</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="/blog/">Blog</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta-wrap">
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Cotizar
+      </a>
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ========== 2. HERO ========== -->
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" onclick="closeMenu()" aria-label="Cerrar menú">×</button>
+  <a href="#por-que-playko" onclick="closeMenu()">¿Por qué PLAYKO?</a>
+  <a href="#servicios" onclick="closeMenu()">Servicios</a>
+  <a href="#portafolio" onclick="closeMenu()">Proyectos</a>
+  <a href="#proceso" onclick="closeMenu()">Proceso</a>
+  <a href="/blog/" onclick="closeMenu()">Blog</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="https://wa.me/525539887615" target="_blank" rel="noopener" class="mobile-cta">Cotizar por WhatsApp</a>
+</div>
+
+<!-- ========================================================
+     2. HERO — Clean white, NOT a fullscreen photo
+     ======================================================== -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text fade-in">
-        <span class="hero-eyebrow">Sistema acrílico profesional · CDMX · MTY · GDL</span>
-        <h1>Pintura para canchas deportivas que <span class="em-accent">dura años, no meses</span>.</h1>
-        <p class="hero-sub">Sistema acrílico antiderrapante tipo Laykold. Trazos oficiales FIBA, ITF, USAPA. Cobertura nacional con respuesta en 1 hora.</p>
+        <span class="eyebrow">Pintura profesional para canchas deportivas</span>
+        <h1>Pintamos canchas que duran <span class="em-accent">8-12 años</span> en México</h1>
+        <p class="hero-sub">Sistema acrílico antiderrapante tipo Laykold. Basquetbol, tenis, pickleball y multicanchas. Cobertura nacional con respuesta en 1 hora hábil.</p>
         <div class="hero-ctas">
-          <a href="#cotizacion" class="btn-primary">Cotizar mi cancha →</a>
-          <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20informaci%C3%B3n%20sobre%20pintura%20deportiva" class="btn-secondary" target="_blank" rel="noopener">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-            Hablar con PLAYKO
+          <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Cotiza por WhatsApp
           </a>
+          <a href="#portafolio" class="btn btn-outline">Ver proyectos</a>
         </div>
-        <div class="hero-trust">
-          <strong>+100 canchas pintadas</strong>
-          <span class="dot">·</span>
-          <strong>+50 ciudades</strong>
-          <span class="dot">·</span>
-          <strong>8-12 años durabilidad real</strong>
+        <div class="hero-trust-bar">
+          <span><strong>+100</strong> canchas pintadas</span>
+          <span class="dot"></span>
+          <span><strong>+50</strong> ciudades</span>
+          <span class="dot"></span>
+          <span><strong>8-12 años</strong> durabilidad</span>
         </div>
       </div>
-      <div class="hero-visual fade-in">
-        <img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Cancha deportiva profesional pintada con sistema acrílico antiderrapante PLAYKO" loading="eager" fetchpriority="high">
-        <div class="live-card">
-          <span class="live-badge"><span class="live-dot"></span> EN VIVO</span>
-          <div class="live-stat">+12 canchas pintadas este mes</div>
-          <div class="live-stat">Respuesta promedio: 23 min</div>
-          <div class="live-stat">Garantía 8 años UV + 2 años obra</div>
+      <div class="hero-photo fade-in">
+        <img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Pintura profesional para canchas deportivas en México — sistema acrílico antiderrapante PLAYKO" width="900" height="675" fetchpriority="high">
+        <div class="hero-photo-badge">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L5.53 12.7a1 1 0 0 0-1.41 1.41l4.18 4.18a1 1 0 0 0 1.41 0L20.7 7.7a1 1 0 0 0-1.41-1.41z"/></svg>
+          Garantía firmada 8 años UV + 2 años obra
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 3. CONVERSATION / TESTIMONIO ========== -->
-<section class="conversation">
+<!-- ========================================================
+     3. TRUST AUTHORITY — Más de 8 años pintando confianza
+     ======================================================== -->
+<section class="trust-section" id="nosotros">
   <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Testimonios reales</span>
-      <h2>Lo que cuentan <span class="em-accent">clubes y colegios</span> que ya pintaron con PLAYKO</h2>
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Nuestro respaldo</span>
+      <h2>Más de <em class="em-italic">8 años pintando confianza</em> en canchas deportivas mexicanas</h2>
+      <p>Hemos pintado canchas en escuelas privadas, clubes deportivos premium, centros de gobierno y desarrollos residenciales. Cada cancha lleva sistema acrílico multicapa con garantía firmada.</p>
     </div>
-    <div class="chat-card fade-in">
-      <div class="chat-msg user">
-        <div class="chat-avatar user-av">AR</div>
-        <div class="chat-bubble">Hola, quiero cotizar repintado de mi cancha de basquetbol en CDMX. Mide 28×15 m, lleva 6 años sin mantenimiento.</div>
+    <div class="projects-grid">
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-basketball-cdmx-playko.jpg" alt="Cancha de basquetbol pintada en CDMX por PLAYKO con sistema acrílico antiderrapante" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Basquetbol CDMX</strong><span>Sistema acrílico FIBA · 4 capas</span></div>
       </div>
-      <div class="chat-msg brand">
-        <div class="chat-avatar brand-av">P</div>
-        <div class="chat-bubble">Hola Alejandro 👋 Te pasamos cotización por aquí mismo. Para tu cancha estándar FIBA con sistema acrílico Laykold 4 capas hablamos de $85,000–$120,000 MXN según condiciones del concreto. ¿Te mando fotos de proyectos similares?</div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-tenis-cdmx-playko.jpg" alt="Cancha de tenis pintada en Ciudad de México por PLAYKO con superficie ITF" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Tenis CDMX</strong><span>Reglamento ITF · Cushion</span></div>
       </div>
-      <div class="chat-msg user">
-        <div class="chat-avatar user-av">AR</div>
-        <div class="chat-bubble">Sí, por favor. ¿Cuánto tarda la obra?</div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-pickleball-mexico-playko.jpg" alt="Cancha de pickleball pintada en México con trazos USA Pickleball por PLAYKO" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Pickleball MX</strong><span>USA Pickleball · Color vibrante</span></div>
       </div>
-      <div class="chat-msg brand">
-        <div class="chat-avatar brand-av">P</div>
-        <div class="chat-bubble">5–7 días en clima seco. Te envío el portafolio y agendamos visita técnica gratuita esta semana.</div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-multicancha-mexico-2026-playko.jpg" alt="Multicancha con sistema acrílico de colores diferenciados pintada por PLAYKO México" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Multicancha 2026</strong><span>3-5 deportes · colegio</span></div>
       </div>
-      <div class="chat-attribution">
-        <strong>Equipo PLAYKO</strong> · Atención WhatsApp · Respuesta promedio 23 min
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-tenis-monterrey-playko.jpg" alt="Cancha de tenis renovada en Monterrey con repintado y trazos oficiales PLAYKO" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Tenis Monterrey</strong><span>Repintado · Club privado</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Cancha polideportiva escolar pintada por PLAYKO con sistema acrílico nacional" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Polideportiva escolar</strong><span>Estándar SEP · INIFED</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-basketball-cdmx-playko.jpg" alt="Cancha residencial premium con pintura acrílica multicapa PLAYKO en CDMX" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Residencial Polanco</strong><span>3x3 + entrenamiento</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-pickleball-mexico-playko.jpg" alt="Cancha de pickleball pintada en club de Guadalajara con sistema acrílico PLAYKO" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Club Pickleball GDL</strong><span>4 canchas · grado torneo</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-multicancha-mexico-2026-playko.jpg" alt="Multicancha municipal con colores diferenciados y trazos reglamentarios PLAYKO" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Multicancha municipal</strong><span>Querétaro · Gobierno</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-tenis-cdmx-playko.jpg" alt="Cancha de tenis con superficie acrílica antiderrapante PLAYKO en hotel de Cancún" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Tenis hotel Cancún</strong><span>Cushion + UV resistant</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-cancha-tenis-monterrey-playko.jpg" alt="Cancha de tenis renovada en colegio de Monterrey con pintura acrílica PLAYKO" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Colegio Monterrey</strong><span>Renovación + trazos</span></div>
+      </div>
+      <div class="project-card fade-in">
+        <img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Cancha deportiva premium con sistema acrílico multicapa PLAYKO en Mérida Yucatán" loading="lazy" width="600" height="375">
+        <div class="project-caption"><strong>Club Mérida</strong><span>Multideporte premium</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 4. REGLAMENTOS / FEDERACIONES ========== -->
-<section class="federations fade-in">
-  <div class="container">
-    <div class="federations-eyebrow">Trazamos bajo reglamento oficial de</div>
-    <div class="fed-row">
-      <div class="fed-item">FIBA <small>basketball</small></div>
-      <div class="fed-item">FIBA 3×3</div>
-      <div class="fed-item">ITF <small>tenis</small></div>
-      <div class="fed-item">USAPA <small>pickleball</small></div>
-      <div class="fed-item">USA Pickleball</div>
-      <div class="fed-item">FMF <small>fútbol sala</small></div>
+<!-- ========================================================
+     4. VALUE PROPOSITION — Compromiso y calidad
+     ======================================================== -->
+<section class="value-section" id="por-que-playko">
+  <div class="container-narrow">
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Por qué PLAYKO</span>
+      <h2>Compromiso y calidad en <span class="em-accent">cada cancha</span> que pintamos</h2>
+      <p>Sistema acrílico multicapa, trazos reglamentarios oficiales y garantía firmada — el estándar profesional que tu cancha merece.</p>
     </div>
-  </div>
-</section>
-
-<!-- ========== 5. PROBLEM STATEMENT ========== -->
-<section id="problema">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Problema</span>
-      <h2>¿Por qué tu cancha <span class="em-accent">se ve mal después de 1 año</span>?</h2>
-    </div>
-    <div class="problem-grid">
-      <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-        </div>
-        <h3>Pintura común decolora</h3>
-        <p>Se desvanece a los 6 meses por sol intenso de México.</p>
+    <div class="value-grid">
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>Cobertura nacional</h3>
+        <p>Pintamos en CDMX, Monterrey, Guadalajara, Querétaro, Mérida, Cancún y +44 ciudades más en toda la República.</p>
       </div>
-      <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-        </div>
-        <h3>Acabado liso = lesiones</h3>
-        <p>Resbalones en pivotes, giros y aterrizajes.</p>
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>8+ años de experiencia</h3>
+        <p>Equipo técnico certificado con más de 100 canchas pintadas para escuelas, clubes y desarrollos residenciales.</p>
       </div>
-      <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-        </div>
-        <h3>Aplicadores improvisados</h3>
-        <p>Sin sistema multicapa = peeling al año.</p>
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>Sistema acrílico Laykold</h3>
+        <p>4 a 5 capas con primer adherente, antiderrapante calibrado y resina resistente a rayos UV.</p>
       </div>
-      <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-        </div>
-        <h3>Trazos amateur</h3>
-        <p>Sin reglamento oficial = no sirve para torneos.</p>
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>Trazos oficiales</h3>
+        <p>FIBA, ITF, USA Pickleball y FMF reglamentarios para uso competitivo, entrenamiento o recreativo.</p>
+      </div>
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>Garantía firmada</h3>
+        <p>8 años contra decoloración UV y 2 años sobre obra de aplicación, por escrito y con factura CFDI.</p>
+      </div>
+      <div class="value-card fade-in">
+        <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span>
+        <h3>Respuesta en 1 hora</h3>
+        <p>Cotización formal en menos de 60 minutos por WhatsApp. Visita técnica gratuita en CDMX, MTY y GDL.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 6. TIPOS DE CANCHA ========== -->
-<section id="tipos-de-cancha">
+<!-- ========================================================
+     5. SERVICES GRID — 6 deportes
+     ======================================================== -->
+<section class="services-section" id="servicios">
   <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Tipos de cancha</span>
-      <h2>Pintamos <span class="em-accent">cualquier cancha deportiva</span> en México</h2>
-      <p>Sistema acrílico antiderrapante tipo Laykold aplicado por deporte. Cada cancha lleva los trazos y dimensiones reglamentarias correspondientes.</p>
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Servicios</span>
+      <h2>Diseñadas para el juego, <span class="em-accent">pintadas a la medida</span></h2>
+      <p>Sistema acrílico antiderrapante por deporte, con trazos reglamentarios oficiales y garantía firmada.</p>
     </div>
-
-    <div class="tipos-grid">
-      <a href="/servicios/pintura-cancha-basquetbol" class="tipo-card fade-in">
-        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-basketball-cdmx-playko.jpg');" role="img" aria-label="Cancha de basquetbol pintada con sistema acrílico PLAYKO"></div>
-        <div class="tipo-body">
-          <h3>Pintura para canchas de basquetbol</h3>
-          <p>Sistema 4-5 capas con trazos oficiales FIBA / FIBA 3x3 / NBA opcional. Colores resistentes a UV y antiderrapante de alto rendimiento.</p>
-          <span class="tipo-cta">Ver detalle de servicio</span>
+    <div class="services-grid">
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-cancha-basketball-cdmx-playko.jpg" alt="Pintura para cancha de basquetbol con trazos FIBA por PLAYKO México" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Basquetbol</h3>
+          <p>Trazos FIBA, 3x3 o NBA. Sistema 4 capas con antiderrapante calibrado para cambios de dirección.</p>
+          <a href="/servicios/pintura-cancha-basquetbol" class="service-cta">Cotiza tu cancha de basquetbol <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
+      </article>
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-cancha-tenis-cdmx-playko.jpg" alt="Pintura para cancha de tenis con superficie ITF por PLAYKO México" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Tenis</h3>
+          <p>Reglamento ITF, velocidad de pelota ajustable según granulometría del acrílico.</p>
+          <a href="/servicios/pintura-cancha-tenis" class="service-cta">Cotiza tu cancha de tenis <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-cancha-pickleball-mexico-playko.jpg" alt="Pintura para cancha de pickleball con trazos USA Pickleball oficiales PLAYKO" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Pickleball</h3>
+          <p>Trazos USA Pickleball oficiales. Colores vibrantes característicos del deporte de más rápido crecimiento.</p>
+          <a href="/servicios/pintura-cancha-pickleball" class="service-cta">Cotiza tu cancha de pickleball <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-cancha-multicancha-mexico-2026-playko.jpg" alt="Pintura para multicancha con sistema de colores diferenciados PLAYKO México" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Multicancha</h3>
+          <p>Hasta 5 deportes en una sola superficie. Sistema de colores diferenciado para máxima claridad.</p>
+          <a href="/servicios/pintura-cancha-multicancha" class="service-cta">Cotiza tu multicancha <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Pintura para cancha polideportiva escolar con estándar SEP e INIFED PLAYKO" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Polideportiva</h3>
+          <p>Estándar SEP e INIFED para colegios y centros municipales. Acabado antiderrapante para uso intensivo.</p>
+          <a href="/servicios/pintura-cancha-polideportiva" class="service-cta">Cotiza tu polideportiva <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+      <article class="service-card fade-in">
+        <div class="service-img"><img src="/images/pintura-cancha-tenis-monterrey-playko.jpg" alt="Repintado de cancha deportiva existente con renovación de trazos PLAYKO" loading="lazy" width="600" height="375"></div>
+        <div class="service-body">
+          <h3>Repintado / Renovación</h3>
+          <p>Refresh de cancha existente sin obra civil. Repintado completo + retrazado oficial.</p>
+          <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20renovaci%C3%B3n%20de%20mi%20cancha" target="_blank" rel="noopener" class="service-cta">Cotiza renovación <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     6. WHAT'S INCLUDED
+     ======================================================== -->
+<section class="includes-section" id="proceso">
+  <div class="container-narrow">
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Qué incluye</span>
+      <h2>Todo lo que tu cancha <span class="em-accent">necesita</span> en un solo precio</h2>
+      <p>Cotización transparente, sin sorpresas. Desde la visita técnica hasta la bitácora fotográfica final.</p>
+    </div>
+    <div class="includes-list">
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Visita técnica gratuita (CDMX, MTY, GDL) o evaluación remota</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Cotización formal por WhatsApp en menos de 1 hora</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Preparación de superficie (limpieza, fisuras, primer adherente)</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Sistema acrílico multicapa con granulometría calibrada</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Trazos oficiales del deporte (FIBA / ITF / USA Pickleball / FMF)</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Logo institucional o personalización opcional</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Garantía firmada: 8 años UV + 2 años obra</span></div>
+      <div class="includes-item fade-in"><span class="includes-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></span><span>Factura CFDI y bitácora fotográfica del proceso</span></div>
+    </div>
+    <div class="includes-cta-wrap fade-in">
+      <a href="#cotizacion" class="btn btn-primary">Cotizar mi proyecto</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     7. PORTAFOLIO GALLERY
+     ======================================================== -->
+<section class="portfolio-section" id="portafolio">
+  <div class="container">
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Portafolio</span>
+      <h2>Algunos de <span class="em-accent">nuestros proyectos</span> recientes</h2>
+      <p>Canchas pintadas en escuelas, clubes, hoteles, gobierno y desarrollos residenciales premium en toda la República.</p>
+    </div>
+    <div class="portfolio-grid">
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20de%20basquetbol%20Polanco%20y%20quiero%20cotizar%20uno%20similar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-cancha-basketball-cdmx-playko.jpg" alt="Cancha de basquetbol pintada por PLAYKO en Polanco CDMX con sistema FIBA" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Basquetbol — Polanco</strong><span>Trazos FIBA · Acabado profesional</span></div>
       </a>
-
-      <a href="/servicios/pintura-cancha-tenis" class="tipo-card fade-in">
-        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-tenis-cdmx-playko.jpg');" role="img" aria-label="Cancha de tenis pintada con acabado premium tipo Laykold por PLAYKO"></div>
-        <div class="tipo-body">
-          <h3>Pintura para canchas de tenis</h3>
-          <p>Acabado premium con velocidad de pelota ajustable según granulometría. Resistente a clima CDMX, calor MTY y humedad costera.</p>
-          <span class="tipo-cta">Ver detalle de servicio</span>
-        </div>
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20de%20tenis%20y%20quiero%20cotizar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-cancha-tenis-cdmx-playko.jpg" alt="Cancha de tenis con superficie ITF pintada por PLAYKO en CDMX" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Tenis — Lomas Country</strong><span>Cushion ITF · Club privado</span></div>
       </a>
-
-      <a href="/servicios/pintura-cancha-pickleball" class="tipo-card fade-in">
-        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-pickleball-mexico-playko.jpg');" role="img" aria-label="Cancha de pickleball pintada con colores oficiales USAPA por PLAYKO"></div>
-        <div class="tipo-body">
-          <h3>Pintura para canchas de pickleball</h3>
-          <p>Colores vibrantes con trazos USAPA / IPF reglamentarios. Compatible con multicancha pickleball + tenis dobles en una misma superficie.</p>
-          <span class="tipo-cta">Ver detalle de servicio</span>
-        </div>
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20de%20pickleball%20y%20quiero%20cotizar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-cancha-pickleball-mexico-playko.jpg" alt="Cancha de pickleball pintada por PLAYKO en club de Guadalajara con trazos USA Pickleball" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Pickleball — Club GDL</strong><span>USA Pickleball · 4 canchas</span></div>
       </a>
-
-      <a href="/servicios/pintura-cancha-multicancha" class="tipo-card fade-in">
-        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-multicancha-mexico-2026-playko.jpg');" role="img" aria-label="Multicancha polivalente con trazos de varios deportes pintada por PLAYKO"></div>
-        <div class="tipo-body">
-          <h3>Pintura para multicanchas</h3>
-          <p>Hasta 5 deportes en una sola superficie: basquetbol + voleibol + futbol sala + pickleball + tenis. Sistema de colores diferenciado por deporte.</p>
-          <span class="tipo-cta">Ver detalle de servicio</span>
-        </div>
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20de%20multicancha%20y%20quiero%20cotizar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-cancha-multicancha-mexico-2026-playko.jpg" alt="Multicancha escolar con 3 deportes pintada por PLAYKO con colores diferenciados" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Multicancha — Colegio Querétaro</strong><span>3 deportes · Estándar SEP</span></div>
       </a>
-
-      <a href="/servicios/pintura-cancha-polideportiva" class="tipo-card fade-in">
-        <div class="tipo-img" style="background-image:url('/images/pintura-canchas-deportivas-playko-hero.jpg');" role="img" aria-label="Cancha polideportiva escolar pintada con sistema acrílico antiderrapante por PLAYKO"></div>
-        <div class="tipo-body">
-          <h3>Pintura para canchas polideportivas</h3>
-          <p>Estándar SEP / INIFED para colegios públicos y privados. Pintura polivalente para clubes, condominios y centros deportivos municipales.</p>
-          <span class="tipo-cta">Ver detalle de servicio</span>
-        </div>
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20de%20tenis%20Monterrey%20y%20quiero%20cotizar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-cancha-tenis-monterrey-playko.jpg" alt="Repintado de cancha de tenis en colegio de Monterrey por PLAYKO" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Tenis — Monterrey</strong><span>Repintado + trazos ITF</span></div>
       </a>
-
-      <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20pintura%20para%20una%20cancha%20deportiva" class="tipo-card tipo-cta-card fade-in" target="_blank" rel="noopener">
-        <div class="tipo-body">
-          <h3>¿Tu cancha no aparece aquí?</h3>
-          <p>Hacemos voleibol, futbol sala, frontón, handball, futbol americano (yardas pintadas) y más. Cotizamos cualquier deporte.</p>
-          <span class="tipo-cta-btn">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-            Cotizar por WhatsApp
-          </span>
-        </div>
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20vi%20el%20proyecto%20polideportivo%20y%20quiero%20cotizar" target="_blank" rel="noopener" class="portfolio-card fade-in">
+        <img src="/images/pintura-canchas-deportivas-playko-hero.jpg" alt="Cancha polideportiva premium pintada por PLAYKO en hotel de Cancún" loading="lazy" width="800" height="600">
+        <div class="portfolio-info"><strong>Polideportiva — Hotel Cancún</strong><span>Premium · UV resistant</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ========== 7. PRICING ========== -->
-<section class="pricing">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Inversión</span>
-      <h2>Precios reales <span class="em-accent">sin sorpresas</span></h2>
-      <p>Todos los paquetes incluyen visita técnica gratuita y cotización formal en 1 hora hábil.</p>
-    </div>
-    <div class="pricing-grid">
-
-      <div class="price-card fade-in">
-        <h3>Renovación</h3>
-        <div class="price-tag">$30K – $60K</div>
-        <div class="price-unit">MXN · cancha estándar</div>
-        <ul class="price-features">
-          <li>Cancha existente en buen estado</li>
-          <li>Limpieza + refresh de pintura</li>
-          <li>Retrazado oficial del deporte</li>
-          <li>2-3 capas acrílicas</li>
-          <li>Entrega 3-5 días</li>
-        </ul>
-        <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20RENOVACI%C3%93N%20de%20mi%20cancha" class="price-cta" target="_blank" rel="noopener">Cotizar renovación</a>
-      </div>
-
-      <div class="price-card featured fade-in">
-        <span class="price-badge">⭐ Más solicitado</span>
-        <h3>Profesional</h3>
-        <div class="price-tag">$80K – $150K</div>
-        <div class="price-unit">MXN · cancha estándar</div>
-        <ul class="price-features">
-          <li>Sistema acrílico 4 capas</li>
-          <li>Antiderrapante calibrado</li>
-          <li>Trazos oficiales FIBA / ITF / USAPA</li>
-          <li>Reparación de fisuras incluida</li>
-          <li>Garantía 8 años UV + 2 obra</li>
-        </ul>
-        <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20PROFESIONAL%20para%20mi%20cancha" class="price-cta" target="_blank" rel="noopener">Cotizar profesional</a>
-      </div>
-
-      <div class="price-card fade-in">
-        <h3>Premium</h3>
-        <div class="price-tag">$160K – $260K</div>
-        <div class="price-unit">MXN · cancha estándar</div>
-        <ul class="price-features">
-          <li>Sistema 5 capas tipo Laykold</li>
-          <li>Colores premium personalizados</li>
-          <li>Logo institucional pintado</li>
-          <li>Visita técnica + mockup digital</li>
-          <li>Garantía extendida 10 años</li>
-        </ul>
-        <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20PREMIUM%20para%20mi%20cancha" class="price-cta" target="_blank" rel="noopener">Cotizar premium</a>
-      </div>
-
-      <div class="price-card fade-in">
-        <h3>Multicancha</h3>
-        <div class="price-tag">$90K – $220K</div>
-        <div class="price-unit">MXN · hasta 5 deportes</div>
-        <ul class="price-features">
-          <li>Hasta 5 deportes en una superficie</li>
-          <li>Sistema de colores diferenciado</li>
-          <li>Trazos múltiples coordinados</li>
-          <li>Sistema acrílico 4 capas</li>
-          <li>Ideal colegios / clubes</li>
-        </ul>
-        <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20MULTICANCHA" class="price-cta" target="_blank" rel="noopener">Cotizar multicancha</a>
-      </div>
-
-    </div>
-    <div class="pricing-callout fade-in">
-      ¿Más de 800 m² o varias canchas? <a href="https://wa.me/525539887615?text=Necesito%20cotizaci%C3%B3n%20empresarial%20para%20varias%20canchas" target="_blank" rel="noopener">Cotización empresarial personalizada →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 9. PROCESO ========== -->
-<section id="proceso">
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Proceso</span>
-      <h2>De llamada a cancha lista en <span class="em-accent">5-10 días</span></h2>
-    </div>
-    <div class="process-grid">
-      <div class="process-step fade-in">
-        <div class="process-num">01</div>
-        <h3>Cotizamos</h3>
-        <p>Visita técnica gratuita o evaluación remota con fotos. Propuesta en 1 hora.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="process-num">02</div>
-        <h3>Preparamos</h3>
-        <p>Limpieza profunda, reparación de fisuras, nivelación, primer adherente.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="process-num">03</div>
-        <h3>Aplicamos</h3>
-        <p>Sistema acrílico multicapa con granulometría antiderrapante calibrada.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="process-num">04</div>
-        <h3>Entregamos</h3>
-        <p>Trazos oficiales del deporte + garantía firmada 8 años UV + 2 obra.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 10. COMPARISON TABLE ========== -->
-<section>
-  <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Comparativa</span>
-      <h2>Sistema acrílico Laykold <span class="em-accent">vs pintura común</span></h2>
-    </div>
-    <div class="compare-wrap fade-in">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Criterio</th>
-            <th class="featured-col">Laykold tipo (PLAYKO)</th>
-            <th>Pintura común</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Durabilidad real</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> 8-12 años</td>
-            <td><span class="compare-no">✗</span> 1-3 años</td>
-          </tr>
-          <tr>
-            <td>Capas aplicadas</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> 4-5 (primer + base + color + antideslizante)</td>
-            <td><span class="compare-no">✗</span> 1-2</td>
-          </tr>
-          <tr>
-            <td>Fricción antiderrapante</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> μ 0.5-0.8 calibrado</td>
-            <td><span class="compare-no">✗</span> Variable / liso</td>
-          </tr>
-          <tr>
-            <td>Resistencia UV</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> Pigmentos formulados</td>
-            <td><span class="compare-no">✗</span> Decolora 6-12 meses</td>
-          </tr>
-          <tr>
-            <td>Garantía</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> 8 años decoloración + 2 obra</td>
-            <td><span class="compare-no">✗</span> Sin garantía</td>
-          </tr>
-          <tr>
-            <td>Reglamento de trazos</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> FIBA / ITF / USAPA</td>
-            <td><span class="compare-no">✗</span> Marcas aproximadas</td>
-          </tr>
-          <tr>
-            <td>Costo total a 10 años</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> Hasta 60% menos (sin retrabajo)</td>
-            <td><span class="compare-no">✗</span> Repintado cada 2 años</td>
-          </tr>
-          <tr>
-            <td>Aplicador</td>
-            <td class="featured-cell"><span class="compare-yes">✓</span> Certificado PLAYKO</td>
-            <td><span class="compare-no">✗</span> Pintor general</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Mobile stacked version -->
-      <div class="compare-mobile">
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Durabilidad real</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> 8-12 años</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> 1-3 años</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Capas aplicadas</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> 4-5 capas</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> 1-2 capas</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Fricción antiderrapante</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> μ 0.5-0.8 calibrado</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Variable / liso</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Resistencia UV</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> Pigmentos formulados</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Decolora 6-12 meses</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Garantía</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> 8 años UV + 2 obra</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Sin garantía</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Reglamento de trazos</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> FIBA / ITF / USAPA</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Marcas aproximadas</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Costo total a 10 años</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> Hasta 60% menos</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Repintado c/2 años</span></div>
-        </div>
-        <div class="compare-mobile-row">
-          <div class="cmp-criteria">Aplicador</div>
-          <div class="cmp-line brand"><span><span class="cmp-label">Laykold (PLAYKO)</span><span class="compare-yes">✓</span> Certificado PLAYKO</span></div>
-          <div class="cmp-line"><span><span class="cmp-label">Pintura común</span><span class="compare-no">✗</span> Pintor general</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 11. LIMITED OFFER ========== -->
-<section class="limited-offer">
-  <div class="container">
-    <div class="limited-grid fade-in">
-      <div>
-        <span class="eyebrow-green eyebrow-white">Cupo limitado mayo 2026</span>
-        <h3>Agendamos <span class="em-accent">solo 12 obras nuevas</span> este mes en CDMX, MTY, GDL</h3>
-        <p>Para asegurar tiempos de entrega y calidad de aplicación. Quedan 4 fechas disponibles.</p>
-      </div>
-      <div class="limited-cta-wrap">
-        <a href="https://wa.me/525539887615?text=Quiero%20apartar%20fecha%20de%20mayo%20para%20pintar%20mi%20cancha" class="btn-light" target="_blank" rel="noopener">
-          Reservar fecha →
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 15. COTIZACIÓN FORM (PRESERVED) ========== -->
+<!-- ========================================================
+     8. COTIZACIÓN FORM SIMPLIFICADO (PRESERVED)
+     ======================================================== -->
 <section id="cotizacion">
   <div class="container">
     <div class="section-head fade-in">
@@ -1726,12 +1417,14 @@ footer {
   </div>
 </section>
 
-<!-- ========== 12. FAQ ========== -->
+<!-- ========================================================
+     9. FAQ
+     ======================================================== -->
 <section class="faq-section" id="faq">
   <div class="container">
-    <div class="section-head fade-in">
-      <span class="eyebrow-green">Preguntas frecuentes</span>
-      <h2>Todo lo que necesitas saber</h2>
+    <div class="section-head center fade-in">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Todo lo que necesitas <span class="em-accent">saber</span></h2>
     </div>
     <div class="faq-list">
       <details class="faq-item fade-in">
@@ -1740,7 +1433,7 @@ footer {
       </details>
       <details class="faq-item fade-in">
         <summary>¿Cuánto tiempo dura la pintura en una cancha deportiva?</summary>
-        <div class="faq-content">Con aplicación profesional y mantenimiento básico, la pintura deportiva acrílica dura entre 5 a 8 años dependiendo del uso intensivo, clima y tipo de superficie. Las canchas en clubes con alto tráfico pueden requerir repintado cada 4-5 años, mientras que canchas escolares o residenciales pueden durar hasta 8 años manteniendo colores vibrantes.</div>
+        <div class="faq-content">Con aplicación profesional y mantenimiento básico, la pintura deportiva acrílica dura entre 8 a 12 años dependiendo del uso intensivo, clima y tipo de superficie. Las canchas en clubes con alto tráfico pueden requerir repintado cada 6-8 años, mientras que canchas escolares o residenciales pueden durar hasta 12 años manteniendo colores vibrantes.</div>
       </details>
       <details class="faq-item fade-in">
         <summary>¿En qué ciudades de México ofrecen servicio de pintura deportiva?</summary>
@@ -1752,7 +1445,7 @@ footer {
       </details>
       <details class="faq-item fade-in">
         <summary>¿Cuánto cuesta pintar una cancha de basketball, tenis o pickleball?</summary>
-        <div class="faq-content">El costo de pintura deportiva varía según tamaño, tipo de cancha, estado de la superficie y ubicación. Una cancha de pickleball (6x13m) parte desde $25,000 MXN. Basketball completa (28x15m) desde $65,000 MXN. Tenis profesional (23x11m) desde $55,000 MXN. Multicanchas desde $80,000 MXN. Incluye preparación, pintura multicapa, trazos oficiales y acabado antiderrapante. Cotización exacta vía WhatsApp en menos de 24 horas.</div>
+        <div class="faq-content">El costo de pintura deportiva varía según tamaño, tipo de cancha, estado de la superficie y ubicación. Una cancha de pickleball (6x13m) parte desde $25,000 MXN. Basketball completa (28x15m) desde $65,000 MXN. Tenis profesional (23x11m) desde $55,000 MXN. Multicanchas desde $80,000 MXN. Incluye preparación, pintura multicapa, trazos oficiales y acabado antiderrapante. Cotización exacta vía WhatsApp en menos de 1 hora.</div>
       </details>
       <details class="faq-item fade-in">
         <summary>¿Qué incluye el servicio de pintura para canchas deportivas?</summary>
@@ -1778,43 +1471,46 @@ footer {
   </div>
 </section>
 
-<!-- ========== COBERTURA ========== -->
+<!-- ========================================================
+     COBERTURA
+     ======================================================== -->
 <section id="cobertura">
   <p class="cobertura-text">
     <strong>Cobertura Nacional en México:</strong> Aguascalientes · Baja California · Baja California Sur · Campeche · Chiapas · Chihuahua · Ciudad de México · Coahuila · Colima · Durango · Estado de México · Guanajuato · Guerrero · Hidalgo · Jalisco · Michoacán · Morelos · Nayarit · Nuevo León · Oaxaca · Puebla · Querétaro · Quintana Roo · San Luis Potosí · Sinaloa · Sonora · Tabasco · Tamaulipas · Tlaxcala · Veracruz · Yucatán · Zacatecas · CDMX · Monterrey · Guadalajara · Puebla · Cancún · Mérida · Tijuana · León · Querétaro · Toluca · Saltillo · Aguascalientes · Hermosillo · Chihuahua · Morelia · Cuernavaca · Pachuca · Tuxtla Gutiérrez · Veracruz · Villahermosa · Tampico · San Luis Potosí
   </p>
 </section>
 
-<!-- ========== 13. CTA FINAL OSCURO ========== -->
-<section class="cta-dark">
-  <div class="cta-dark-inner fade-in">
-    <span class="eyebrow-green eyebrow-orange">Última llamada</span>
-    <h2>Tu cancha <span class="em-accent">se merece pintura de verdad</span></h2>
-    <p>Visita técnica gratuita. Cotización en 1 hora. Sin compromiso.</p>
-    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" class="cta-dark-btn" target="_blank" rel="noopener">
-      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-      Cotizar mi cancha por WhatsApp
+<!-- ========================================================
+     10. FINAL CTA — Orange gradient
+     ======================================================== -->
+<section class="cta-final">
+  <div class="cta-final-inner fade-in">
+    <span class="eyebrow eyebrow-white">¿Listo?</span>
+    <h2>Cotiza tu cancha en menos de <em>1 hora</em></h2>
+    <p>Visita técnica gratuita en CDMX, MTY y GDL. Evaluación remota en cualquier ciudad. Cotización formal por WhatsApp.</p>
+    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="btn btn-white">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+      Hablar por WhatsApp
     </a>
-    <div class="cta-dark-reassure">
-      <span>Respuesta &lt;1h</span>
-      <span>Garantía escrita</span>
-      <span>Factura CFDI</span>
-    </div>
+    <div class="cta-final-reassure">Respuesta &lt;1h · Sin costo · Sin compromiso</div>
   </div>
 </section>
 
-<!-- ========== 14. FOOTER ========== -->
+<!-- ========================================================
+     11. FOOTER
+     ======================================================== -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
         <span class="footer-brand">PLAYKO</span>
-        <p>Pintura profesional para canchas deportivas en México. Sistema acrílico certificado para basketball, tenis, pickleball y multicanchas.</p>
+        <p>Pintura profesional para canchas deportivas en México. Sistema acrílico certificado para basketball, tenis, pickleball y multicanchas. Cobertura nacional con respuesta en 1 hora.</p>
       </div>
       <div class="footer-col">
         <h3>Navegación</h3>
-        <a href="#problema">¿Por qué PLAYKO?</a>
-        <a href="#tipos-de-cancha">Servicios</a>
+        <a href="#por-que-playko">¿Por qué PLAYKO?</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Proyectos</a>
         <a href="#proceso">Proceso</a>
         <a href="/blog/">Blog</a>
         <a href="#faq">Preguntas frecuentes</a>
@@ -1831,7 +1527,7 @@ footer {
         <h3>Contacto</h3>
         <a href="https://wa.me/525539887615" target="_blank" rel="noopener">WhatsApp: +52 55 3988 7615</a>
         <a href="mailto:contacto@pinturaparacanchasdeportivas.mx">contacto@pinturaparacanchasdeportivas.mx</a>
-        <p style="margin-top:0.5rem;">Cobertura: Nacional México</p>
+        <p style="margin-top:0.5rem; color:#9ca3af;">Cobertura: Nacional México</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1841,7 +1537,7 @@ footer {
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20informaci%C3%B3n%20sobre%20pintura%20deportiva" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20informaci%C3%B3n%20sobre%20pintura%20deportiva" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp PLAYKO">
   <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -1856,27 +1552,33 @@ footer {
 <script>
 // Mobile menu
 function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('active');
+  const menu = document.getElementById('mobileMenu');
+  const toggle = document.querySelector('.nav-toggle');
+  menu.classList.toggle('active');
+  const open = menu.classList.contains('active');
+  menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 function closeMenu() {
-  document.getElementById('mobileMenu').classList.remove('active');
+  const menu = document.getElementById('mobileMenu');
+  const toggle = document.querySelector('.nav-toggle');
+  menu.classList.remove('active');
+  menu.setAttribute('aria-hidden', 'true');
+  toggle.setAttribute('aria-expanded', 'false');
 }
 
 // Sticky nav compact + sticky CTA mobile
 const header = document.getElementById('siteHeader');
 const stickyCta = document.getElementById('stickyCta');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   if (y > 80) header.classList.add('compact');
   else header.classList.remove('compact');
 
-  // Show mobile sticky CTA after hero (≈ 500px)
   if (window.innerWidth < 900) {
     if (y > 600) stickyCta.classList.add('visible');
     else stickyCta.classList.remove('visible');
   }
-  lastScroll = y;
 }, { passive: true });
 
 // Fade-in on scroll (Intersection Observer)
@@ -2088,7 +1790,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       "@type": "ListItem",
       "position": 2,
       "name": "Servicios",
-      "item": "https://www.pinturaparacanchasdeportivas.mx#tipos-de-cancha"
+      "item": "https://www.pinturaparacanchasdeportivas.mx#servicios"
     },
     {
       "@type": "ListItem",
@@ -2192,7 +1894,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       "@type": "HowToStep",
       "position": 4,
       "name": "Trazos y acabados",
-      "text": "Marcas reglamentarias del deporte correspondiente: FIBA para basketball, ITF para tenis, USAPA para pickleball.",
+      "text": "Marcas reglamentarias del deporte correspondiente: FIBA para basketball, ITF para tenis, USA Pickleball para pickleball.",
       "url": "https://www.pinturaparacanchasdeportivas.mx/#proceso"
     }
   ]
