@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog PLAYKO | Guía completa de pintura para canchas deportivas en México</title>
+<meta name="description" content="Blog técnico de PLAYKO: precios, sistemas acrílicos, durabilidad, antiderrapantes y procesos para pintar canchas de basketball, tenis, pickleball y multicanchas en México.">
+<meta name="keywords" content="blog pintura canchas, pintura cancha basketball precio, sistema acrílico Laykold, pintura antiderrapante, cómo pintar cancha pickleball, tipos pintura cancha deportiva">
+<link rel="canonical" href="https://pinturaparacanchasdeportivas.mx/blog/">
+<meta property="og:title" content="Blog PLAYKO | Guía completa de pintura para canchas deportivas">
+<meta property="og:description" content="Aprende a pintar canchas deportivas profesionales: precios 2026, sistemas acrílicos, antiderrapantes y procesos paso a paso.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pinturaparacanchasdeportivas.mx/blog/">
+<meta property="og:image" content="https://pinturaparacanchasdeportivas.mx/images/playko-blog-og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --primary:#FF6B00;
+  --primary-dark:#E65100;
+  --secondary:#0D47A1;
+  --text:#1A1A1A;
+  --text-light:#666;
+  --bg:#FFFFFF;
+  --bg-light:#F8F9FA;
+  --border:#E0E0E0;
+  --whatsapp:#25D366;
+}
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+  background:#fff;
+}
+
+/* Header */
+header { position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); z-index:999; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+nav { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.8rem; font-weight:900; color:var(--primary); letter-spacing:-0.02em; text-decoration:none; }
+.nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+.nav-links a { text-decoration:none; color:var(--text); font-weight:600; font-size:0.95rem; transition:color 0.2s; }
+.nav-links a:hover { color:var(--primary); }
+.cta-header { background:var(--whatsapp); color:white; padding:0.75rem 1.5rem; border-radius:8px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:transform 0.2s, box-shadow 0.2s; }
+.cta-header:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(37, 211, 102, 0.3); color:#fff; }
+.menu-toggle { display:none; background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--text); }
+
+/* Hero blog */
+.blog-hero { position:relative; min-height:62vh; display:flex; align-items:center; overflow:hidden; }
+.blog-hero-bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1600&q=80'); background-size:cover; background-position:center; }
+.blog-hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,0,0,0.78), rgba(0,0,0,0.45)); }
+.blog-hero-inner { position:relative; max-width:1100px; width:100%; margin:0 auto; padding:5rem 2rem; z-index:2; color:#fff; }
+.kicker {
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:0.78rem;
+  font-weight:800;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:0.5rem 1rem;
+  border-radius:999px;
+  margin-bottom:1.25rem;
+}
+.blog-h1 {
+  font-size:3.5rem;
+  font-weight:900;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  max-width:900px;
+  margin-bottom:1.25rem;
+}
+.blog-h1 .em-accent { color:var(--primary); }
+.blog-hero-sub { font-size:1.15rem; color:rgba(255,255,255,0.88); max-width:720px; margin-bottom:2rem; line-height:1.6; }
+.meta-row { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; color:rgba(255,255,255,0.85); font-size:0.95rem; }
+.meta-row .avatar { width:42px; height:42px; border-radius:50%; background:var(--primary); display:inline-flex; align-items:center; justify-content:center; font-weight:800; color:#fff; }
+.meta-dot { width:4px; height:4px; background:rgba(255,255,255,0.4); border-radius:50%; }
+
+.hero-stats {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem;
+  margin-top:2.5rem; max-width:780px;
+}
+.hero-stat {
+  background:rgba(255,255,255,0.94); color:var(--text);
+  padding:1.2rem 1.25rem; border-radius:12px;
+  border-top:4px solid var(--primary);
+  backdrop-filter:blur(6px);
+}
+.hero-stat-num { font-size:1.9rem; font-weight:900; color:var(--primary-dark); line-height:1; margin-bottom:0.4rem; }
+.hero-stat-label { font-size:0.82rem; color:var(--text-light); font-weight:600; letter-spacing:0.02em; }
+
+/* Categories */
+.cat-bar { background:var(--bg-light); border-bottom:1px solid var(--border); padding:1.25rem 2rem; }
+.cat-pills { max-width:1200px; margin:0 auto; display:flex; gap:0.6rem; flex-wrap:wrap; justify-content:center; }
+.cat-pill {
+  background:#fff; color:var(--text); border:1px solid var(--border);
+  padding:0.55rem 1.1rem; border-radius:999px; font-size:0.9rem; font-weight:700;
+  text-decoration:none; transition:all 0.18s;
+  cursor:pointer;
+}
+.cat-pill:hover, .cat-pill.active {
+  background:var(--primary); border-color:var(--primary); color:#fff;
+}
+
+/* Grid */
+.blog-grid-wrap { background:#fff; padding:4rem 2rem; }
+.blog-grid {
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem;
+}
+.article-card {
+  background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden;
+  text-decoration:none; color:inherit; display:flex; flex-direction:column;
+  transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.article-card:hover { transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,0.10); border-color:var(--primary); }
+.article-card-img { width:100%; aspect-ratio:16/9; background-size:cover; background-position:center; background-color:#eee; }
+.article-card-body { padding:1.6rem 1.4rem 1.7rem; display:flex; flex-direction:column; gap:0.8rem; flex:1; }
+.article-cat {
+  display:inline-block;
+  background:rgba(255,107,0,0.10); color:var(--primary-dark);
+  font-size:0.72rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;
+  padding:0.35rem 0.75rem; border-radius:999px;
+  width:max-content;
+}
+.article-title { font-size:1.2rem; font-weight:800; line-height:1.35; color:var(--text); }
+.article-summary { font-size:0.95rem; color:var(--text-light); line-height:1.6; }
+.article-meta { display:flex; align-items:center; gap:0.6rem; color:var(--text-light); font-size:0.82rem; margin-top:auto; padding-top:0.6rem; border-top:1px solid var(--bg-light); }
+.article-meta strong { color:var(--text); font-weight:700; }
+.article-read { color:var(--primary); font-weight:800; font-size:0.92rem; display:inline-flex; align-items:center; gap:0.35rem; margin-top:0.3rem; }
+
+/* Newsletter / CTA banner */
+.cta-banner {
+  background:linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color:#fff; padding:3.5rem 2rem; margin:0;
+}
+.cta-banner-inner { max-width:1000px; margin:0 auto; text-align:center; }
+.cta-banner h2 { font-size:2rem; font-weight:900; margin-bottom:0.8rem; line-height:1.2; }
+.cta-banner p { font-size:1.1rem; opacity:0.92; margin-bottom:1.6rem; }
+.cta-btn {
+  display:inline-flex; align-items:center; gap:0.6rem;
+  background:#fff; color:var(--primary-dark);
+  padding:1rem 1.8rem; border-radius:10px; font-weight:800;
+  text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;
+  font-size:1.02rem;
+}
+.cta-btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,0.18); }
+
+/* Footer */
+footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; }
+.footer-content { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:3rem; margin-bottom:3rem; }
+.footer-section h3 { font-size:1.2rem; font-weight:800; margin-bottom:1.5rem; color:var(--primary); }
+.footer-section p, .footer-section a { color:rgba(255,255,255,0.7); line-height:1.8; text-decoration:none; display:block; margin-bottom:0.5rem; transition:color 0.2s; }
+.footer-section a:hover { color:var(--primary); }
+.footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.5); }
+
+/* WhatsApp Flotante */
+.whatsapp-float { position:fixed; bottom:30px; right:30px; background:var(--whatsapp); width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(37, 211, 102, 0.5); z-index:9999; cursor:pointer; transition:all 0.3s; animation:pulse 2s infinite; }
+.whatsapp-float:hover { transform:scale(1.1); box-shadow:0 12px 32px rgba(37, 211, 102, 0.6); }
+@keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.05); } }
+
+/* Sticky CTA mobile */
+.sticky-cta-mobile { display:none; }
+
+/* Fade-in scroll */
+.fade-in { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .blog-h1 { font-size:2.2rem; }
+  .blog-hero-inner { padding:3.5rem 1.25rem 3rem; }
+  .blog-hero { min-height:auto; }
+  .hero-stats { grid-template-columns:1fr; max-width:100%; }
+  .blog-grid { grid-template-columns:1fr; gap:1.5rem; padding-bottom:5rem; }
+  .blog-grid-wrap { padding:2.5rem 1.25rem 2rem; }
+  .cat-bar { padding:1rem; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:white; border-top:1px solid var(--border); padding:1rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+  .nav-links.active { display:flex; }
+  .menu-toggle { display:block; }
+  .whatsapp-float { bottom:90px; right:20px; width:55px; height:55px; }
+  .cta-banner h2 { font-size:1.5rem; }
+  .sticky-cta-mobile {
+    display:flex; position:fixed; bottom:0; left:0; right:0;
+    background:#fff; border-top:1px solid var(--border);
+    padding:0.7rem 1rem; z-index:998; gap:0.6rem;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.08);
+  }
+  .sticky-cta-mobile a {
+    flex:1; text-align:center; padding:0.9rem 0.5rem;
+    background:var(--whatsapp); color:#fff;
+    border-radius:8px; text-decoration:none; font-weight:800; font-size:0.95rem;
+    display:flex; align-items:center; justify-content:center; gap:0.4rem;
+  }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "name":"Blog PLAYKO",
+  "description":"Blog técnico de PLAYKO sobre pintura profesional para canchas deportivas en México: basketball, tenis, pickleball, multicanchas y mantenimiento.",
+  "url":"https://pinturaparacanchasdeportivas.mx/blog/",
+  "publisher":{
+    "@type":"Organization",
+    "name":"PLAYKO",
+    "url":"https://pinturaparacanchasdeportivas.mx",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://pinturaparacanchasdeportivas.mx/images/playko-logo.png"
+    }
+  },
+  "blogPost":[
+    {"@type":"BlogPosting","headline":"¿Cuánto cuesta pintar una cancha de basketball en México? Guía 2026","url":"https://pinturaparacanchasdeportivas.mx/blog/cuanto-cuesta-pintar-cancha-basketball-mexico-2026.html","datePublished":"2026-05-18"},
+    {"@type":"BlogPosting","headline":"Tipos de pintura para canchas deportivas: cuál elegir según uso","url":"https://pinturaparacanchasdeportivas.mx/blog/tipos-pintura-canchas-deportivas-guia.html","datePublished":"2026-05-18"},
+    {"@type":"BlogPosting","headline":"Cómo se pinta una cancha de pickleball profesional paso a paso","url":"https://pinturaparacanchasdeportivas.mx/blog/como-pintar-cancha-pickleball-profesional.html","datePublished":"2026-05-18"},
+    {"@type":"BlogPosting","headline":"Sistema acrílico tipo Laykold vs pintura común: comparativa real","url":"https://pinturaparacanchasdeportivas.mx/blog/sistema-acrilico-laykold-vs-pintura-comun.html","datePublished":"2026-05-18"},
+    {"@type":"BlogPosting","headline":"Pintura antiderrapante para canchas: por qué importa y qué buscar","url":"https://pinturaparacanchasdeportivas.mx/blog/pintura-antiderrapante-canchas-importancia.html","datePublished":"2026-05-18"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://pinturaparacanchasdeportivas.mx/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://pinturaparacanchasdeportivas.mx/blog/"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">PLAYKO</a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/#portafolio">Proyectos</a></li>
+      <li><a href="/#proceso">Proceso</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" target="_blank" rel="noopener" class="cta-header">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Cotizar
+      </a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="blog-hero">
+  <div class="blog-hero-bg" role="img" aria-label="Cancha deportiva profesional recién pintada con sistema acrílico naranja y azul vista aérea"></div>
+  <div class="blog-hero-overlay"></div>
+  <div class="blog-hero-inner">
+    <span class="kicker">Blog PLAYKO</span>
+    <h1 class="blog-h1">Guía completa de <span class="em-accent">pintura</span> para canchas deportivas</h1>
+    <p class="blog-hero-sub">Artículos técnicos sobre precios, sistemas acrílicos, antiderrapantes y procesos profesionales para basketball, tenis, pickleball y multicanchas en México.</p>
+    <div class="meta-row">
+      <span class="avatar">P</span>
+      <strong>Equipo técnico PLAYKO</strong>
+      <span class="meta-dot"></span>
+      <span>Actualizado mayo 2026</span>
+      <span class="meta-dot"></span>
+      <span>Cobertura nacional</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Artículos técnicos publicados</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">8 min</div>
+        <div class="hero-stat-label">Lectura promedio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">May 2026</div>
+        <div class="hero-stat-label">Última actualización</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cat-bar">
+  <div class="cat-pills">
+    <a class="cat-pill active" href="#todos">Todos</a>
+    <a class="cat-pill" href="#basketball">Basketball</a>
+    <a class="cat-pill" href="#tenis">Tenis</a>
+    <a class="cat-pill" href="#pickleball">Pickleball</a>
+    <a class="cat-pill" href="#multicanchas">Multicanchas</a>
+    <a class="cat-pill" href="#mantenimiento">Mantenimiento</a>
+  </div>
+</div>
+
+<section class="blog-grid-wrap" id="todos">
+  <div class="blog-grid">
+
+    <a href="/blog/cuanto-cuesta-pintar-cancha-basketball-mexico-2026.html" class="article-card fade-in">
+      <div class="article-card-img" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=900&q=80');" role="img" aria-label="Cancha de basketball profesional con pintura acrílica color azul y líneas blancas vista desde arriba"></div>
+      <div class="article-card-body">
+        <span class="article-cat">Basketball · Precios</span>
+        <h2 class="article-title">¿Cuánto cuesta pintar una cancha de basketball en México? Guía 2026</h2>
+        <p class="article-summary">Precios reales por m² del sistema acrílico antiderrapante, qué incluye una cotización profesional y cómo evitar sorpresas en el presupuesto.</p>
+        <div class="article-meta">
+          <strong>Equipo PLAYKO</strong> <span class="meta-dot"></span> 18 may 2026 <span class="meta-dot"></span> 9 min
+        </div>
+        <span class="article-read">Leer más →</span>
+      </div>
+    </a>
+
+    <a href="/blog/tipos-pintura-canchas-deportivas-guia.html" class="article-card fade-in">
+      <div class="article-card-img" style="background-image:url('https://images.unsplash.com/photo-1544919982-b61976f0ba43?w=900&q=80');" role="img" aria-label="Cubetas de pintura acrílica deportiva azul y verde alineadas en obra de cancha"></div>
+      <div class="article-card-body">
+        <span class="article-cat">Multicanchas · Guía</span>
+        <h2 class="article-title">Tipos de pintura para canchas deportivas: cuál elegir según uso</h2>
+        <p class="article-summary">Acrílica al agua, epóxica, poliuretánica y sistemas profesionales: comparativa práctica por durabilidad, costo y tipo de cancha.</p>
+        <div class="article-meta">
+          <strong>Equipo PLAYKO</strong> <span class="meta-dot"></span> 18 may 2026 <span class="meta-dot"></span> 8 min
+        </div>
+        <span class="article-read">Leer más →</span>
+      </div>
+    </a>
+
+    <a href="/blog/como-pintar-cancha-pickleball-profesional.html" class="article-card fade-in">
+      <div class="article-card-img" style="background-image:url('https://images.unsplash.com/photo-1687204209659-3bded6aecd79?w=900&q=80');" role="img" aria-label="Cancha de pickleball pintada con líneas blancas azul cobalto y verde kitchen"></div>
+      <div class="article-card-body">
+        <span class="article-cat">Pickleball · Proceso</span>
+        <h2 class="article-title">Cómo se pinta una cancha de pickleball profesional paso a paso</h2>
+        <p class="article-summary">El proceso completo: preparación, sellador, base acrílica, textura antiderrapante y trazo de líneas oficiales USAPA / IPF.</p>
+        <div class="article-meta">
+          <strong>Equipo PLAYKO</strong> <span class="meta-dot"></span> 18 may 2026 <span class="meta-dot"></span> 9 min
+        </div>
+        <span class="article-read">Leer más →</span>
+      </div>
+    </a>
+
+    <a href="/blog/sistema-acrilico-laykold-vs-pintura-comun.html" class="article-card fade-in">
+      <div class="article-card-img" style="background-image:url('https://images.unsplash.com/photo-1592656094267-c562fbc5d3a8?w=900&q=80');" role="img" aria-label="Cancha de tenis profesional con sistema acrílico verde y línea blanca tipo Laykold"></div>
+      <div class="article-card-body">
+        <span class="article-cat">Tenis · Sistemas</span>
+        <h2 class="article-title">Sistema acrílico tipo Laykold vs pintura común: comparativa real</h2>
+        <p class="article-summary">Por qué un sistema acrílico profesional dura 8-10 años y la pintura común se descascara en 12 meses. Datos, costos y prueba de campo.</p>
+        <div class="article-meta">
+          <strong>Equipo PLAYKO</strong> <span class="meta-dot"></span> 18 may 2026 <span class="meta-dot"></span> 7 min
+        </div>
+        <span class="article-read">Leer más →</span>
+      </div>
+    </a>
+
+    <a href="/blog/pintura-antiderrapante-canchas-importancia.html" class="article-card fade-in">
+      <div class="article-card-img" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=80');" role="img" aria-label="Detalle de textura antiderrapante de pintura acrílica deportiva color verde en cancha"></div>
+      <div class="article-card-body">
+        <span class="article-cat">Mantenimiento · Seguridad</span>
+        <h2 class="article-title">Pintura antiderrapante para canchas: por qué importa y qué buscar</h2>
+        <p class="article-summary">El coeficiente de fricción salva tobillos. Cómo se logra la textura antiderrapante, qué normas buscar y cuándo se reaplica.</p>
+        <div class="article-meta">
+          <strong>Equipo PLAYKO</strong> <span class="meta-dot"></span> 18 may 2026 <span class="meta-dot"></span> 7 min
+        </div>
+        <span class="article-read">Leer más →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>¿Quieres cotizar tu cancha hoy mismo?</h2>
+    <p>Atendemos colegios, clubes, gobierno y condominios en todo México. Respuesta por WhatsApp en menos de 1 hora hábil.</p>
+    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" target="_blank" rel="noopener" class="cta-btn">
+      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotizar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>PLAYKO</h3>
+      <p>Pintura profesional para canchas deportivas en México. Sistema acrílico certificado para basketball, tenis, pickleball y multicanchas.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Servicios</h3>
+      <a href="/#servicios">Pintura cancha basketball</a>
+      <a href="/#servicios">Pintura cancha tenis</a>
+      <a href="/#servicios">Pintura cancha pickleball</a>
+      <a href="/#servicios">Multicanchas y polivalentes</a>
+    </div>
+    <div class="footer-section">
+      <h3>Recursos</h3>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cuanto-cuesta-pintar-cancha-basketball-mexico-2026.html">Precios basketball 2026</a>
+      <a href="/blog/tipos-pintura-canchas-deportivas-guia.html">Tipos de pintura</a>
+      <a href="/blog/como-pintar-cancha-pickleball-profesional.html">Cómo pintar pickleball</a>
+      <a href="/blog/sistema-acrilico-laykold-vs-pintura-comun.html">Laykold vs pintura común</a>
+      <a href="/blog/pintura-antiderrapante-canchas-importancia.html">Pintura antiderrapante</a>
+    </div>
+    <div class="footer-section">
+      <h3>Contacto</h3>
+      <p><strong>WhatsApp:</strong> +52 55 3988 7615</p>
+      <p><strong>Email:</strong> contacto@pinturaparacanchasdeportivas.mx</p>
+      <p><strong>Cobertura:</strong> Nacional México</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 PLAYKO - Pintura Deportiva Profesional México. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20informaci%C3%B3n%20sobre%20pintura%20deportiva" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp PLAYKO">
+  <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="sticky-cta-mobile">
+  <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" target="_blank" rel="noopener">
+    <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Cotizar por WhatsApp
+  </a>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
