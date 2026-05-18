@@ -18,19 +18,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-:root { --primary:#FF6B00; --primary-dark:#E65100; --secondary:#0D47A1; --vino:#9A1B30; --text:#1A1A1A; --text-light:#666; --bg:#FFFFFF; --bg-light:#F8F9FA; --border:#E0E0E0; --whatsapp:#25D366; }
+:root { --primary:#266DE3; --primary-dark:#1D4ED8; --secondary:#0D47A1; --vino:#9A1B30; --text:#1A1A1A; --text-light:#666; --bg:#FFFFFF; --bg-light:#F8F9FA; --border:#E0E0E0; --whatsapp:#25D366; }
 html { scroll-behavior:smooth; }
 body { font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color:var(--text); line-height:1.75; overflow-x:hidden; background:#fff; }
 img { max-width:100%; height:auto; display:block; }
 
 header { position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); z-index:999; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
 nav { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
-.logo { font-size:1.8rem; font-weight:900; color:var(--primary); letter-spacing:-0.02em; text-decoration:none; }
+.logo { display:inline-flex; align-items:center; height:34px; text-decoration:none; } .logo img { height:26px; width:auto; display:block; }
 .nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
 .nav-links a { text-decoration:none; color:var(--text); font-weight:600; font-size:0.95rem; transition:color 0.2s; }
 .nav-links a:hover { color:var(--primary); }
 .cta-header { background:var(--whatsapp); color:white; padding:0.75rem 1.5rem; border-radius:8px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:transform 0.2s, box-shadow 0.2s; }
-.cta-header:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(37, 211, 102, 0.3); color:#fff; }
+.cta-header:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(38, 109, 227, 0.35); color:#fff; }
 .menu-toggle { display:none; background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--text); }
 
 .post-hero { position:relative; min-height:60vh; display:flex; align-items:center; overflow:hidden; }
@@ -68,7 +68,7 @@ nav { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-
 .article li { margin-bottom:0.55rem; }
 .article a { color:var(--primary-dark); font-weight:700; }
 
-.tldr { background:linear-gradient(135deg, #fff5ed, #fff); border-left:5px solid var(--primary); padding:1.4rem 1.5rem; border-radius:8px; margin-bottom:2.4rem; box-shadow:0 2px 12px rgba(255,107,0,0.05); }
+.tldr { background:linear-gradient(135deg, #EFF6FF, #fff); border-left:5px solid var(--primary); padding:1.4rem 1.5rem; border-radius:8px; margin-bottom:2.4rem; box-shadow:0 2px 12px rgba(38,109,227,0.05); }
 .tldr strong { color:var(--primary-dark); display:block; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.5rem; }
 
 .stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:1rem; margin:1.5rem 0 2rem; }
@@ -77,10 +77,10 @@ nav { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-
 .stat-card .num { font-size:1.8rem; font-weight:900; color:var(--primary-dark); line-height:1; margin-bottom:0.4rem; }
 .stat-card .lbl { font-size:0.85rem; color:var(--text-light); font-weight:600; }
 
-.callout { background:linear-gradient(135deg, #fff5ed, #ffeadb); border-left:5px solid var(--primary); padding:1.3rem 1.5rem; border-radius:10px; margin:1.8rem 0; display:flex; gap:1rem; align-items:flex-start; }
+.callout { background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left:5px solid var(--primary); padding:1.3rem 1.5rem; border-radius:10px; margin:1.8rem 0; display:flex; gap:1rem; align-items:flex-start; }
 .callout .ic { flex-shrink:0; width:36px; height:36px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.1rem; }
 .callout strong { color:var(--primary-dark); }
-.callout.warn { background:linear-gradient(135deg, #fff5ed, #fee); border-left-color:var(--vino); }
+.callout.warn { background:linear-gradient(135deg, #EFF6FF, #fee); border-left-color:var(--vino); }
 .callout.warn .ic { background:var(--vino); }
 .callout.info { background:linear-gradient(135deg, #e8f1fd, #fff); border-left-color:var(--secondary); }
 .callout.info .ic { background:var(--secondary); }
@@ -113,12 +113,12 @@ blockquote cite { display:block; margin-top:0.7rem; font-size:0.85rem; font-styl
 .bar-val.good { color:#2a9d4a; }
 .bar-val.bad { color:#d33; }
 
-.mid-cta { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff; padding:2.2rem 1.8rem; border-radius:14px; margin:2.5rem 0; text-align:center; box-shadow:0 14px 36px rgba(230,81,0,0.22); }
+.mid-cta { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff; padding:2.2rem 1.8rem; border-radius:14px; margin:2.5rem 0; text-align:center; box-shadow:0 14px 36px rgba(29,78,216,0.22); }
 .mid-cta h3 { color:#fff; font-size:1.4rem; margin-bottom:0.4rem; line-height:1.25; }
 .mid-cta p { color:rgba(255,255,255,0.92); margin-bottom:1.2rem; }
 
 /* Banner 1 — Cotización 1h */
-.banner-cotiza { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff; border-radius:18px; margin:2.5rem 0; padding:2rem 1.8rem; display:grid; grid-template-columns:auto 1fr; gap:1.6rem; align-items:center; box-shadow:0 18px 40px rgba(230,81,0,0.25); }
+.banner-cotiza { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff; border-radius:18px; margin:2.5rem 0; padding:2rem 1.8rem; display:grid; grid-template-columns:auto 1fr; gap:1.6rem; align-items:center; box-shadow:0 18px 40px rgba(29,78,216,0.25); }
 .banner-cotiza .icon-wrap { width:84px; height:84px; background:rgba(255,255,255,0.18); border-radius:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .banner-cotiza .icon-wrap svg { width:48px; height:48px; }
 .banner-cotiza h3 { font-size:clamp(1.2rem, 2.2vw, 1.5rem); margin-bottom:0.4rem; color:#fff; line-height:1.25; }
@@ -132,15 +132,15 @@ blockquote cite { display:block; margin-top:0.7rem; font-size:0.85rem; font-styl
 
 /* Banner 2 — Portafolio mini */
 .banner-portafolio { background:#0c0c0f; color:#fff; border-radius:18px; margin:2.5rem 0; padding:2rem 1.8rem; box-shadow:0 18px 40px rgba(0,0,0,0.25); position:relative; overflow:hidden; }
-.banner-portafolio::before { content:""; position:absolute; top:-30%; right:-15%; width:340px; height:340px; background:radial-gradient(circle, rgba(255,107,0,0.25), transparent 60%); }
+.banner-portafolio::before { content:""; position:absolute; top:-30%; right:-15%; width:340px; height:340px; background:radial-gradient(circle, rgba(38,109,227,0.25), transparent 60%); }
 .banner-portafolio h3 { font-size:clamp(1.25rem, 2.3vw, 1.6rem); color:#fff; margin-bottom:0.4rem; position:relative; line-height:1.25; }
 .banner-portafolio .lbl { color:var(--primary); font-size:0.78rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.6rem; display:block; position:relative; }
 .banner-portafolio p { color:rgba(255,255,255,0.78); font-size:0.95rem; margin-bottom:1.4rem; position:relative; }
 .banner-portafolio .port-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:0.8rem; margin-bottom:1.4rem; position:relative; }
 .banner-portafolio .port-grid div { aspect-ratio:1/1; background-size:cover; background-position:center; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.3); transition:transform 0.25s; }
 .banner-portafolio .port-grid div:hover { transform:scale(1.04); }
-.banner-portafolio .cta-btn { display:inline-flex; align-items:center; gap:0.5rem; background:var(--primary); color:#fff; padding:0.9rem 1.5rem; border-radius:10px; font-weight:800; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s; position:relative; box-shadow:0 6px 18px rgba(255,107,0,0.35); }
-.banner-portafolio .cta-btn:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(255,107,0,0.5); }
+.banner-portafolio .cta-btn { display:inline-flex; align-items:center; gap:0.5rem; background:var(--primary); color:#fff; padding:0.9rem 1.5rem; border-radius:10px; font-weight:800; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s; position:relative; box-shadow:0 6px 18px rgba(38,109,227,0.35); }
+.banner-portafolio .cta-btn:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(38,109,227,0.5); }
 
 /* Banner 3 — Proceso paso a paso */
 .banner-proceso { background:linear-gradient(135deg, #f8f9fa, #fff); border:1px solid var(--border); border-radius:18px; margin:2.5rem 0; padding:2rem 1.8rem; box-shadow:0 6px 24px rgba(0,0,0,0.05); }
@@ -322,7 +322,7 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
 
 <header>
   <nav>
-    <a href="/" class="logo">PLAYKO</a>
+    <a href="/" class="logo" aria-label="PLAYKO Pintura para Canchas Deportivas"><img src="/images/playko-logo-mark.svg" alt="PLAYKO" width="120" height="26" loading="eager" decoding="async"></a>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="/#servicios">Servicios</a></li>

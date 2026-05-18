@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Pintura para Canchas Deportivas | PLAYKO México">
 <meta name="twitter:description" content="Pintura profesional para canchas de basketball, tenis, pickleball y multicanchas. Sistema acrílico antiderrapante. Cobertura nacional.">
 <meta name="twitter:image" content="https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg">
-<meta name="theme-color" content="#FF6B00">
+<meta name="theme-color" content="#266DE3">
 <meta name="geo.region" content="MX">
 <meta name="geo.placename" content="México">
 <meta name="author" content="PLAYKO Pintura para Canchas Deportivas">
@@ -35,8 +35,8 @@
 }
 
 :root {
-  --primary: #FF6B00;
-  --primary-dark: #E65100;
+  --primary: #266DE3;
+  --primary-dark: #1D4ED8;
   --secondary: #0D47A1;
   --text: #1A1A1A;
   --text-light: #666;
@@ -73,12 +73,7 @@ nav {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -0.02em;
-}
+.logo { display:inline-flex; align-items:center; height:34px; text-decoration:none; } .logo img { height:26px; width:auto; display:block; }
 
 .nav-links {
   display: flex;
@@ -100,7 +95,7 @@ nav {
 }
 
 .cta-header {
-  background: var(--whatsapp);
+  background: var(--primary);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -114,7 +109,7 @@ nav {
 
 .cta-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 8px 20px rgba(38, 109, 227, 0.35);
 }
 
 .menu-toggle {
@@ -166,8 +161,8 @@ nav {
 }
 .hero-badge{
   display:inline-block;
-  background:rgba(34,197,94,0.15);
-  color:#A7F3D0;
+  background:rgba(38,109,227,0.18);
+  color:#BFDBFE;
   font-size:12px;
   font-weight:700;
   text-transform:uppercase;
@@ -175,7 +170,7 @@ nav {
   padding:6px 12px;
   border-radius:999px;
   margin-bottom:20px;
-  border:1px solid rgba(167,243,208,0.2);
+  border:1px solid rgba(191,219,254,0.25);
 }
 .hero-h1{
   font-size:clamp(42px,5vw,68px);
@@ -186,7 +181,7 @@ nav {
   margin-bottom:20px;
 }
 .hero-green{
-  color:#22C55E;
+  color:var(--primary);
 }
 .hero-sub{
   font-size:18px;
@@ -232,14 +227,14 @@ nav {
   font-family:inherit;
 }
 .hero-btn-primary{
-  background:#22C55E;
+  background:var(--primary);
   color:#fff;
-  box-shadow:0 4px 14px rgba(34,197,94,0.3);
+  box-shadow:0 4px 14px rgba(38,109,227,0.35);
 }
 .hero-btn-primary:hover{
   background:#16A34A;
   transform:translateY(-2px);
-  box-shadow:0 6px 20px rgba(34,197,94,0.4);
+  box-shadow:0 6px 20px rgba(38,109,227,0.45);
 }
 .hero-btn-secondary{
   background:transparent;
@@ -294,16 +289,16 @@ nav {
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(255, 107, 0, 0.4);
+  box-shadow: 0 12px 28px rgba(38, 109, 227, 0.4);
 }
 .btn-whatsapp {
-  background: var(--whatsapp);
+  background: var(--primary);
   color: white;
 }
 .btn-whatsapp:hover {
-  background: #20BA5A;
+  background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 12px 28px rgba(38, 109, 227, 0.45);
 }
 
 /* Marquee */
@@ -431,7 +426,7 @@ section {
 
 .service-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(38, 109, 227, 0.15);
   transform: translateY(-4px);
 }
 
@@ -585,7 +580,7 @@ section {
   font-size: 2rem;
   font-weight: 900;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(38, 109, 227, 0.3);
 }
 
 .step h3 {
@@ -651,7 +646,7 @@ section {
   outline: none;
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
+  box-shadow: 0 0 0 4px rgba(38, 109, 227, 0.1);
 }
 
 .form-group textarea {
@@ -662,7 +657,7 @@ section {
 .btn-submit {
   width: 100%;
   padding: 1.5rem;
-  background: var(--whatsapp);
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 10px;
@@ -677,9 +672,9 @@ section {
 }
 
 .btn-submit:hover {
-  background: #20BA5A;
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 24px rgba(38, 109, 227, 0.45);
 }
 
 /* FAQ */
@@ -918,7 +913,7 @@ footer {
 
 <header>
   <nav>
-    <div class="logo">PLAYKO</div>
+    <a href="/" class="logo" aria-label="PLAYKO Pintura para Canchas Deportivas"><img src="/images/playko-logo-mark.svg" alt="PLAYKO" width="120" height="26" loading="eager" decoding="async"></a>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#beneficios">¿Por qué PLAYKO?</a></li>
