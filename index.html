@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Pintura para Canchas Deportivas | PLAYKO México">
 <meta name="twitter:description" content="Pintura profesional para canchas de basketball, tenis, pickleball y multicanchas. Sistema acrílico antiderrapante. Cobertura nacional.">
 <meta name="twitter:image" content="https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg">
-<meta name="theme-color" content="#266DE3">
+<meta name="theme-color" content="#FF6B00">
 <meta name="geo.region" content="MX">
 <meta name="geo.placename" content="México">
 <meta name="author" content="PLAYKO Pintura para Canchas Deportivas">
@@ -35,8 +35,8 @@
 }
 
 :root {
-  --primary: #266DE3;
-  --primary-dark: #1D4ED8;
+  --primary: #FF6B00;
+  --primary-dark: #E65100;
   --secondary: #0D47A1;
   --text: #1A1A1A;
   --text-light: #666;
@@ -73,7 +73,7 @@ nav {
   align-items: center;
 }
 
-.logo { display:inline-flex; align-items:center; height:34px; text-decoration:none; } .logo img { height:26px; width:auto; display:block; }
+.logo { font-size:1.8rem; font-weight:900; color:var(--primary); letter-spacing:-0.02em; text-decoration:none; }
 
 .nav-links {
   display: flex;
@@ -109,7 +109,7 @@ nav {
 
 .cta-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(38, 109, 227, 0.35);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.35);
 }
 
 .menu-toggle {
@@ -161,8 +161,8 @@ nav {
 }
 .hero-badge{
   display:inline-block;
-  background:rgba(38,109,227,0.18);
-  color:#BFDBFE;
+  background:rgba(255,107,0,0.18);
+  color:#FFCBA0;
   font-size:12px;
   font-weight:700;
   text-transform:uppercase;
@@ -170,7 +170,7 @@ nav {
   padding:6px 12px;
   border-radius:999px;
   margin-bottom:20px;
-  border:1px solid rgba(191,219,254,0.25);
+  border:1px solid rgba(255,203,160,0.25);
 }
 .hero-h1{
   font-size:clamp(42px,5vw,68px);
@@ -229,12 +229,12 @@ nav {
 .hero-btn-primary{
   background:var(--primary);
   color:#fff;
-  box-shadow:0 4px 14px rgba(38,109,227,0.35);
+  box-shadow:0 4px 14px rgba(255,107,0,0.35);
 }
 .hero-btn-primary:hover{
   background:#16A34A;
   transform:translateY(-2px);
-  box-shadow:0 6px 20px rgba(38,109,227,0.45);
+  box-shadow:0 6px 20px rgba(255,107,0,0.45);
 }
 .hero-btn-secondary{
   background:transparent;
@@ -289,7 +289,7 @@ nav {
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(38, 109, 227, 0.4);
+  box-shadow: 0 12px 28px rgba(255, 107, 0, 0.4);
 }
 .btn-whatsapp {
   background: var(--primary);
@@ -298,7 +298,7 @@ nav {
 .btn-whatsapp:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(38, 109, 227, 0.45);
+  box-shadow: 0 12px 28px rgba(255, 107, 0, 0.45);
 }
 
 /* Marquee */
@@ -426,7 +426,7 @@ section {
 
 .service-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 8px 32px rgba(38, 109, 227, 0.15);
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.15);
   transform: translateY(-4px);
 }
 
@@ -580,7 +580,7 @@ section {
   font-size: 2rem;
   font-weight: 900;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 8px 24px rgba(38, 109, 227, 0.3);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
 }
 
 .step h3 {
@@ -646,7 +646,7 @@ section {
   outline: none;
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 4px rgba(38, 109, 227, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
 }
 
 .form-group textarea {
@@ -674,7 +674,7 @@ section {
 .btn-submit:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(38, 109, 227, 0.45);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.45);
 }
 
 /* FAQ */
@@ -913,7 +913,7 @@ footer {
 
 <header>
   <nav>
-    <a href="/" class="logo" aria-label="PLAYKO Pintura para Canchas Deportivas"><img src="/images/playko-logo-mark.svg" alt="PLAYKO" width="120" height="26" loading="eager" decoding="async"></a>
+    <div class="logo">PLAYKO</div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#beneficios">¿Por qué PLAYKO?</a></li>
@@ -1105,6 +1105,106 @@ Tenis · Basketball · Pickleball · Multicanchas
         <h3>Resistencia Climática Total</h3>
         <p>Formulación especial para clima mexicano: resiste desde el calor extremo del norte hasta la humedad del sureste. Sin agrietamiento ni desprendimiento.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Tipos de cancha — service cards */
+.tipos-section { padding: 5rem 2rem; background: var(--bg); }
+.tipos-inner { max-width: 1280px; margin: 0 auto; }
+.tipos-eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.6rem; display: block; text-align: center; }
+.tipos-h2 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; text-align: center; margin-bottom: 0.8rem; color: var(--text); }
+.tipos-h2 .em { color: var(--primary); }
+.tipos-sub { font-size: 1.05rem; color: var(--text-light); text-align: center; max-width: 640px; margin: 0 auto 3rem; line-height: 1.6; }
+.tipos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.tipo-card {
+  position: relative; display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+  text-decoration: none; color: inherit; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.tipo-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(255,107,0,0.18); border-color: var(--primary); }
+.tipo-card .tipo-img { aspect-ratio: 16/10; background-size: cover; background-position: center; position: relative; }
+.tipo-card .tipo-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55)); }
+.tipo-card .tipo-vol { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.96); color: var(--text); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.35rem 0.7rem; border-radius: 999px; z-index: 2; }
+.tipo-card .tipo-vol.hot { background: var(--primary); color: #fff; }
+.tipo-card .tipo-body { padding: 1.5rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.tipo-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--text); line-height: 1.25; letter-spacing: -0.01em; }
+.tipo-card p { font-size: 0.94rem; color: var(--text-light); line-height: 1.55; flex: 1; }
+.tipo-card .tipo-cta { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); font-weight: 700; font-size: 0.92rem; margin-top: 0.4rem; }
+.tipo-card .tipo-cta::after { content: "→"; transition: transform 0.2s; }
+.tipo-card:hover .tipo-cta::after { transform: translateX(4px); }
+@media (max-width: 960px) {
+  .tipos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .tipos-section { padding: 3rem 1.25rem; }
+  .tipos-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+</style>
+
+<section class="tipos-section" id="tipos-de-cancha">
+  <div class="tipos-inner">
+    <span class="tipos-eyebrow">Tipos de cancha</span>
+    <h2 class="tipos-h2">Pintamos <span class="em">cualquier cancha deportiva</span> en México</h2>
+    <p class="tipos-sub">Sistema acrílico antiderrapante tipo Laykold aplicado por deporte. Cada cancha lleva los trazos y dimensiones reglamentarias correspondientes.</p>
+
+    <div class="tipos-grid">
+      <a href="/servicios/pintura-cancha-basquetbol" class="tipo-card">
+        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-basketball-cdmx-playko.jpg');" role="img" aria-label="Cancha de basquetbol pintada con sistema acrílico PLAYKO"></div>
+        <div class="tipo-body">
+          <h3>Pintura para canchas de basquetbol</h3>
+          <p>Sistema 4-5 capas con trazos oficiales FIBA / FIBA 3x3 / NBA opcional. Colores resistentes a UV y antiderrapante de alto rendimiento.</p>
+          <span class="tipo-cta">Ver detalle de servicio</span>
+        </div>
+      </a>
+
+      <a href="/servicios/pintura-cancha-tenis" class="tipo-card">
+        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-tenis-cdmx-playko.jpg');" role="img" aria-label="Cancha de tenis pintada con acabado premium tipo Laykold por PLAYKO"></div>
+        <div class="tipo-body">
+          <h3>Pintura para canchas de tenis</h3>
+          <p>Acabado premium con velocidad de pelota ajustable según granulometría. Resistente a clima CDMX, calor MTY y humedad costera.</p>
+          <span class="tipo-cta">Ver detalle de servicio</span>
+        </div>
+      </a>
+
+      <a href="/servicios/pintura-cancha-pickleball" class="tipo-card">
+        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-pickleball-mexico-playko.jpg');" role="img" aria-label="Cancha de pickleball pintada con colores oficiales USAPA por PLAYKO"></div>
+        <div class="tipo-body">
+          <h3>Pintura para canchas de pickleball</h3>
+          <p>Colores vibrantes con trazos USAPA / IPF reglamentarios. Compatible con multicancha pickleball + tenis dobles en una misma superficie.</p>
+          <span class="tipo-cta">Ver detalle de servicio</span>
+        </div>
+      </a>
+
+      <a href="/servicios/pintura-cancha-multicancha" class="tipo-card">
+        <div class="tipo-img" style="background-image:url('/images/pintura-cancha-multicancha-mexico-2026-playko.jpg');" role="img" aria-label="Multicancha polivalente con trazos de varios deportes pintada por PLAYKO"></div>
+        <div class="tipo-body">
+          <h3>Pintura para multicanchas</h3>
+          <p>Hasta 5 deportes en una sola superficie: basquetbol + voleibol + futbol sala + pickleball + tenis. Sistema de colores diferenciado por deporte.</p>
+          <span class="tipo-cta">Ver detalle de servicio</span>
+        </div>
+      </a>
+
+      <a href="/servicios/pintura-cancha-polideportiva" class="tipo-card">
+        <div class="tipo-img" style="background-image:url('/images/pintura-canchas-deportivas-playko-hero.jpg');" role="img" aria-label="Cancha polideportiva escolar pintada con sistema acrílico antiderrapante por PLAYKO"></div>
+        <div class="tipo-body">
+          <h3>Pintura para canchas polideportivas</h3>
+          <p>Estándar SEP / INIFED para colegios públicos y privados. Pintura polivalente para clubes, condominios y centros deportivos municipales.</p>
+          <span class="tipo-cta">Ver detalle de servicio</span>
+        </div>
+      </a>
+
+      <a href="https://wa.me/525539887615?text=Quiero%20cotizar%20pintura%20para%20una%20cancha%20deportiva" class="tipo-card" style="background:linear-gradient(135deg, var(--primary), var(--primary-dark)); border:none;">
+        <div class="tipo-body" style="padding:2.5rem 1.5rem; justify-content:center; align-items:flex-start; min-height:100%;">
+          <h3 style="color:#fff; font-size:1.6rem; line-height:1.2;">¿Tu cancha no aparece aquí?</h3>
+          <p style="color:rgba(255,255,255,0.92); font-size:1rem;">Hacemos voleibol, futbol sala, frontón, handball, futbol americano (yardas pintadas) y más. Cotizamos cualquier deporte.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; background:#fff; color:var(--primary); font-weight:800; padding:0.7rem 1.3rem; border-radius:10px; margin-top:0.5rem; font-size:0.95rem;">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            Cotizar por WhatsApp
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
