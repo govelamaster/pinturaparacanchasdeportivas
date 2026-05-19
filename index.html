@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pintura para Canchas Deportivas | Basketball, Tenis, Pickleball | PLAYKO México</title>
-<meta name="description" content="Pintura profesional para canchas deportivas en México. Basketball, tenis, pickleball, multicanchas y canchas polivalentes. Sistema acrílico antiderrapante tipo Laykold para colegios, clubes y gobierno. Cobertura nacional.">
+<meta name="description" content="Pintura profesional para canchas deportivas en México. Basketball, tenis, pickleball, multicanchas y canchas polivalentes. Sistema acrílico antiderrapante antiderrapante para colegios, clubes y gobierno. Cobertura nacional.">
 <meta name="keywords" content="pintura para canchas deportivas, pintura cancha basketball, pintura cancha tenis, pintura cancha pickleball, pintura acrílica canchas, pintura antiderrapante canchas, pintura deportiva México">
 <link rel="canonical" href="https://www.pinturaparacanchasdeportivas.mx">
 <meta property="og:title" content="Pintura para Canchas Deportivas | PLAYKO México">
@@ -352,17 +352,19 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
 
 .hero-text .eyebrow { margin-bottom: 1.2rem; }
 .hero h1 {
-  font-size: clamp(2.1rem, 5.2vw, 3.8rem);
+  font-size: clamp(1.75rem, 4.6vw, 3.5rem);
   font-weight: 900;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   color: var(--text);
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   text-wrap: balance;
 }
 .hero h1 .em-accent {
   color: var(--primary);
   display: inline;
+  font-style: italic;
+  font-weight: 800;
 }
 
 .hero-rating-row {
@@ -1661,7 +1663,11 @@ footer {
   display: none;
 }
 .sticky-cta.visible { transform: translateY(0); }
-@media (max-width: 899px) { .sticky-cta { display: block; } }
+@media (max-width: 899px) {
+  .sticky-cta { display: block; }
+  /* Add bottom padding to body when sticky CTA can appear so it never traslapa contenido */
+  body.has-sticky-cta { padding-bottom: 72px; }
+}
 .sticky-cta a {
   display: flex;
   align-items: center;
@@ -1738,8 +1744,8 @@ footer {
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text fade-in">
-        <span class="eyebrow">Pintura profesional para canchas deportivas</span>
-        <h1><span class="em-accent">Pintura profesional</span> para canchas deportivas en México</h1>
+        <span class="eyebrow">Cobertura nacional · Cotización en 1 hora</span>
+        <h1>Pintura profesional para canchas deportivas <span class="em-accent">en México</span></h1>
         <div class="hero-rating-row">
           <span class="stars" aria-label="4.9 de 5 estrellas">★★★★★</span>
           
@@ -1886,7 +1892,7 @@ footer {
       </div>
       <div class="value-card fade-in">
         <span class="value-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-        <h3>Sistema acrílico Laykold</h3>
+        <h3>Sistema acrílico antiderrapante</h3>
         <p>4 a 5 capas con primer adherente, antiderrapante calibrado y resina resistente a rayos UV.</p>
       </div>
       <div class="value-card fade-in">
@@ -2047,7 +2053,7 @@ footer {
       <div class="process-step fade-in">
         <div class="process-step-number">03</div>
         <h3>Aplicación multicapa</h3>
-        <p>4 a 5 capas de acrílico Laykold con granulometría calibrada.</p>
+        <p>1 capa de resurfacer + 2 capas de pintura acrílica acrílico antiderrapante con granulometría calibrada.</p>
         <span class="day">Día 3-7</span>
       </div>
       <div class="process-step fade-in">
@@ -2087,7 +2093,7 @@ footer {
         </svg>
       </div>
     </div>
-    <p class="compare-caption fade-in"><strong>Cancha de basquetbol CDMX</strong> — repintada en 6 días con sistema acrílico Laykold.</p>
+    <p class="compare-caption fade-in"><strong>Cancha de basquetbol CDMX</strong> — repintada en 6 días con sistema acrílico antiderrapante.</p>
   </div>
 </section>
 
@@ -2291,7 +2297,7 @@ footer {
         <div class="pricing-price">$65K</div>
         <span class="pricing-price-suffix">MXN · desde</span>
         <ul class="pricing-features">
-          <li>Sistema 4-5 capas acrílico</li>
+          <li>Sistema 1 capa de resurfacer + 2 capas de pintura acrílico</li>
           <li>Antiderrapante calibrado</li>
           <li>Trazos FIBA / ITF / USAPA</li>
           <li>Garantía firmada por escrito</li>
@@ -2390,11 +2396,11 @@ footer {
     <div class="faq-list">
       <details class="faq-item fade-in">
         <summary>¿Qué tipo de pintura utilizan para canchas deportivas?</summary>
-        <div class="faq-content">Utilizamos sistema acrílico profesional tipo Laykold específicamente formulado para superficies deportivas. Es una pintura de alto rendimiento con pigmentación resistente a rayos UV, acabado antiderrapante certificado y durabilidad comprobada en canchas de basketball, tenis, pickleball y multicanchas en toda la República Mexicana.</div>
+        <div class="faq-content">Utilizamos sistema acrílico profesional antiderrapante específicamente formulado para superficies deportivas. Es una pintura de alto rendimiento con pigmentación resistente a rayos UV, acabado antiderrapante certificado y durabilidad comprobada en canchas de basketball, tenis, pickleball y multicanchas en toda la República Mexicana.</div>
       </details>
       <details class="faq-item fade-in">
         <summary>¿Cuánto tiempo dura la pintura en una cancha deportiva?</summary>
-        <div class="faq-content">Con aplicación profesional y mantenimiento básico, la pintura deportiva acrílica dura entre 8 a 12 años dependiendo del uso intensivo, clima y tipo de superficie. Las canchas en clubes con alto tráfico pueden requerir repintado cada 6-8 años, mientras que canchas escolares o residenciales pueden durar hasta 12 años manteniendo colores vibrantes.</div>
+        <div class="faq-content">Con aplicación profesional y mantenimiento básico, la pintura deportiva acrílica dura entre 3 a 5 años (depende de base y mantenimiento) dependiendo del uso intensivo, clima y tipo de superficie. Las canchas en clubes con alto tráfico pueden requerir repintado cada 6-8 años, mientras que canchas escolares o residenciales pueden durar hasta 12 años manteniendo colores vibrantes.</div>
       </details>
       <details class="faq-item fade-in">
         <summary>¿En qué ciudades de México ofrecen servicio de pintura deportiva?</summary>
@@ -2418,7 +2424,7 @@ footer {
       </details>
       <details class="faq-item fade-in">
         <summary>¿La pintura es antiderrapante y segura para evitar lesiones?</summary>
-        <div class="faq-content">Sí, el sistema acrílico profesional incluye textura antiderrapante certificada que proporciona tracción óptima tanto en seco como en mojado. La superficie cumple con estándares internacionales de coeficiente de fricción para canchas deportivas, reduciendo significativamente el riesgo de resbalones y lesiones sin comprometer la velocidad de juego. El acabado es especialmente importante en canchas de basketball y pickleball donde los cambios de dirección son frecuentes.</div>
+        <div class="faq-content">Sí, el sistema acrílico profesional incluye textura antiderrapante certificada que proporciona tracción óptima tanto en seco como en mojado. La superficie cumple con estándares internacionales de textura antiderrapante calibradapara canchas deportivas, reduciendo significativamente el riesgo de resbalones y lesiones sin comprometer la velocidad de juego. El acabado es especialmente importante en canchas de basketball y pickleball donde los cambios de dirección son frecuentes.</div>
       </details>
       <details class="faq-item fade-in">
         <summary>¿Ofrecen mantenimiento o repintado de canchas existentes?</summary>
@@ -2563,8 +2569,13 @@ window.addEventListener('scroll', () => {
   else header.classList.remove('compact');
 
   if (window.innerWidth < 900) {
-    if (y > 600) stickyCta.classList.add('visible');
-    else stickyCta.classList.remove('visible');
+    if (y > 600) {
+      stickyCta.classList.add('visible');
+      document.body.classList.add('has-sticky-cta');
+    } else {
+      stickyCta.classList.remove('visible');
+      document.body.classList.remove('has-sticky-cta');
+    }
   }
 
   // Hero parallax
@@ -2714,7 +2725,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   "name": "PLAYKO - Pintura Deportiva México",
   "url": "https://www.pinturaparacanchasdeportivas.mx",
   "logo": "https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg",
-  "description": "Pintura profesional para canchas deportivas en México. Sistema acrílico tipo Laykold para basketball, tenis, pickleball y multicanchas.",
+  "description": "Pintura profesional para canchas deportivas en México. sistema acrílico antiderrapante para basketball, tenis, pickleball y multicanchas.",
   "telephone": "+525539887615",
   "email": "contacto@pinturaparacanchasdeportivas.mx",
   "address": {
@@ -2759,7 +2770,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         "itemOffered": {
           "@type": "Service",
           "name": "Pintura para Canchas de Tenis",
-          "description": "Superficie profesional tipo Laykold para canchas de tenis"
+          "description": "Superficie profesional antiderrapante para canchas de tenis"
         }
       },
       {
@@ -2793,7 +2804,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       "name": "¿Qué tipo de pintura utilizan para canchas deportivas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Utilizamos sistema acrílico profesional tipo Laykold específicamente formulado para superficies deportivas. Es una pintura de alto rendimiento con pigmentación resistente a rayos UV, acabado antiderrapante certificado y durabilidad comprobada en canchas de basketball, tenis, pickleball y multicanchas en toda la República Mexicana."
+        "text": "Utilizamos sistema acrílico profesional antiderrapante específicamente formulado para superficies deportivas. Es una pintura de alto rendimiento con pigmentación resistente a rayos UV, acabado antiderrapante certificado y durabilidad comprobada en canchas de basketball, tenis, pickleball y multicanchas en toda la República Mexicana."
       }
     },
     {
@@ -2884,7 +2895,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   "telephone": "+525539887615",
   "email": "contacto@pinturaparacanchasdeportivas.mx",
   "priceRange": "$$",
-  "description": "Empresa mexicana especializada en pintura profesional para canchas deportivas. Aplicamos sistema acrílico antiderrapante tipo Laykold sobre superficies de basketball, tenis, pickleball, multicanchas y canchas polivalentes. Cobertura nacional.",
+  "description": "Empresa mexicana especializada en pintura profesional para canchas deportivas. Aplicamos sistema acrílico antiderrapante antiderrapante sobre superficies de basketball, tenis, pickleball, multicanchas y canchas polivalentes. Cobertura nacional.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "MX",
@@ -2922,7 +2933,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo se pinta una cancha deportiva profesional con sistema acrílico antiderrapante",
-  "description": "Proceso PLAYKO para pintar canchas de basketball, tenis, pickleball y multicanchas con sistema acrílico tipo Laykold. Tiempo total: 5-10 días según superficie.",
+  "description": "Proceso PLAYKO para pintar canchas de basketball, tenis, pickleball y multicanchas con sistema acrílico antiderrapante. Tiempo total: 5-10 días según superficie.",
   "image": "https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg",
   "totalTime": "P10D",
   "estimatedCost": {
@@ -2930,7 +2941,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     "currency": "MXN"
   },
   "supply": [
-    {"@type": "HowToSupply", "name": "Pintura acrílica multicapa tipo Laykold"},
+    {"@type": "HowToSupply", "name": "Pintura acrílica multicapa antiderrapante"},
     {"@type": "HowToSupply", "name": "Primer adherente"},
     {"@type": "HowToSupply", "name": "Resina antiderrapante con granulometría controlada"}
   ],
@@ -2979,7 +2990,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   "@id": "https://www.pinturaparacanchasdeportivas.mx/#webpage",
   "url": "https://www.pinturaparacanchasdeportivas.mx/",
   "name": "Pintura para Canchas Deportivas | Basketball, Tenis, Pickleball | PLAYKO México",
-  "description": "Pintura profesional para canchas deportivas en México. Basketball, tenis, pickleball, multicanchas y canchas polivalentes. Sistema acrílico antiderrapante tipo Laykold para colegios, clubes y gobierno. Cobertura nacional.",
+  "description": "Pintura profesional para canchas deportivas en México. Basketball, tenis, pickleball, multicanchas y canchas polivalentes. Sistema acrílico antiderrapante antiderrapante para colegios, clubes y gobierno. Cobertura nacional.",
   "inLanguage": "es-MX",
   "isPartOf": {"@id": "https://www.pinturaparacanchasdeportivas.mx/#website"},
   "primaryImageOfPage": "https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg",
