@@ -106,15 +106,26 @@ section{padding:5rem 2rem}
 .layer-card h3{font-size:1.15rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
 .layer-card p{font-size:.95rem;color:var(--text-light)}
 
-.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.inc-card{padding:1.75rem;border-radius:16px;border:1px solid var(--border)}
-.inc-yes{background:#F0FDF4;border-color:#86EFAC}
-.inc-no{background:#FEF2F2;border-color:#FCA5A5}
-.inc-card h4{font-weight:800;font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.inc-card ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.inc-card li{font-size:.95rem;display:flex;align-items:flex-start;gap:.5rem;line-height:1.55}
-.inc-yes li::before{content:"✓";color:#16A34A;font-weight:900;flex-shrink:0}
-.inc-no li::before{content:"✕";color:#DC2626;font-weight:900;flex-shrink:0}
+/* ===== Alcance del servicio (scope split-grid) ===== */
+.scope-head{text-align:center;margin-top:3rem;margin-bottom:2rem}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.scope-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem 1.6rem;transition:transform .25s,box-shadow .25s}
+.scope-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.06)}
+.scope-card-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.scope-card-icon{width:42px;height:42px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.scope-card-icon svg{width:22px;height:22px}
+.scope-card.incluye .scope-card-icon{background:rgba(34,197,94,.12);color:#16A34A}
+.scope-card.aparte .scope-card-icon{background:rgba(255,107,0,.1);color:var(--primary)}
+.scope-card-title{font-size:1.05rem;font-weight:800;color:var(--text);line-height:1.2}
+.scope-card-sub{font-size:.82rem;color:var(--text-light);margin-top:.2rem}
+.scope-list{display:flex;flex-direction:column;gap:.7rem;list-style:none;padding:0;margin:0}
+.scope-list li{display:flex;align-items:flex-start;gap:.65rem;font-size:.94rem;color:var(--text);line-height:1.5}
+.scope-list li svg{flex-shrink:0;width:18px;height:18px;margin-top:.15rem}
+.scope-card.incluye .scope-list li svg{color:#16A34A}
+.scope-card.aparte .scope-list li svg{color:var(--primary)}
+.scope-cta-row{text-align:center;margin-top:2rem}
+.scope-cta-row a{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.6rem;background:var(--primary);color:#fff;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(255,107,0,.25);transition:transform .2s,background .2s}
+.scope-cta-row a:hover{background:var(--primary-dark);transform:translateY(-2px)}
 
 /* ===== Tabla reglamentaria ===== */
 .specs-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.06);margin-top:2rem}
@@ -207,7 +218,7 @@ footer{background:#0F0F0F;color:#9CA3AF;padding:4rem 2rem 2rem}
 /* ===== Responsive ===== */
 @media (max-width:900px){
   .banner-cotiza{grid-template-columns:1fr;padding:2rem 1.5rem}
-  .inc-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
   .price-card.featured{transform:none}
 }
 @media (max-width:768px){
@@ -313,32 +324,48 @@ Cotizar mi cancha de basquetbol</a>
 <div class="layer-card fade-in"><div class="layer-num">05</div><h3>Garantía por escrito</h3><p>Al cierre del proyecto entregamos factura CFDI, bitácora fotográfica del proceso y garantía firmada por escrito.</p></div>
 </div>
 
-<div class="inc-grid">
-<div class="inc-card inc-yes fade-in">
-<h4>✓ Qué incluye</h4>
-<ul>
-<li>Evaluación remota por WhatsApp con fotos y medidas (sin costo)</li>
-<li>Hidrolavado y limpieza profunda de la superficie</li>
-<li>Reparación de grietas menores y juntas frías</li>
-<li>1 capa de sello asfáltico en frío (resurfacer)</li>
-<li>2 capas de pintura acrílica antiderrapante de producción propia</li>
-<li>Trazos FIBA, 3x3 o NBA según se especifique</li>
-<li>Factura CFDI y bitácora fotográfica del proceso</li>
-<li>Garantía firmada por escrito al cierre del proyecto</li>
+<div class="scope-head fade-in">
+<span class="section-eyebrow">Alcance del servicio</span>
+<h3 style="font-size:clamp(1.4rem,2.8vw,1.85rem);font-weight:800;line-height:1.25;color:var(--text);margin-top:.5rem">Lo que <span style="color:var(--primary)">incluye</span> y lo que se cotiza <span style="color:var(--primary)">aparte</span></h3>
+</div>
+<div class="scope-grid">
+<div class="scope-card incluye fade-in">
+<div class="scope-card-head">
+<div class="scope-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></div>
+<div><div class="scope-card-title">Incluido</div><div class="scope-card-sub">En el precio de la pintura</div></div>
+</div>
+<ul class="scope-list">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Evaluación remota por WhatsApp con fotos y medidas (sin costo)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Hidrolavado y limpieza profunda de la superficie</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Reparación de grietas menores y juntas frías</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>1 capa de sello asfáltico en frío (resurfacer)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>2 capas de pintura acrílica antiderrapante de producción propia</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Trazos FIBA, 3x3 o NBA según se especifique</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Factura CFDI y bitácora fotográfica del proceso</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Garantía firmada por escrito al cierre del proyecto</li>
 </ul>
 </div>
-<div class="inc-card inc-no fade-in">
-<h4>✕ Qué NO incluye</h4>
-<ul>
-<li>Construcción de base de concreto o asfalto nueva</li>
-<li>Nivelación mayor o losa estructural</li>
-<li>Demolición de cancha existente</li>
-<li>Postes, tableros, aros o red (se cotizan aparte)</li>
-<li>Cerca perimetral, malla ciclónica o mobiliario</li>
-<li>Iluminación o cableado eléctrico</li>
-<li>Trabajos fuera de la superficie de juego</li>
+<div class="scope-card aparte fade-in">
+<div class="scope-card-head">
+<div class="scope-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<div><div class="scope-card-title">Servicios complementarios</div><div class="scope-card-sub">Cotización personalizada</div></div>
+</div>
+<ul class="scope-list">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Construcción de base de concreto o asfalto nueva</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nivelación mayor o reparación de losa estructural</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Demolición de cancha existente</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Postes, tableros, aros y redes deportivas</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Cerca perimetral, malla ciclónica o mobiliario</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Iluminación deportiva y cableado eléctrico</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Trabajos fuera de la superficie de juego</li>
 </ul>
 </div>
+</div>
+<div class="scope-cta-row fade-in">
+<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20un%20paquete%20completo%20%28pintura%20%2B%20servicios%20complementarios%29" target="_blank" rel="noopener">
+<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+Pedir cotización del paquete completo
+</a>
 </div>
 </div>
 </section>
