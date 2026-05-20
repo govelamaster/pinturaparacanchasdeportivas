@@ -483,6 +483,48 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
     </div>
   </div>
 </section>
+<!-- FEATURES STRIP -->
+<style>
+.features-strip { background: #fff; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; }
+.features-strip-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+@media (max-width: 767px) { .features-strip-inner { grid-template-columns: repeat(2,1fr); } }
+.fs-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.8rem 2rem; position: relative; }
+.fs-item + .fs-item::before { content:''; position:absolute; left:0; top:20%; height:60%; width:1px; background:#e8e8e8; }
+@media (max-width: 767px) { .fs-item:nth-child(odd) + .fs-item::before { display:none; } .fs-item:nth-child(3),.fs-item:nth-child(4) { border-top: 1px solid #e8e8e8; } }
+.fs-icon { width:36px; height:36px; flex-shrink:0; display:flex; align-items:center; justify-content:center; color: var(--primary); margin-top:1px; }
+.fs-icon svg { width:22px; height:22px; stroke-width:1.6; }
+.fs-text strong { display:block; font-size:.92rem; font-weight:700; color:#1a1a1a; margin-bottom:.25rem; letter-spacing:-.01em; }
+.fs-text span { font-size:.83rem; color:#6e6e73; line-height:1.5; }
+</style>
+<section class="features-strip fade-in">
+  <div class="features-strip-inner">
+    <div class="fs-item">
+      <div class="fs-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="fs-text"><strong>Antiderrapante y seguro</strong><span>Textura uniforme, bote de pelota predecible y sin riesgo de resbalones.</span></div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </div>
+      <div class="fs-text"><strong>Resistencia climática</strong><span>100% acrílica. Soporta intemperie, rayos UV y cambios de temperatura.</span></div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10"/><path d="M8 12c0-2.21 1.79-4 4-4"/><path d="M16 12c0 2.21-1.79 4-4 4"/></svg>
+      </div>
+      <div class="fs-text"><strong>Flexibilidad</strong><span>Absorbe movimientos del terreno sin agrietarse ni desprenderse.</span></div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/><circle cx="19" cy="18" r="2"/><path d="M19 16v-4"/></svg>
+      </div>
+      <div class="fs-text"><strong>Fácil mantenimiento</strong><span>Limpieza simple, sin productos especiales. Conserva el color por años.</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================
      COTIZADOR DE CUBETAS — calcula cantidad de cubetas y total
      ============================================================ -->
@@ -565,13 +607,15 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 .calc-result-area { margin-top: 16px; display: none; }
 .calc-result-area.visible { display: block; }
 .calc-buckets-hero { background: #111318; border-radius: 12px 12px 0 0; padding: 20px 20px 16px; text-align: center; }
-.calc-buckets-hero-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; }
+.calc-buckets-hero-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
 .calc-buckets-row { display: flex; align-items: center; justify-content: center; }
-.calc-bucket-col { text-align: center; padding: 0 18px; }
-.calc-bucket-sep { width: 1px; height: 44px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
-.calc-bucket-num { font-size: 52px; font-weight: 900; color: #fff; letter-spacing: -2px; line-height: 1; font-variant-numeric: tabular-nums; }
-.calc-bucket-num.solo { font-size: 64px; }
-.calc-bucket-sub { font-size: 0.65rem; color: rgba(255,255,255,0.4); font-weight: 500; line-height: 1.4; margin-top: 4px; }
+.calc-bucket-col { text-align: center; padding: 0 24px; }
+.calc-bucket-sep { width: 1px; height: 52px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+.calc-bucket-num { font-size: 56px; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; font-variant-numeric: tabular-nums; }
+.calc-bucket-num.solo { font-size: 68px; }
+.calc-bucket-sub { font-size: 0.68rem; color: rgba(255,255,255,0.65); font-weight: 500; line-height: 1.5; margin-top: 6px; letter-spacing: 0.02em; }
+.calc-sport-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.calc-sport-tag { font-size: 0.67rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 4px 9px; }
 .calc-breakdown { border: 1px solid #f3f4f6; border-top: none; border-radius: 0; padding: 0 16px; background: #fff; }
 .calc-brow { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3f4f6; gap: 10px; }
 .calc-brow:last-child { border-bottom: none; }
@@ -647,13 +691,13 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 
       <div>
         <div class="calc-sub-label">Deportes disponibles</div>
-        <div class="calc-sport-icons">
-          <div class="calc-sport-icon"><span>🎾</span><small>Tenis</small></div>
-          <div class="calc-sport-icon"><span>🏓</span><small>Pickleball</small></div>
-          <div class="calc-sport-icon"><span>🏀</span><small>Básquet</small></div>
-          <div class="calc-sport-icon"><span>🏐</span><small>Voleibol</small></div>
-          <div class="calc-sport-icon"><span>⚽</span><small>Fútbol</small></div>
-          <div class="calc-sport-icon"><span>🏅</span><small>Multi</small></div>
+        <div class="calc-sport-tags">
+          <span class="calc-sport-tag">Tenis</span>
+          <span class="calc-sport-tag">Pickleball</span>
+          <span class="calc-sport-tag">Basquetbol</span>
+          <span class="calc-sport-tag">Voleibol</span>
+          <span class="calc-sport-tag">Fútbol rápido</span>
+          <span class="calc-sport-tag">Multicancha</span>
         </div>
       </div>
 
