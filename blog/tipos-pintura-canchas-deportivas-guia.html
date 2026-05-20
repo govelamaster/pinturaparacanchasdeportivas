@@ -256,6 +256,10 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
   .sticky-cta-mobile { display:flex; position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:1px solid var(--border); padding:0.7rem 1rem; z-index:998; gap:0.6rem; box-shadow:0 -4px 16px rgba(0,0,0,0.08); }
   .sticky-cta-mobile a { flex:1; text-align:center; padding:0.9rem 0.5rem; background:var(--whatsapp); color:#fff; border-radius:8px; text-decoration:none; font-weight:800; font-size:0.95rem; display:flex; align-items:center; justify-content:center; gap:0.4rem; }
 }
+
+/* Logo image override */
+.logo, .brand-mark { display:inline-flex; align-items:center; height:34px; text-decoration:none; padding:0; }
+.logo img, .brand-mark img { height:26px; width:auto; display:block; }
 </style>
 
 <script type="application/ld+json">
@@ -299,7 +303,7 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
 
 <header>
   <nav>
-    <a href="/" class="logo" aria-label="PLAYKO Pintura para Canchas Deportivas">PLAYKO</a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="/#servicios">Servicios</a></li>

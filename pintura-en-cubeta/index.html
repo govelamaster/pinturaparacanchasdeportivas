@@ -305,6 +305,10 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
   padding: 0.45rem 0.6rem !important;
 }
 
+
+/* Logo image override */
+.logo, .brand-mark { display:inline-flex; align-items:center; height:34px; text-decoration:none; padding:0; }
+.logo img, .brand-mark img { height:26px; width:auto; display:block; }
 </style>
 
 <script type="application/ld+json">
@@ -383,7 +387,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 <!-- Navbar -->
 <header class="site-header" id="siteHeader">
   <div class="nav-inner">
-    <a href="/" class="brand-mark" aria-label="PLAYKO — Inicio">PLAYKO</a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
     <nav class="nav-menu" aria-label="Principal">
       <div class="nav-dropdown">
         <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
@@ -452,200 +456,243 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
     </div>
   </div>
 </section>
-
 <!-- ============================================================
-     COTIZADOR DE CUBETAS (wizard interactivo)
+     COTIZADOR DE CUBETAS — calcula cantidad de cubetas y total
      ============================================================ -->
 <style>
-.cotizador-section { background: linear-gradient(180deg, #fff 0%, var(--bg-light) 100%); padding: 4rem 0 5rem; }
-.cotizador-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
-.cotizador-head { text-align: center; margin-bottom: 2.5rem; }
-.cotizador-head .eyebrow { color: var(--primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.7rem; display: block; }
-.cotizador-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; color: var(--text); margin-bottom: 0.8rem; text-wrap: balance; }
-.cotizador-head h2 .em-accent { color: var(--primary); font-style: italic; }
-.cotizador-head p { color: var(--text-light); font-size: 1.02rem; line-height: 1.6; max-width: 620px; margin: 0 auto; }
-
-.cotz-card { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
-@media (min-width: 768px) { .cotz-card { padding: 2.5rem 2.5rem; } }
-
-.cotz-step-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem; }
-.cotz-step-title { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 1.2rem; }
-
-/* Step 1: deporte */
-.cotz-sports { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
-@media (max-width: 640px) { .cotz-sports { grid-template-columns: repeat(2, 1fr); } }
-.cotz-sport {
-  border: 2px solid var(--border); border-radius: 14px; padding: 1.1rem 0.6rem;
-  background: #fff; cursor: pointer; text-align: center;
-  font-weight: 700; font-size: 0.92rem; color: var(--text);
-  transition: all 0.2s; min-height: 92px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem;
-}
-.cotz-sport:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
-.cotz-sport.selected { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 8px 20px rgba(255,107,0,0.32); }
-.cotz-sport svg { width: 28px; height: 28px; }
-
-/* Step 2: medidas */
-.cotz-medidas { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-@media (max-width: 540px) { .cotz-medidas { grid-template-columns: 1fr; } }
-.cotz-medidas label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; font-weight: 700; color: var(--text); }
-.cotz-medidas input { padding: 0.9rem 1rem; border: 2px solid var(--border); border-radius: 12px; font-size: 1rem; font-family: inherit; background: #fafafa; }
-.cotz-medidas input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(255,107,0,0.12); }
-
-.cotz-area-display {
-  margin-top: 1.5rem; padding: 1.4rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  border-radius: 14px; color: #fff;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-}
-.cotz-area-display .area-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.92; display: block; margin-bottom: 0.2rem; }
-.cotz-area-display .area-value { font-size: 1.9rem; font-weight: 900; line-height: 1; }
-.cotz-area-display .area-note { font-size: 0.78rem; opacity: 0.92; max-width: 220px; text-align: right; line-height: 1.4; }
-
-/* Step 3: ciudad + send */
-.cotz-final { margin-top: 1.5rem; }
-.cotz-final label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
-.cotz-final input { padding: 0.9rem 1rem; border: 2px solid var(--border); border-radius: 12px; font-size: 1rem; font-family: inherit; background: #fafafa; width: 100%; }
-.cotz-final input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(255,107,0,0.12); }
-.cotz-final .cotz-send {
-  width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-  padding: 1.15rem 1.5rem; background: var(--whatsapp); color: #fff; border: none; border-radius: 14px;
-  font-size: 1.05rem; font-weight: 800; font-family: inherit; cursor: pointer;
-  box-shadow: 0 10px 24px rgba(37,211,102,0.32); transition: all 0.2s; margin-top: 0.5rem;
-}
-.cotz-final .cotz-send:hover { background: #1FAB55; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(37,211,102,0.42); }
-.cotz-final .cotz-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
-.cotz-help { font-size: 0.82rem; color: var(--text-light); margin-top: 0.9rem; text-align: center; line-height: 1.5; }
-
-.cotz-reassure { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 1rem; font-size: 0.82rem; color: var(--text-light); flex-wrap: wrap; }
-.cotz-reassure span { display: inline-flex; align-items: center; gap: 0.3rem; }
-.cotz-reassure svg { width: 14px; height: 14px; color: var(--success); }
+.cotz-wrap-section { background: #f5f5f7; padding: 4rem 1rem 5rem; }
+.cotz-inner-wrap { max-width: 480px; margin: 0 auto; }
+.cotz-header { text-align: center; padding: 0 8px 28px; }
+.cotz-header h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 700; color: #1d1d1f; letter-spacing: -1px; line-height: 1.1; margin-bottom: 10px; text-wrap: balance; }
+.cotz-header p { font-size: 15px; color: #6e6e73; line-height: 1.5; }
+.cotz-pkg { background: white; border-radius: 18px; padding: 20px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06); }
+.cotz-label-step { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #aeaeb2; margin-bottom: 14px; }
+.cotz-courts { display: flex; flex-direction: column; gap: 8px; }
+.cotz-court { width: 100%; padding: 15px 16px; background: #fafafa; border: 1.5px solid #e5e5ea; border-radius: 12px; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.15s; -webkit-tap-highlight-color: transparent; text-align: left; }
+.cotz-court:hover { background: white; border-color: #c7c7cc; }
+.cotz-court.active { background: #fff5ed; border-color: #FF6B00; box-shadow: 0 0 0 3px rgba(255,107,0,0.1); }
+.cotz-court-info { flex: 1; min-width: 0; }
+.cotz-court-name { font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 2px; }
+.cotz-court-area { font-size: 13px; color: #8e8e93; }
+.cotz-court-check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #d2d2d7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.15s; }
+.cotz-court.active .cotz-court-check { background: #FF6B00; border-color: #FF6B00; }
+.cotz-court .cotz-check-svg { display: none; }
+.cotz-court.active .cotz-check-svg { display: block; }
+.cotz-or { display: flex; align-items: center; gap: 10px; margin: 14px 0; }
+.cotz-or::before, .cotz-or::after { content: ''; flex: 1; height: 1px; background: #f0f0f0; }
+.cotz-or span { font-size: 12px; color: #c7c7cc; font-weight: 500; }
+.cotz-input-w { position: relative; }
+.cotz-input-w input { width: 100%; padding: 14px 48px 14px 16px; border: 1.5px solid #e5e5ea; border-radius: 12px; font-size: 16px; font-family: inherit; background: #fafafa; color: #1d1d1f; transition: all 0.15s; -webkit-appearance: none; appearance: none; }
+.cotz-input-w input:focus { outline: none; border-color: #FF6B00; background: white; box-shadow: 0 0 0 3px rgba(255,107,0,0.1); }
+.cotz-input-w input::placeholder { color: #c7c7cc; }
+.cotz-input-unit { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 14px; font-weight: 600; color: #8e8e93; pointer-events: none; }
+.cotz-seg { display: grid; grid-template-columns: 1fr 1fr 1fr; background: #f2f2f7; border-radius: 12px; padding: 3px; gap: 3px; }
+.cotz-seg button { padding: 11px 4px; border: none; background: transparent; border-radius: 10px; cursor: pointer; transition: all 0.15s; font-family: inherit; font-size: 13px; font-weight: 500; color: #6e6e73; line-height: 1.3; text-align: center; -webkit-tap-highlight-color: transparent; }
+.cotz-seg button:hover { background: rgba(255,255,255,0.5); }
+.cotz-seg button.active { background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.12); font-weight: 600; color: #1d1d1f; }
+.cotz-seg-rec { display: block; font-size: 9px; color: #FF6B00; font-weight: 700; letter-spacing: 0.3px; margin-top: 2px; }
+.cotz-warn { display: none; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 11px 14px; margin-top: 12px; font-size: 13px; color: #78350f; line-height: 1.5; }
+.cotz-result { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 10px; }
+.cotz-empty { padding: 44px 20px; text-align: center; }
+.cotz-empty-icon { font-size: 32px; opacity: 0.2; display: block; margin-bottom: 10px; }
+.cotz-empty-text { font-size: 14px; color: #aeaeb2; line-height: 1.5; }
+#cotzResultFilled { display: none; }
+.cotz-hero { background: #1d1d1f; padding: 24px 20px 20px; text-align: center; }
+.cotz-hero-label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.cotz-buckets-row { display: flex; align-items: center; justify-content: center; }
+.cotz-bucket-col { text-align: center; padding: 0 20px; }
+.cotz-bucket-sep { width: 1px; height: 50px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+.cotz-bucket-number { font-size: 58px; font-weight: 700; color: white; letter-spacing: -2px; line-height: 1; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.cotz-bucket-number.solo { font-size: 72px; }
+.cotz-bucket-sub { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; line-height: 1.4; }
+.cotz-breakdown { padding: 2px 20px 0; }
+.cotz-brow { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f5f5f7; gap: 12px; }
+.cotz-brow:last-child { border-bottom: none; }
+.cotz-brow-label { font-size: 14px; color: #6e6e73; line-height: 1.4; }
+.cotz-brow-label strong { color: #1d1d1f; font-weight: 600; }
+.cotz-brow-value { font-size: 15px; font-weight: 600; color: #1d1d1f; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cotz-iva-row .cotz-brow-label, .cotz-iva-row .cotz-brow-value { color: #8e8e93; font-size: 13px; font-weight: 500; }
+.cotz-total-strip { background: #f9f9fb; border-top: 1px solid #f0f0f0; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+.cotz-total-label { font-size: 16px; font-weight: 600; color: #1d1d1f; }
+.cotz-total-value { font-size: 26px; font-weight: 700; color: #FF6B00; letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.cotz-cta-wa { display: none; background: #25d366; border-radius: 14px; padding: 16px 20px; align-items: center; gap: 14px; cursor: pointer; transition: all 0.15s; text-decoration: none; margin-bottom: 10px; }
+.cotz-cta-wa:hover { background: #1db954; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.25); }
+.cotz-cta-wa-icon { font-size: 24px; flex-shrink: 0; }
+.cotz-cta-wa-text strong { display: block; color: white; font-size: 15px; font-weight: 700; margin-bottom: 1px; }
+.cotz-cta-wa-text span { color: rgba(255,255,255,0.78); font-size: 12px; }
+.cotz-cta-wa-arrow { margin-left: auto; color: rgba(255,255,255,0.5); font-size: 20px; }
+.cotz-iva-note { font-size: 11px; color: #aeaeb2; text-align: center; margin-top: 8px; padding: 0 16px; }
+@keyframes cotzPop { 0% { transform: scale(0.8); opacity: 0; } 65% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
+.cotz-pop { animation: cotzPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@media (max-width: 380px) { .cotz-bucket-number { font-size: 50px; } .cotz-bucket-number.solo { font-size: 62px; } .cotz-total-value { font-size: 22px; } }
 </style>
 
-<section class="cotizador-section" id="cotizador-cubetas">
-  <div class="cotizador-inner">
-    <div class="cotizador-head fade-in">
-      <span class="eyebrow">Cotizador de cubetas · 30 segundos</span>
-      <h2>Calcula tu cancha y recibe <span class="em-accent">cotización por WhatsApp</span></h2>
-      <p>Dinos el deporte, las medidas y tu ciudad. Te respondemos en menos de 1 hora hábil con la cantidad exacta de cubetas (pintura + Resurfacer) y la propuesta formal.</p>
+<section class="cotz-wrap-section" id="cotizador-cubetas">
+  <div class="cotz-inner-wrap">
+    <div class="cotz-header fade-in">
+      <h2>Cotiza tu cancha<br>al instante</h2>
+      <p>Elige el tipo de cancha y obtén cuántas cubetas necesitas con el precio total.</p>
     </div>
 
-    <div class="cotz-card fade-in">
-      <!-- Step 1: deporte -->
-      <div class="cotz-step-label">Paso 1</div>
-      <div class="cotz-step-title">¿Para qué cancha es?</div>
-      <div class="cotz-sports" role="radiogroup" aria-label="Tipo de cancha">
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Pickleball">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>Pickleball</span>
-        </div>
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Tenis">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M5.5 6.5c3 3 8 3 11 0"/><path d="M5.5 17.5c3-3 8-3 11 0"/></svg>
-          <span>Tenis</span>
-        </div>
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Basquetbol">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5 5l14 14M19 5L5 19"/></svg>
-          <span>Basquetbol</span>
-        </div>
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Multicancha">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><line x1="12" y1="5" x2="12" y2="19"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
-          <span>Multicancha</span>
-        </div>
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Voleibol">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12c5 0 9 4 9 9M21 12c-5 0-9 4-9 9"/></svg>
-          <span>Voleibol</span>
-        </div>
-        <div class="cotz-sport" role="radio" tabindex="0" data-sport="Otro">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.5 1.5c0 2-2.5 2-2.5 4M12 17h.01"/></svg>
-          <span>Otro</span>
-        </div>
-      </div>
-
-      <!-- Step 2: medidas -->
-      <div style="margin-top: 2rem;">
-        <div class="cotz-step-label">Paso 2</div>
-        <div class="cotz-step-title">Medidas de tu cancha</div>
-        <div class="cotz-medidas">
-          <label>Largo (metros)
-            <input type="number" id="cotzLargo" min="1" max="200" step="0.1" placeholder="ej. 28" inputmode="decimal">
-          </label>
-          <label>Ancho (metros)
-            <input type="number" id="cotzAncho" min="1" max="100" step="0.1" placeholder="ej. 15" inputmode="decimal">
-          </label>
-        </div>
-        <div class="cotz-area-display">
-          <div>
-            <span class="area-label">Área total</span>
-            <span class="area-value" id="cotzArea">0 m²</span>
-          </div>
-          <div class="area-note">La cantidad exacta de cubetas depende del estado de tu base y el sistema que apliques. Te la confirmamos por WhatsApp.</div>
-        </div>
-      </div>
-
-      <!-- Step 3: ciudad + send -->
-      <div class="cotz-final" style="margin-top: 2rem;">
-        <div class="cotz-step-label">Paso 3</div>
-        <div class="cotz-step-title">¿Dónde está la cancha?</div>
-        <label>Ciudad y estado
-          <input type="text" id="cotzCiudad" placeholder="ej. Monterrey, Nuevo León" autocomplete="address-level2">
-        </label>
-        <label>Tu nombre
-          <input type="text" id="cotzNombre" placeholder="ej. Olga Govela" autocomplete="name">
-        </label>
-        <button type="button" class="cotz-send" id="cotzSend">
-          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-          Recibir cotización por WhatsApp
+    <div class="cotz-pkg fade-in">
+      <div class="cotz-label-step">1 — Tipo de cancha</div>
+      <div class="cotz-courts">
+        <button class="cotz-court" data-size="648">
+          <div class="cotz-court-info"><div class="cotz-court-name">Tenis</div><div class="cotz-court-area">648 m²</div></div>
+          <div class="cotz-court-check"><svg class="cotz-check-svg" width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </button>
-        <div class="cotz-reassure">
-          <span><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Respuesta &lt;1h</span>
-          <span><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin costo</span>
-          <span><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin compromiso</span>
+        <button class="cotz-court" data-size="190">
+          <div class="cotz-court-info"><div class="cotz-court-name">Pickleball</div><div class="cotz-court-area">190 m² · 10 × 19 m</div></div>
+          <div class="cotz-court-check"><svg class="cotz-check-svg" width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+        <button class="cotz-court" data-size="608">
+          <div class="cotz-court-info"><div class="cotz-court-name">Basketball</div><div class="cotz-court-area">608 m² · 32 × 19 m</div></div>
+          <div class="cotz-court-check"><svg class="cotz-check-svg" width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+        <button class="cotz-court" data-size="608">
+          <div class="cotz-court-info"><div class="cotz-court-name">Multifuncional</div><div class="cotz-court-area">608 m² · 32 × 19 m</div></div>
+          <div class="cotz-court-check"><svg class="cotz-check-svg" width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+      </div>
+      <div class="cotz-or"><span>o escribe el área exacta</span></div>
+      <div class="cotz-input-w">
+        <input type="number" id="cotzCustomArea" placeholder="Metros cuadrados" min="1" step="1" inputmode="numeric">
+        <span class="cotz-input-unit">m²</span>
+      </div>
+    </div>
+
+    <div class="cotz-pkg fade-in">
+      <div class="cotz-label-step">2 — Productos que necesitas</div>
+      <div class="cotz-seg">
+        <button class="active" data-product="both">Sistema Completo<span class="cotz-seg-rec">★ Recomendado</span></button>
+        <button data-product="pintura">Solo Pintura</button>
+        <button data-product="resurfacer">Solo Resurfacer</button>
+      </div>
+      <div class="cotz-warn" id="cotzSoloWarn">⚠️ Sin el sistema completo la durabilidad se reduce. El Resurfacer es la base que la pintura necesita para adherirse bien.</div>
+    </div>
+
+    <div class="cotz-result fade-in" id="cotzResultCard">
+      <div id="cotzEmpty" class="cotz-empty">
+        <span class="cotz-empty-icon">🧮</span>
+        <p class="cotz-empty-text">Selecciona el tipo de cancha<br>para ver tu cotización</p>
+      </div>
+      <div id="cotzResultFilled">
+        <div class="cotz-hero">
+          <div class="cotz-hero-label">Cubetas que necesitas</div>
+          <div class="cotz-buckets-row" id="cotzBucketsRow"></div>
+        </div>
+        <div class="cotz-breakdown">
+          <div class="cotz-brow" id="cotzRowPintura" style="display:none;">
+            <span class="cotz-brow-label"><strong>Pintura Acrílica</strong><br><span id="cotzCntPintura">0</span> cubetas × $4,800 c/u</span>
+            <span class="cotz-brow-value" id="cotzStPintura">-</span>
+          </div>
+          <div class="cotz-brow" id="cotzRowResurfacer" style="display:none;">
+            <span class="cotz-brow-label"><strong>Resurfacer Asfáltico</strong><br><span id="cotzCntResurfacer">0</span> cubetas × $4,600 c/u</span>
+            <span class="cotz-brow-value" id="cotzStResurfacer">-</span>
+          </div>
+          <div class="cotz-brow" id="cotzRowSubtotal" style="display:none;">
+            <span class="cotz-brow-label"><strong>Subtotal</strong></span>
+            <span class="cotz-brow-value" id="cotzSubtotal">-</span>
+          </div>
+          <div class="cotz-brow cotz-iva-row">
+            <span class="cotz-brow-label">IVA (16%)</span>
+            <span class="cotz-brow-value" id="cotzIva">-</span>
+          </div>
+        </div>
+        <div class="cotz-total-strip">
+          <span class="cotz-total-label">Total con IVA</span>
+          <span class="cotz-total-value" id="cotzTotal">-</span>
         </div>
       </div>
     </div>
+
+    <a class="cotz-cta-wa" id="cotzCtaWA" href="#" target="_blank" rel="noopener noreferrer">
+      <span class="cotz-cta-wa-icon">💬</span>
+      <div class="cotz-cta-wa-text">
+        <strong>Solicitar cotización formal</strong>
+        <span>Recibe propuesta detallada por WhatsApp</span>
+      </div>
+      <span class="cotz-cta-wa-arrow">›</span>
+    </a>
+
+    <p class="cotz-iva-note">Precios referenciales con IVA. Cantidad exacta depende del estado de la base y el sistema aplicado. La cotización formal se ajusta a tu proyecto.</p>
   </div>
 </section>
 
 <script>
 (function() {
-  let selectedSport = '';
-  const sports = document.querySelectorAll('.cotz-sport');
-  const largo = document.getElementById('cotzLargo');
-  const ancho = document.getElementById('cotzAncho');
-  const ciudad = document.getElementById('cotzCiudad');
-  const nombre = document.getElementById('cotzNombre');
-  const areaEl = document.getElementById('cotzArea');
-  const sendBtn = document.getElementById('cotzSend');
-
-  sports.forEach(chip => {
-    const select = () => {
-      sports.forEach(c => { c.classList.remove('selected'); c.setAttribute('aria-checked', 'false'); });
-      chip.classList.add('selected');
-      chip.setAttribute('aria-checked', 'true');
-      selectedSport = chip.dataset.sport;
-    };
-    chip.addEventListener('click', select);
-    chip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(); } });
-  });
-
-  function updateArea() {
-    const l = parseFloat(largo.value) || 0;
-    const a = parseFloat(ancho.value) || 0;
-    const area = l * a;
-    areaEl.textContent = area > 0 ? `${area.toFixed(2)} m²` : '0 m²';
+  const customInput   = document.getElementById('cotzCustomArea');
+  const courtBtns     = document.querySelectorAll('.cotz-court');
+  const segBtns       = document.querySelectorAll('.cotz-seg button');
+  const emptyState    = document.getElementById('cotzEmpty');
+  const resultFilled  = document.getElementById('cotzResultFilled');
+  const bucketsRow    = document.getElementById('cotzBucketsRow');
+  const ctaWA         = document.getElementById('cotzCtaWA');
+  const soloWarning   = document.getElementById('cotzSoloWarn');
+  const rowPintura    = document.getElementById('cotzRowPintura');
+  const rowResurfacer = document.getElementById('cotzRowResurfacer');
+  const rowSubtotal   = document.getElementById('cotzRowSubtotal');
+  const cntPintura    = document.getElementById('cotzCntPintura');
+  const cntResurfacer = document.getElementById('cotzCntResurfacer');
+  const stPintura     = document.getElementById('cotzStPintura');
+  const stResurfacer  = document.getElementById('cotzStResurfacer');
+  const subtotalEl    = document.getElementById('cotzSubtotal');
+  const ivaEl         = document.getElementById('cotzIva');
+  const totalEl       = document.getElementById('cotzTotal');
+  const WA_NUMBER = '525539887615';
+  let currentProduct = 'both';
+  let lastArea = 0;
+  function fmt(v) { return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(v); }
+  function popEl(el) { el.classList.remove('cotz-pop'); void el.offsetWidth; el.classList.add('cotz-pop'); }
+  function renderBuckets(cp, cr) {
+    if (currentProduct === 'both') {
+      bucketsRow.innerHTML = `<div class="cotz-bucket-col"><div class="cotz-bucket-number">${cp}</div><div class="cotz-bucket-sub">Pintura<br>19 L c/u</div></div><div class="cotz-bucket-sep"></div><div class="cotz-bucket-col"><div class="cotz-bucket-number">${cr}</div><div class="cotz-bucket-sub">Resurfacer<br>19 L c/u</div></div>`;
+    } else if (currentProduct === 'pintura') {
+      bucketsRow.innerHTML = `<div class="cotz-bucket-col"><div class="cotz-bucket-number solo">${cp}</div><div class="cotz-bucket-sub">Cubetas · Pintura Acrílica<br>19 L c/u</div></div>`;
+    } else {
+      bucketsRow.innerHTML = `<div class="cotz-bucket-col"><div class="cotz-bucket-number solo">${cr}</div><div class="cotz-bucket-sub">Cubetas · Resurfacer Asfáltico<br>19 L c/u</div></div>`;
+    }
+    bucketsRow.querySelectorAll('.cotz-bucket-number').forEach(popEl);
   }
-  [largo, ancho].forEach(i => i.addEventListener('input', updateArea));
-
-  sendBtn.addEventListener('click', () => {
-    const l = parseFloat(largo.value) || 0;
-    const a = parseFloat(ancho.value) || 0;
-    const area = (l * a).toFixed(2);
-    const sport = selectedSport || 'No especificado';
-    const city = ciudad.value.trim() || 'No especificada';
-    const name = nombre.value.trim() || '(sin nombre)';
-    const text = `Hola PLAYKO, quiero cotizar cubetas de pintura + Resurfacer:%0A%0A*Nombre:* ${name}%0A*Cancha:* ${sport}%0A*Medidas:* ${l}m × ${a}m%0A*Área total:* ${area} m²%0A*Ciudad:* ${city}%0A%0APor favor mándenme la cantidad exacta de cubetas y la propuesta formal.`;
-    window.open(`https://wa.me/525539887615?text=${text}`, '_blank');
-  });
+  function calcular(area) {
+    lastArea = area;
+    if (!area || area <= 0) {
+      emptyState.style.display = 'block'; resultFilled.style.display = 'none'; ctaWA.style.display = 'none';
+      return;
+    }
+    const cp = Math.ceil(area / 50);
+    const cr = Math.ceil(area / 40);
+    const costoPintura = cp * 4800;
+    const costoResurfacer = cr * 4600;
+    emptyState.style.display = 'none'; resultFilled.style.display = 'block'; ctaWA.style.display = 'flex';
+    renderBuckets(cp, cr);
+    let subtotal = 0;
+    if (currentProduct === 'both') {
+      rowPintura.style.display = 'flex'; rowResurfacer.style.display = 'flex'; rowSubtotal.style.display = 'flex';
+      cntPintura.textContent = cp; cntResurfacer.textContent = cr;
+      stPintura.textContent = fmt(costoPintura); stResurfacer.textContent = fmt(costoResurfacer);
+      subtotal = costoPintura + costoResurfacer; subtotalEl.textContent = fmt(subtotal);
+      soloWarning.style.display = 'none';
+    } else if (currentProduct === 'pintura') {
+      rowPintura.style.display = 'flex'; rowResurfacer.style.display = 'none'; rowSubtotal.style.display = 'none';
+      cntPintura.textContent = cp; stPintura.textContent = fmt(costoPintura);
+      subtotal = costoPintura; soloWarning.style.display = 'block';
+    } else {
+      rowPintura.style.display = 'none'; rowResurfacer.style.display = 'flex'; rowSubtotal.style.display = 'none';
+      cntResurfacer.textContent = cr; stResurfacer.textContent = fmt(costoResurfacer);
+      subtotal = costoResurfacer; soloWarning.style.display = 'block';
+    }
+    const iva = subtotal * 0.16;
+    ivaEl.textContent = fmt(iva); totalEl.textContent = fmt(subtotal + iva);
+    popEl(totalEl);
+    const prodName = currentProduct === 'both' ? 'Sistema Completo (Pintura + Resurfacer)' : currentProduct === 'pintura' ? 'Pintura Acrílica' : 'Resurfacer Asfáltico';
+    const msg = `Hola PLAYKO, calculé en su cotizador:\n\n• Área: ${area} m²\n• Producto: ${prodName}\n• Total estimado: ${fmt(subtotal + iva)}\n\nMe gustaría recibir propuesta formal.`;
+    ctaWA.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+  segBtns.forEach(btn => { btn.addEventListener('click', () => { segBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); currentProduct = btn.dataset.product; calcular(lastArea); }); });
+  courtBtns.forEach(btn => { btn.addEventListener('click', () => { courtBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); const area = parseInt(btn.dataset.size); customInput.value = area; calcular(area); }); });
+  customInput.addEventListener('input', () => { courtBtns.forEach(b => b.classList.remove('active')); calcular(parseFloat(customInput.value)); });
+  courtBtns[0].click();
 })();
 </script>
 

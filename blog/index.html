@@ -302,6 +302,10 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; }
 
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; border-radius: 12px; }
 .table-wrap table { min-width: 540px; }
+
+/* Logo image override */
+.logo, .brand-mark { display:inline-flex; align-items:center; height:34px; text-decoration:none; padding:0; }
+.logo img, .brand-mark img { height:26px; width:auto; display:block; }
 </style>
 
 <script type="application/ld+json">
@@ -345,7 +349,7 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; }
 
 <header>
   <nav>
-    <a href="/" class="logo" aria-label="PLAYKO Pintura para Canchas Deportivas">PLAYKO</a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="/#servicios">Servicios</a></li>

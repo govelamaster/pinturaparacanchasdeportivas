@@ -535,6 +535,10 @@ footer {
   padding: 0.45rem 0.6rem !important;
 }
 
+
+/* Logo image override */
+.logo, .brand-mark { display:inline-flex; align-items:center; height:34px; text-decoration:none; padding:0; }
+.logo img, .brand-mark img { height:26px; width:auto; display:block; }
 </style>
 
 <script type="application/ld+json">
@@ -621,7 +625,7 @@ footer {
 <!-- Navbar -->
 <header class="site-header" id="siteHeader">
   <div class="nav-inner">
-    <a href="/" class="brand-mark" aria-label="PLAYKO — Inicio">PLAYKO</a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
     <nav class="nav-menu" aria-label="Principal">
       <div class="nav-dropdown">
         <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
