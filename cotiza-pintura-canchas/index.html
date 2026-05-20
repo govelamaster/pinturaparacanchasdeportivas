@@ -805,6 +805,186 @@
     .fade-in { opacity: 1; transform: none; transition: none; }
     * { animation: none !important; transition: none !important; }
   }
+
+  /* ===== CONTACT FORM SECTION (before footer) ===== */
+  .cta-form-section {
+    background: #0F1117;
+    padding: 80px 0 72px;
+  }
+  .cta-form-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .cta-form-left .eyebrow-orange {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .cta-form-left h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+  .cta-form-left h2 em {
+    font-style: normal;
+    color: var(--primary);
+  }
+  .cta-form-left p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin: 0 0 32px;
+  }
+  .cta-trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+  }
+  .cta-trust-list li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .cta-form-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 32px 32px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  }
+  .cta-form-box h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0F1117;
+    margin: 0 0 4px;
+  }
+  .cta-form-box .form-sub2 {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0 0 24px;
+  }
+  .cta-form-box .form-field {
+    margin-bottom: 16px;
+  }
+  .cta-form-box label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .cta-form-box input[type="text"],
+  .cta-form-box input[type="tel"],
+  .cta-form-box select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #111;
+    background: #fafafa;
+    transition: border-color .2s;
+    box-sizing: border-box;
+  }
+  .cta-form-box input:focus,
+  .cta-form-box select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+  }
+  .cta-form-box .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .cta-form-box .chip2 {
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #e5e7eb;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    background: #fff;
+    cursor: pointer;
+    transition: all .18s;
+  }
+  .cta-form-box .chip2.active,
+  .cta-form-box .chip2:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+  .cta-form-box .btn-wa-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+  }
+  .cta-form-box .btn-wa-form:hover {
+    background: #1ebe5d;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(37,211,102,0.5);
+  }
+  .cta-form-box .btn-wa-form svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .cta-form-box .micro-trust {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+  @media (max-width: 768px) {
+    .cta-form-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .cta-form-section { padding: 56px 0 48px; }
+    .cta-form-box { padding: 28px 20px 24px; }
+  }
 </style>
 </head>
 <body>
@@ -1059,6 +1239,67 @@
   </div>
 </section>
 
+<!-- ============== FORM ANTES DEL FOOTER ============== -->
+<section class="cta-form-section">
+  <div class="cta-form-inner">
+
+    <!-- Izquierda: copy + trust -->
+    <div class="cta-form-left fade-in">
+      <span class="eyebrow-orange">Cotización sin costo</span>
+      <h2>Tu cancha pintada en <em>5 a 10 días</em></h2>
+      <p>Llena el formulario y un asesor PLAYKO te manda propuesta formal por WhatsApp en menos de 1 hora hábil. Sin visita previa, sin compromiso.</p>
+      <ul class="cta-trust-list">
+        <li>Sistema acrílico antiderrapante de producción propia</li>
+        <li>Trazos FIBA · ITF · USAPA · FMF incluidos</li>
+        <li>Garantía firmada por escrito al cierre</li>
+        <li>Cobertura nacional — +50 ciudades</li>
+        <li>Factura CFDI y documentación fotográfica</li>
+      </ul>
+    </div>
+
+    <!-- Derecha: formulario -->
+    <div class="cta-form-box fade-in">
+      <h3>Recibe tu cotización hoy</h3>
+      <p class="form-sub2">Te respondemos en menos de 1 hora hábil.</p>
+
+      <form id="footer-form" novalidate>
+        <div class="form-field">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Ej. Carlos Mendoza" />
+        </div>
+
+        <div class="form-field">
+          <label for="f-wa">WhatsApp (10 dígitos)</label>
+          <input id="f-wa" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel" required pattern="[0-9]{10}" maxlength="10" placeholder="5512345678" />
+        </div>
+
+        <div class="form-field">
+          <label>Tipo de cancha</label>
+          <div class="chip-row" role="radiogroup" aria-label="Tipo de cancha">
+            <button type="button" class="chip2 active" data-sport="Basquetbol">Basquetbol</button>
+            <button type="button" class="chip2" data-sport="Tenis">Tenis</button>
+            <button type="button" class="chip2" data-sport="Pickleball">Pickleball</button>
+            <button type="button" class="chip2" data-sport="Multicancha">Multicancha</button>
+            <button type="button" class="chip2" data-sport="Otro">Otro</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-wa-form">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.93 11.93 0 0 0 5.76 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.18-3.46-8.41z"/></svg>
+          Enviar por WhatsApp
+        </button>
+
+        <div class="micro-trust">
+          <span>Respuesta &lt;1h</span>
+          <span>Sin costo</span>
+          <span>Sin compromiso</span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
 <!-- ============== FOOTER ============== -->
 <footer>
   <div class="footer-inner">
@@ -1128,6 +1369,35 @@
 
       const url = `https://wa.me/${phone}?text=${msg}`;
       window.open(url, '_blank', 'noopener');
+    });
+  })();
+
+  // ===== Footer form: chips =====
+  (function () {
+    const chips2 = document.querySelectorAll('.chip2');
+    chips2.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips2.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      });
+    });
+
+    // Footer form submit -> WhatsApp
+    const fform = document.getElementById('footer-form');
+    const phone2 = '525539887615';
+    fform.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('f-nombre').value.trim();
+      const wa = document.getElementById('f-wa').value.trim();
+      const sport = document.querySelector('.chip2.active')?.dataset.sport || 'Otro';
+      if (!nombre) { document.getElementById('f-nombre').focus(); return; }
+      if (!/^[0-9]{10}$/.test(wa)) { document.getElementById('f-wa').focus(); return; }
+      const msg =
+        `Hola PLAYKO, quiero cotizar pintura para mi cancha deportiva.%0A%0A` +
+        `Nombre: ${encodeURIComponent(nombre)}%0A` +
+        `WhatsApp: ${encodeURIComponent(wa)}%0A` +
+        `Deporte: ${encodeURIComponent(sport)}`;
+      window.open(`https://wa.me/${phone2}?text=${msg}`, '_blank', 'noopener');
     });
   })();
 
