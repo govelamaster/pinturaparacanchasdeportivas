@@ -48,17 +48,45 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:4px}
 
-/* ===== Header ===== */
-header{position:sticky;top:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:999;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-nav{max-width:1400px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.logo{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;font-weight:900;font-size:1.4rem;color:var(--primary);letter-spacing:-.5px}
-.logo::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(255,107,0,.15)}
-.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links a{text-decoration:none;color:var(--text);font-weight:600;font-size:.95rem;transition:color .2s}
-.nav-links a:hover{color:var(--primary)}
-.cta-header{background:var(--primary);color:#fff!important;padding:.75rem 1.4rem;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .2s}
-.cta-header:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,0,.35);color:#fff!important}
-.menu-toggle{display:none;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--text)}
+/* ===== Header (NEW navbar) ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:all .25s ease}
+.site-header.compact{box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.25rem;max-width:1280px;margin:0 auto;transition:padding .25s ease}
+.site-header.compact .nav-inner{padding:.7rem 1.25rem}
+@media(min-width:768px){.nav-inner{padding:1.2rem 2rem}.site-header.compact .nav-inner{padding:.75rem 2rem}}
+.brand-mark{font-size:1.7rem;font-weight:900;letter-spacing:-.04em;color:var(--primary)}
+.nav-menu{display:none}
+@media(min-width:1024px){.nav-menu{display:flex;gap:1.8rem;align-items:center}.nav-menu a{font-size:.93rem;font-weight:600;color:var(--text);transition:color .15s;position:relative;text-decoration:none}.nav-menu a:hover,.nav-menu a.active{color:var(--primary)}.nav-menu a::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .2s ease;transform-origin:left}.nav-menu a:hover::after,.nav-menu a.active::after{transform:scaleX(1)}}
+.nav-cta-wrap{display:flex;align-items:center;gap:.75rem}
+.nav-cta{display:none;align-items:center;gap:.5rem;background:var(--primary);color:#fff;padding:.7rem 1.2rem;border-radius:10px;font-weight:700;font-size:.9rem;transition:all .2s ease;text-decoration:none}
+.nav-cta:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,107,0,.32);color:#fff}
+@media(min-width:768px){.nav-cta{display:inline-flex}}
+.nav-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:none;border:none;cursor:pointer}
+@media(min-width:1024px){.nav-toggle{display:none}}
+.nav-toggle span{width:22px;height:2px;background:var(--text);display:block;position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0;width:22px;height:2px;background:var(--text)}
+.nav-toggle span::before{top:-7px}
+.nav-toggle span::after{top:7px}
+.mobile-menu{position:fixed;top:0;right:0;width:88%;max-width:340px;height:100vh;background:#fff;z-index:200;box-shadow:-20px 0 40px rgba(0,0,0,.15);padding:5rem 1.5rem 2rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+.mobile-menu.active{transform:translateX(0)}
+.mobile-menu a{display:block;padding:1rem .5rem;font-size:1.05rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--primary)}
+.mobile-menu-close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;background:var(--bg-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--text);border:none;cursor:pointer}
+.mobile-menu .mobile-cta{margin-top:1.5rem;background:var(--whatsapp);color:#fff;text-align:center;border-radius:12px;border-bottom:0;padding:1rem}
+/* Dropdown nav */
+.nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:.3rem;cursor:pointer}
+.nav-chev{font-size:.65rem;transition:transform .2s ease;opacity:.7}
+.nav-dropdown:hover .nav-chev{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(.4rem);background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.12);padding:.5rem;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(.2rem)}
+.nav-dropdown-menu a{display:block;padding:.7rem 1rem;font-size:.92rem;font-weight:600;color:var(--text);border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a.active{background:var(--bg-light);color:var(--primary)}
+@media(max-width:899px){.nav-dropdown{display:none}}
+/* Mobile submenu */
+.mobile-sublinks{display:flex;flex-direction:column;padding-left:.8rem;margin-bottom:.5rem;border-left:2px solid var(--primary)}
+.mobile-sublinks a{font-size:.95rem!important;opacity:.85;padding:.45rem .6rem!important}
+.mobile-sublinks a.active{color:var(--primary);opacity:1}
 
 /* ===== Hero ===== */
 .hero{position:relative;width:100%;min-height:600px;height:75vh;overflow:hidden}
@@ -106,15 +134,26 @@ section{padding:5rem 2rem}
 .layer-card h3{font-size:1.15rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
 .layer-card p{font-size:.95rem;color:var(--text-light)}
 
-.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.inc-card{padding:1.75rem;border-radius:16px;border:1px solid var(--border)}
-.inc-yes{background:#F0FDF4;border-color:#86EFAC}
-.inc-no{background:#FEF2F2;border-color:#FCA5A5}
-.inc-card h4{font-weight:800;font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.inc-card ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.inc-card li{font-size:.95rem;display:flex;align-items:flex-start;gap:.5rem;line-height:1.55}
-.inc-yes li::before{content:"✓";color:#16A34A;font-weight:900;flex-shrink:0}
-.inc-no li::before{content:"✕";color:#DC2626;font-weight:900;flex-shrink:0}
+/* ===== Alcance del servicio (scope split-grid) ===== */
+.scope-head{text-align:center;margin-top:3rem;margin-bottom:2rem}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.scope-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem 1.6rem;transition:transform .25s,box-shadow .25s}
+.scope-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.06)}
+.scope-card-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.scope-card-icon{width:42px;height:42px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.scope-card-icon svg{width:22px;height:22px}
+.scope-card.incluye .scope-card-icon{background:rgba(34,197,94,.12);color:#16A34A}
+.scope-card.aparte .scope-card-icon{background:rgba(255,107,0,.1);color:var(--primary)}
+.scope-card-title{font-size:1.05rem;font-weight:800;color:var(--text);line-height:1.2}
+.scope-card-sub{font-size:.82rem;color:var(--text-light);margin-top:.2rem}
+.scope-list{display:flex;flex-direction:column;gap:.7rem;list-style:none;padding:0;margin:0}
+.scope-list li{display:flex;align-items:flex-start;gap:.65rem;font-size:.94rem;color:var(--text);line-height:1.5}
+.scope-list li svg{flex-shrink:0;width:18px;height:18px;margin-top:.15rem}
+.scope-card.incluye .scope-list li svg{color:#16A34A}
+.scope-card.aparte .scope-list li svg{color:var(--primary)}
+.scope-cta-row{text-align:center;margin-top:2rem}
+.scope-cta-row a{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.6rem;background:var(--primary);color:#fff;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(255,107,0,.25);transition:transform .2s,background .2s}
+.scope-cta-row a:hover{background:var(--primary-dark);transform:translateY(-2px)}
 
 /* ===== Tabla reglamentaria ===== */
 .specs-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.06);margin-top:2rem}
@@ -207,15 +246,10 @@ footer{background:#0F0F0F;color:#9CA3AF;padding:4rem 2rem 2rem}
 /* ===== Responsive ===== */
 @media (max-width:900px){
   .banner-cotiza{grid-template-columns:1fr;padding:2rem 1.5rem}
-  .inc-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
   .price-card.featured{transform:none}
 }
 @media (max-width:768px){
-  nav{padding:.85rem 1rem}
-  .nav-links{position:fixed;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;border-top:1px solid var(--border);gap:1.25rem;align-items:stretch;display:none;box-shadow:0 8px 16px rgba(0,0,0,.08)}
-  .nav-links.active{display:flex}
-  .menu-toggle{display:block}
-  .cta-header{justify-content:center}
   section{padding:3.5rem 1rem}
   .hero{height:auto;min-height:auto;padding:6rem 0 4rem}
   .hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.85) 100%)}
@@ -246,22 +280,55 @@ footer{background:#0F0F0F;color:#9CA3AF;padding:4rem 2rem 2rem}
 </head>
 <body>
 
-<header>
-<nav>
-<a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
-<button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
-<ul class="nav-links" id="navLinks">
-<li><a href="/#servicios">Servicios</a></li>
-<li><a href="/#portafolio">Proyectos</a></li>
-<li><a href="/#proceso">Proceso</a></li>
-<li><a href="/blog/">Blog</a></li>
-<li><a href="/#faq">FAQ</a></li>
-<li><a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20de%20pickleball" target="_blank" rel="noopener" class="cta-header" aria-label="Cotizar por WhatsApp">
-<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-Cotizar</a></li>
-</ul>
-</nav>
+<!-- Navbar -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
+    <nav class="nav-menu" aria-label="Principal">
+      <div class="nav-dropdown">
+        <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/servicios/pintura-cancha-basquetbol" role="menuitem">Cancha de Basquetbol</a>
+          <a href="/servicios/pintura-cancha-tenis" role="menuitem">Cancha de Tenis</a>
+          <a href="/servicios/pintura-cancha-multicancha" role="menuitem">Cancha Multideportiva</a>
+          <a href="/servicios/pintura-cancha-pickleball" role="menuitem" class="active">Cancha Pickleball</a>
+        </div>
+      </div>
+      <a href="/calculadora-pintura">Calculadora de Pintura</a>
+      <a href="/pintura-en-cubeta">Pintura en Cubeta</a>
+      <a href="/accesorios">Accesorios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta-wrap">
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20de%20pickleball" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Cotizar
+      </a>
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
 </header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" onclick="closeMenu()" aria-label="Cerrar menú">×</button>
+  <a href="/#tipos-de-cancha" onclick="closeMenu()">Tipos de Canchas</a>
+  <div class="mobile-sublinks">
+    <a href="/servicios/pintura-cancha-basquetbol" onclick="closeMenu()">› Cancha de Basquetbol</a>
+    <a href="/servicios/pintura-cancha-tenis" onclick="closeMenu()">› Cancha de Tenis</a>
+    <a href="/servicios/pintura-cancha-multicancha" onclick="closeMenu()">› Cancha Multideportiva</a>
+    <a href="/servicios/pintura-cancha-pickleball" onclick="closeMenu()" class="active">› Cancha Pickleball</a>
+  </div>
+  <a href="/calculadora-pintura" onclick="closeMenu()">Calculadora de Pintura</a>
+  <a href="/pintura-en-cubeta" onclick="closeMenu()">Pintura en Cubeta</a>
+  <a href="/accesorios" onclick="closeMenu()">Accesorios</a>
+  <a href="/blog/" onclick="closeMenu()">Blog</a>
+  <a href="/#faq" onclick="closeMenu()">FAQ</a>
+  <a href="https://wa.me/525539887615" target="_blank" rel="noopener" class="mobile-cta">Cotizar por WhatsApp</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="hero" aria-labelledby="page-title">
@@ -313,32 +380,48 @@ Cotizar mi cancha de pickleball</a>
 <div class="layer-card fade-in"><div class="layer-num">05</div><h3>Garantía por escrito</h3><p>Al cierre del proyecto entregamos factura CFDI, bitácora fotográfica del proceso y garantía firmada por escrito.</p></div>
 </div>
 
-<div class="inc-grid">
-<div class="inc-card inc-yes fade-in">
-<h4>✓ Qué incluye</h4>
-<ul>
-<li>Evaluación remota por WhatsApp con fotos y medidas (sin costo)</li>
-<li>Hidrolavado y limpieza profunda de la superficie</li>
-<li>Reparación de grietas menores y juntas frías</li>
-<li>1 capa de sello asfáltico en frío (resurfacer)</li>
-<li>2 capas de pintura acrílica antiderrapante de producción propia</li>
-<li>Trazos USAPA / IPF oficiales (baseline, sideline, kitchen)</li>
-<li>Factura CFDI y bitácora fotográfica del proceso</li>
-<li>Garantía firmada por escrito al cierre del proyecto</li>
+<div class="scope-head fade-in">
+<span class="section-eyebrow">Alcance del servicio</span>
+<h3 style="font-size:clamp(1.4rem,2.8vw,1.85rem);font-weight:800;line-height:1.25;color:var(--text);margin-top:.5rem">Lo que <span style="color:var(--primary)">incluye</span> y lo que se cotiza <span style="color:var(--primary)">aparte</span></h3>
+</div>
+<div class="scope-grid">
+<div class="scope-card incluye fade-in">
+<div class="scope-card-head">
+<div class="scope-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg></div>
+<div><div class="scope-card-title">Incluido</div><div class="scope-card-sub">En el precio de la pintura</div></div>
+</div>
+<ul class="scope-list">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Evaluación remota por WhatsApp con fotos y medidas (sin costo)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Hidrolavado y limpieza profunda de la superficie</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Reparación de grietas menores y juntas frías</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>1 capa de sello asfáltico en frío (resurfacer)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>2 capas de pintura acrílica antiderrapante de producción propia</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Trazos USAPA / IPF oficiales (baseline, sideline, kitchen)</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Factura CFDI y bitácora fotográfica del proceso</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></svg>Garantía firmada por escrito al cierre del proyecto</li>
 </ul>
 </div>
-<div class="inc-card inc-no fade-in">
-<h4>✕ Qué NO incluye</h4>
-<ul>
-<li>Construcción de base de concreto o asfalto nueva</li>
-<li>Nivelación mayor o losa estructural</li>
-<li>Demolición de cancha existente</li>
-<li>Postes, tableros, aros o red (se cotizan aparte)</li>
-<li>Cerca perimetral, malla ciclónica o mobiliario</li>
-<li>Iluminación o cableado eléctrico</li>
-<li>Trabajos fuera de la superficie de juego</li>
+<div class="scope-card aparte fade-in">
+<div class="scope-card-head">
+<div class="scope-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+<div><div class="scope-card-title">Servicios complementarios</div><div class="scope-card-sub">Cotización personalizada</div></div>
+</div>
+<ul class="scope-list">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Construcción de base de concreto o asfalto nueva</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nivelación mayor o reparación de losa estructural</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Demolición de cancha existente</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Postes, redes y mobiliario deportivo</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Cerca perimetral, malla ciclónica o windscreen</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Iluminación deportiva y cableado eléctrico</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Trabajos fuera de la superficie de juego</li>
 </ul>
 </div>
+</div>
+<div class="scope-cta-row fade-in">
+<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20un%20paquete%20completo%20%28pintura%20%2B%20servicios%20complementarios%29" target="_blank" rel="noopener">
+<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+Pedir cotización del paquete completo
+</a>
 </div>
 </div>
 </section>
@@ -564,9 +647,12 @@ WhatsApp</a>
 </div>
 
 <script>
-function toggleMenu(){document.getElementById('navLinks').classList.toggle('active')}
+function toggleMenu(){const m=document.getElementById('mobileMenu');const t=document.querySelector('.nav-toggle');m.classList.toggle('active');const o=m.classList.contains('active');m.setAttribute('aria-hidden',o?'false':'true');t.setAttribute('aria-expanded',o?'true':'false');}
+function closeMenu(){const m=document.getElementById('mobileMenu');const t=document.querySelector('.nav-toggle');m.classList.remove('active');m.setAttribute('aria-hidden','true');t.setAttribute('aria-expanded','false');}
+const siteHeader=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{if(window.scrollY>80)siteHeader.classList.add('compact');else siteHeader.classList.remove('compact');},{passive:true});
 // Smooth scroll for internal anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('active')}})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});closeMenu();}})});
 // Fade-in observer
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
