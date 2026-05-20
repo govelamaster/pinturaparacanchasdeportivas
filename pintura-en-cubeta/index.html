@@ -420,7 +420,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
           <a href="/servicios/pintura-cancha-pickleball" role="menuitem">Cancha Pickleball</a>
         </div>
       </div>
-      <a href="/calculadora-pintura">Calculadora de Pintura</a>
+      <a href="/calculadora-pintura">Cotiza tu Cancha en Línea</a>
       <a href="/pintura-en-cubeta" class="active">Pintura en Cubeta</a>
       <a href="/accesorios">Accesorios</a>
       <a href="/blog/">Blog</a>
@@ -447,7 +447,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
     <a href="/servicios/pintura-cancha-multicancha" onclick="closeMenu()">› Cancha Multideportiva</a>
     <a href="/servicios/pintura-cancha-pickleball" onclick="closeMenu()">› Cancha Pickleball</a>
   </div>
-  <a href="/calculadora-pintura" onclick="closeMenu()">Calculadora de Pintura</a>
+  <a href="/calculadora-pintura" onclick="closeMenu()">Cotiza tu Cancha en Línea</a>
   <a href="/pintura-en-cubeta" onclick="closeMenu()">Pintura en Cubeta</a>
   <a href="/accesorios" onclick="closeMenu()">Accesorios</a>
   <a href="/blog/" onclick="closeMenu()">Blog</a>
@@ -532,30 +532,24 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 .calc-wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 380px 1fr; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 48px rgba(0,0,0,0.14); }
 
 /* LEFT PANEL */
-.calc-left { background: #111318; padding: 40px 32px 36px; display: flex; flex-direction: column; gap: 28px; }
-.calc-eyebrow { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #FF6B00; }
-.calc-left h2 { font-size: clamp(1.5rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; line-height: 1.2; margin: 0; }
+.calc-left { background: #111318; padding: 48px 40px 44px; display: flex; flex-direction: column; gap: 0; }
+.calc-eyebrow { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6B00; }
+.calc-left h2 { font-size: clamp(1.75rem, 2.6vw, 2.15rem); font-weight: 900; color: #fff; line-height: 1.13; margin: 12px 0 0; letter-spacing: -0.025em; }
 .calc-left h2 em { font-style: normal; color: #FF6B00; }
-.calc-steps-list { display: flex; flex-direction: column; gap: 14px; }
-.calc-step-row { display: flex; gap: 12px; align-items: flex-start; }
-.cs-num { width: 24px; height: 24px; border-radius: 50%; background: #FF6B00; color: #fff; font-size: 0.75rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-.calc-step-row strong { display: block; font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.calc-step-row p { font-size: 0.75rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin: 0; }
-.calc-sub-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
-.calc-sport-icons { display: flex; flex-wrap: wrap; gap: 10px; }
-.calc-sport-icon { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.calc-sport-icon span { font-size: 1.4rem; }
-.calc-sport-icon small { font-size: 0.62rem; color: rgba(255,255,255,0.45); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-.calc-swatches { display: flex; flex-wrap: wrap; gap: 7px; }
-.calc-swatch { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.12); cursor: pointer; transition: transform .15s; }
-.calc-swatch:hover { transform: scale(1.15); }
-.calc-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-.calc-badge { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px; display: flex; align-items: center; gap: 8px; }
-.calc-badge span { font-size: 1.1rem; }
-.calc-badge small { font-size: 0.7rem; color: rgba(255,255,255,0.6); line-height: 1.3; font-weight: 500; }
+.calc-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.38); line-height: 1.65; margin-top: 14px; }
+.calc-left-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 36px 0; }
+.calc-trust-list { display: flex; flex-direction: column; gap: 16px; }
+.calc-trust-item { display: flex; gap: 12px; align-items: flex-start; }
+.calc-ti-arrow { color: #FF6B00; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; line-height: 1.6; }
+.calc-trust-item p { font-size: 0.84rem; color: rgba(255,255,255,0.46); line-height: 1.6; margin: 0; }
+.calc-stats-row { display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 40px; padding-top: 28px; }
+.calc-stat { flex: 1; text-align: center; }
+.calc-stat-num { font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+.calc-stat-label { font-size: 0.58rem; color: rgba(255,255,255,0.27); font-weight: 600; text-transform: uppercase; letter-spacing: 0.11em; margin-top: 6px; }
+.calc-stat-sep { width: 1px; height: 28px; background: rgba(255,255,255,0.08); flex-shrink: 0; }
 
 /* RIGHT PANEL */
-.calc-right { background: #fff; padding: 32px 32px 0; display: flex; flex-direction: column; }
+.calc-right { background: #fff; padding: 36px 36px 36px; display: flex; flex-direction: column; }
 .calc-stepper { display: flex; align-items: center; gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
 .calc-step-pill { font-size: 0.75rem; font-weight: 700; color: #9ca3af; padding: 5px 12px; border-radius: 20px; background: #f3f4f6; transition: all .2s; }
 .calc-step-pill.active { background: #FF6B00; color: #fff; }
@@ -570,8 +564,8 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 .court-pickle  { background: linear-gradient(160deg,#0284c7 40%,#0369a1); }
 .court-basket  { background: linear-gradient(160deg,#c2410c 40%,#9a3412); }
 .court-voley   { background: linear-gradient(160deg,#7c3aed 40%,#5b21b6); }
-.court-multi   { background: linear-gradient(160deg,#059669 40%,#047857); }
-.court-futsal  { background: linear-gradient(160deg,#16a34a 40%,#15803d); }
+.court-multi   { background: linear-gradient(160deg,#475569 40%,#334155); }
+.court-futsal  { background: linear-gradient(160deg,#16a34a 40%,#14532d); }
 .court-visual svg { width: 80%; height: 80%; opacity: 0.9; }
 .court-name { font-size: 0.78rem; font-weight: 700; color: #374151; padding: 7px 6px 8px; display: block; }
 .court-area-txt { display: none; font-size: 0.65rem; color: #9ca3af; }
@@ -629,27 +623,19 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 .calc-wa-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 .calc-iva-note { font-size: 0.68rem; color: #9ca3af; text-align: center; margin: 10px 0 0; padding: 0 8px; }
 
-/* Bottom strip */
-.calc-bottom-strip { background: #111318; border-radius: 0 0 0 0; margin: 20px -32px 0; padding: 16px 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.calc-strip-item { display: flex; align-items: center; gap: 8px; }
-.calc-strip-item span { font-size: 1.1rem; flex-shrink: 0; }
-.calc-strip-item small { font-size: 0.68rem; color: rgba(255,255,255,0.55); font-weight: 600; line-height: 1.3; }
-
 @keyframes calcPop { 0%{transform:scale(.85);opacity:0} 65%{transform:scale(1.04)} 100%{transform:scale(1);opacity:1} }
 .calc-pop { animation: calcPop .25s cubic-bezier(.34,1.56,.64,1); }
 
 @media (max-width: 900px) {
   .calc-wrap { grid-template-columns: 1fr; }
-  .calc-left { padding: 32px 24px 28px; gap: 22px; }
-  .calc-badges { grid-template-columns: repeat(4,1fr); }
-  .calc-bottom-strip { grid-template-columns: repeat(3,1fr); margin: 16px -24px 0; padding: 16px 24px; }
+  .calc-left { padding: 36px 28px 32px; }
+  .calc-left-divider { margin: 28px 0; }
+  .calc-stats-row { margin-top: 28px; }
 }
 @media (max-width: 580px) {
-  .calc-right { padding: 24px 20px 0; }
+  .calc-right { padding: 24px 20px 24px; }
   .calc-courts-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
-  .court-visual { height: 58px; font-size: 1.6rem; }
-  .calc-bottom-strip { grid-template-columns: 1fr 1fr; margin: 16px -20px 0; padding: 14px 20px; }
-  .calc-badges { grid-template-columns: 1fr 1fr; }
+  .court-visual { height: 58px; }
 }
 </style>
 
@@ -659,72 +645,42 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
     <!-- LEFT PANEL -->
     <div class="calc-left">
       <div>
-        <div class="calc-eyebrow">Cotizador Instantáneo</div>
+        <div class="calc-eyebrow">Cotizador instantáneo</div>
         <h2>Calcula tus<br>cubetas en<br><em>30 segundos</em></h2>
+        <p class="calc-tagline">Sin visita, sin espera. Precio total con IVA al instante.</p>
       </div>
 
-      <div class="calc-steps-list">
-        <div class="calc-step-row">
-          <div class="cs-num">1</div>
-          <div>
-            <strong>Elige tu deporte</strong>
-            <p>Selecciona el tipo de cancha o escribe el área exacta.</p>
-          </div>
+      <div class="calc-left-divider"></div>
+
+      <div class="calc-trust-list">
+        <div class="calc-trust-item">
+          <span class="calc-ti-arrow">›</span>
+          <p>Elige el tipo de cancha o escribe el área exacta en m²</p>
         </div>
-        <div class="calc-step-row">
-          <div class="cs-num">2</div>
-          <div>
-            <strong>Selecciona el sistema</strong>
-            <p>Sistema completo o solo el producto que necesitas.</p>
-          </div>
+        <div class="calc-trust-item">
+          <span class="calc-ti-arrow">›</span>
+          <p>Selecciona sistema completo o solo el producto que necesitas</p>
         </div>
-        <div class="calc-step-row">
-          <div class="cs-num">3</div>
-          <div>
-            <strong>Recibe tu cotización</strong>
-            <p>Cubetas exactas + precio con IVA al instante.</p>
-          </div>
+        <div class="calc-trust-item">
+          <span class="calc-ti-arrow">›</span>
+          <p>Obtén cubetas exactas, precio con IVA y cotización formal por WhatsApp</p>
         </div>
       </div>
 
-      <div>
-        <div class="calc-sub-label">Deportes disponibles</div>
-        <div class="calc-sport-tags">
-          <span class="calc-sport-tag">Tenis</span>
-          <span class="calc-sport-tag">Pickleball</span>
-          <span class="calc-sport-tag">Basquetbol</span>
-          <span class="calc-sport-tag">Voleibol</span>
-          <span class="calc-sport-tag">Fútbol rápido</span>
-          <span class="calc-sport-tag">Multicancha</span>
+      <div class="calc-stats-row">
+        <div class="calc-stat">
+          <div class="calc-stat-num">50 m²</div>
+          <div class="calc-stat-label">por cubeta</div>
         </div>
-      </div>
-
-      <div>
-        <div class="calc-sub-label">Colores más populares</div>
-        <div class="calc-swatches">
-          <div class="calc-swatch" style="background:#1a5fb4;" title="Azul Tenis"></div>
-          <div class="calc-swatch" style="background:#2b7a3b;" title="Verde Cancha"></div>
-          <div class="calc-swatch" style="background:#c0392b;" title="Rojo"></div>
-          <div class="calc-swatch" style="background:#e67e22;" title="Naranja PLAYKO"></div>
-          <div class="calc-swatch" style="background:#7d3c98;" title="Morado Voleibol"></div>
-          <div class="calc-swatch" style="background:#1a8a8a;" title="Verde Azulado"></div>
-          <div class="calc-swatch" style="background:#2c3e50;" title="Azul Oscuro"></div>
-          <div class="calc-swatch" style="background:#d4ac0d;" title="Amarillo"></div>
+        <div class="calc-stat-sep"></div>
+        <div class="calc-stat">
+          <div class="calc-stat-num">10 años</div>
+          <div class="calc-stat-label">garantía UV</div>
         </div>
-      </div>
-
-      <div class="calc-badges">
-        <div class="calc-badge">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L2 4v4c0 3.3 2.5 5.8 6 6.5 3.5-.7 6-3.2 6-6.5V4L8 1.5z" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linejoin="round"/><polyline points="5.5,8 7,9.5 10.5,6.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <small>2 años garantía anti-decoloración</small>
-        </div>
-        <div class="calc-badge">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 14l1-5H3l4-7-1 5h4L6 14z" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>
-          <small>Entrega express</small>
-        </div>
-        <div class="calc-badge">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="4" width="9" height="9" rx="1.2" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/><path d="M5 4V2.5a2.5 2.5 0 015 0V4" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linecap="round"/><path d="M11 8h3M12.5 6.5v3" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linecap="round"/></svg>
-          <small>Rinde 50 m² a 2 manos</small>
+        <div class="calc-stat-sep"></div>
+        <div class="calc-stat">
+          <div class="calc-stat-num">&lt;1 hora</div>
+          <div class="calc-stat-label">respuesta</div>
         </div>
       </div>
     </div>
@@ -809,7 +765,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
       </button>
 
       <!-- Warn -->
-      <div class="calc-warn" id="calcSoloWarn">⚠️ Sin el sistema completo la durabilidad se reduce. El Resurfacer es la base que la pintura necesita para adherirse correctamente.</div>
+      <div class="calc-warn" id="calcSoloWarn">Sin el sistema completo la durabilidad se reduce. El Resurfacer es la base que la pintura necesita para adherirse correctamente.</div>
 
       <!-- Result area -->
       <div class="calc-result-area" id="calcResultArea">
@@ -846,21 +802,6 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
         </a>
       </div>
 
-      <!-- Bottom strip -->
-      <div class="calc-bottom-strip">
-        <div class="calc-strip-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
-          <small>Respuesta en &lt;1 hora</small>
-        </div>
-        <div class="calc-strip-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L2 4v4c0 3.3 2.5 5.8 6 6.5 3.5-.7 6-3.2 6-6.5V4L8 1.5z" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          <small>Cotización formal + garantía escrita</small>
-        </div>
-        <div class="calc-strip-item">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="5" r="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><circle cx="11" cy="5" r="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><circle cx="5" cy="11" r="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><circle cx="11" cy="11" r="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/></svg>
-          <small>12 colores — elige el tuyo</small>
-        </div>
-      </div>
     </div><!-- /calc-right -->
   </div><!-- /calc-wrap -->
 </section>
