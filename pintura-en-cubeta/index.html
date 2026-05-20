@@ -424,7 +424,6 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
       <a href="/pintura-en-cubeta" class="active">Pintura en Cubeta</a>
       <a href="/accesorios">Accesorios</a>
       <a href="/blog/">Blog</a>
-      <a href="/#faq">FAQ</a>
     </nav>
     <div class="nav-cta-wrap">
       <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20en%20cubeta" target="_blank" rel="noopener" class="nav-cta">
@@ -452,7 +451,6 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
   <a href="/pintura-en-cubeta" onclick="closeMenu()">Pintura en Cubeta</a>
   <a href="/accesorios" onclick="closeMenu()">Accesorios</a>
   <a href="/blog/" onclick="closeMenu()">Blog</a>
-  <a href="/#faq" onclick="closeMenu()">FAQ</a>
   <a href="https://wa.me/525539887615" target="_blank" rel="noopener" class="mobile-cta">Cotizar por WhatsApp</a>
 </div>
 
@@ -716,10 +714,22 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
       </div>
 
       <div class="calc-badges">
-        <div class="calc-badge"><span>🛡️</span><small>10 años garantía UV</small></div>
-        <div class="calc-badge"><span>⚡</span><small>Entrega express</small></div>
-        <div class="calc-badge"><span>📐</span><small>Rinde hasta 50 m²/cubeta</small></div>
-        <div class="calc-badge"><span>🇲🇽</span><small>Hecho en México</small></div>
+        <div class="calc-badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L2 4v4c0 3.3 2.5 5.8 6 6.5 3.5-.7 6-3.2 6-6.5V4L8 1.5z" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          <small>10 años garantía UV</small>
+        </div>
+        <div class="calc-badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 14l1-5H3l4-7-1 5h4L6 14z" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <small>Entrega express</small>
+        </div>
+        <div class="calc-badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="8" width="12" height="6" rx="1" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/><path d="M5 8V5a3 3 0 016 0v3" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <small>Rinde 50 m²/cubeta</small>
+        </div>
+        <div class="calc-badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/><path d="M5 8h6M8 5v6" stroke="rgba(255,255,255,0.6)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <small>Hecho en México</small>
+        </div>
       </div>
     </div>
 
@@ -770,7 +780,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
           <span class="court-name">Multicancha</span>
           <div class="cc-check"><svg viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </button>
-        <button class="calc-court-card" data-size="300" data-name="Fútbol rápido">
+        <button class="calc-court-card" data-size="1166" data-name="Fútbol rápido">
           <div class="court-visual court-futsal">
             <svg viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="72" height="42" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="2"/><line x1="40" y1="4" x2="40" y2="46" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="40" cy="25" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/><rect x="4" y="17" width="10" height="16" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><rect x="66" y="17" width="10" height="16" stroke="rgba(255,255,255,0.4)" stroke-width="1"/></svg>
           </div>
@@ -835,17 +845,29 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
         </div>
         <p class="calc-iva-note">Precio referencial. La cotización formal se ajusta al estado de la base y el sistema aplicado.</p>
         <a class="calc-wa-btn" id="calcWaBtn" href="#" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 18 18" fill="none"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.3.33 2.52.9 3.6L1.5 16.5l3.99-1.04A7.47 7.47 0 009 16.5c4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5z" fill="white"/><path d="M6.5 5.5c-.28 0-.5.22-.5.5v.5c0 1.66 1.34 3 3 3h.5c.28 0 .5-.22.5-.5v-.5c0-.28-.22-.5-.5-.5h-.5v-1c0-.28-.22-.5-.5-.5H6.5z" fill="#25d366"/></svg>
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar cotización formal por WhatsApp
         </a>
       </div>
 
       <!-- Bottom strip -->
       <div class="calc-bottom-strip">
-        <div class="calc-strip-item"><span>📦</span><small>Envío gratis desde 5 cubetas</small></div>
-        <div class="calc-strip-item"><span>🎨</span><small>+12 colores disponibles</small></div>
-        <div class="calc-strip-item"><span>⏱️</span><small>Respuesta en menos de 1 hora</small></div>
-        <div class="calc-strip-item"><span>📋</span><small>Cotización formal con membrete</small></div>
+        <div class="calc-strip-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="9" rx="1.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M5 5V4a3 3 0 016 0v1" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <small>Envío gratis desde 5 cubetas</small>
+        </div>
+        <div class="calc-strip-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <small>Respuesta en menos de 1 hora</small>
+        </div>
+        <div class="calc-strip-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="12" rx="1.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M5 6h6M5 9h4" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <small>Cotización formal con membrete</small>
+        </div>
+        <div class="calc-strip-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13l2.5-1 7-7a1.414 1.414 0 00-2-2l-7 7L3 13z" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          <small>+12 colores disponibles</small>
+        </div>
       </div>
     </div><!-- /calc-right -->
   </div><!-- /calc-wrap -->
@@ -1244,7 +1266,7 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <span class="footer-brand">PLAYKO</span>
+        <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
         <p>Pintura profesional para canchas deportivas en México. Sistema acrílico antiderrapante y flexible para basquetbol, tenis, pickleball, multicanchas y polideportivas. Cobertura nacional con respuesta en 1 hora hábil por WhatsApp.</p>
       </div>
       <div class="footer-col">
@@ -1259,7 +1281,6 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
         </div>
       </div>
         <a href="/blog/">Blog</a>
-        <a href="/#faq">FAQ</a>
         <a href="/#portafolio">Portafolio</a>
       </div>
       <div class="footer-col">
