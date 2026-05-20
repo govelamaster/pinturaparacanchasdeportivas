@@ -407,7 +407,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
 <!-- Navbar -->
 <header class="site-header" id="siteHeader">
   <div class="nav-inner">
-    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-naranja.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
     <nav class="nav-menu" aria-label="Principal">
       <div class="nav-dropdown">
         <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
@@ -962,42 +962,42 @@ body.has-sticky-cta { padding-bottom: 72px; }
      PRODUCT SHOWCASE — 3 líneas PLAYKO (Basquetbol/Tenis/Pickleball)
      ============================================================ -->
 <style>
-.showcase-section { background: linear-gradient(135deg, #1a1d24 0%, #0a0d12 100%); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden; }
-.showcase-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(255,107,0,0.18), transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(13,71,161,0.18), transparent 50%); pointer-events: none; }
-.showcase-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
-.showcase-head { text-align: center; margin-bottom: 3rem; color: #fff; }
-.showcase-head .eyebrow { display: inline-block; color: var(--primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8rem; padding: 0.45rem 1rem; background: rgba(255,107,0,0.12); border: 1px solid rgba(255,107,0,0.3); border-radius: 999px; }
-.showcase-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; color: #fff; margin-bottom: 1rem; text-wrap: balance; }
+/* ── Showcase: fondo blanco premium ── */
+.showcase-section { background: #fff; padding: 5rem 1.5rem 4rem; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; }
+.showcase-inner { max-width: 1280px; margin: 0 auto; }
+.showcase-head { text-align: center; margin-bottom: 3.5rem; }
+.showcase-head .eyebrow { display: inline-block; color: var(--primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.showcase-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; color: #1a1a1a; margin-bottom: 0.9rem; text-wrap: balance; }
 .showcase-head h2 .em-accent { color: var(--primary); font-style: italic; }
-.showcase-head p { color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.6; max-width: 680px; margin: 0 auto; }
-.showcase-head .tagline { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.6rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.9); flex-wrap: wrap; justify-content: center; }
-.showcase-head .tagline .dot { width: 4px; height: 4px; background: var(--primary); border-radius: 50%; }
-.showcase-buckets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
+.showcase-head p { color: #555; font-size: 1.05rem; line-height: 1.65; max-width: 600px; margin: 0 auto; }
+.showcase-head .tagline { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.8rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #888; flex-wrap: wrap; justify-content: center; }
+.showcase-head .tagline .dot { width: 3px; height: 3px; background: #ccc; border-radius: 50%; }
+.showcase-buckets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
 @media (max-width: 880px) { .showcase-buckets { grid-template-columns: 1fr; gap: 2rem; } }
-.bucket-card { position: relative; padding: 2.5rem 1.5rem 2rem; text-align: center; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.bucket-card:hover { transform: translateY(-10px); }
-.bucket-img-wrap { position: relative; height: 260px; margin-bottom: 1.6rem; display: flex; align-items: flex-end; justify-content: center; }
-.bucket-img-wrap img { height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.45)); transition: filter 0.3s, transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-.bucket-card:hover .bucket-img-wrap img { filter: drop-shadow(0 28px 48px rgba(0,0,0,0.6)) drop-shadow(0 0 24px rgba(255,107,0,0.22)); transform: translateY(-8px) scale(1.04); }
-.bucket-img-wrap .img-placeholder-bucket { width: 70%; aspect-ratio: 1 / 1.15; background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 2px dashed rgba(255,255,255,0.25); border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; color: rgba(255,255,255,0.6); font-size: 0.82rem; text-align: center; }
-.bucket-img-wrap .img-placeholder-bucket strong { color: #fff; display: block; margin-bottom: 0.4rem; font-size: 0.92rem; }
-.bucket-img-wrap .img-placeholder-bucket code { background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.7rem; color: var(--primary); margin-top: 0.6rem; display: inline-block; word-break: break-all; }
-.bucket-name { font-size: 1.4rem; font-weight: 900; color: #fff; letter-spacing: 0.02em; margin-bottom: 0.4rem; text-transform: uppercase; }
-.bucket-name .sport { display: block; font-size: 1.5rem; font-style: italic; font-weight: 800; margin-top: 0.2rem; letter-spacing: -0.01em; }
+.bucket-card { position: relative; padding: 2.5rem 1.5rem 2.2rem; text-align: center; background: #fafafa; border: 1px solid #ebebeb; border-radius: 20px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s; }
+.bucket-card:hover { transform: translateY(-8px); box-shadow: 0 24px 56px rgba(0,0,0,0.10); }
+.bucket-img-wrap { position: relative; height: 260px; margin-bottom: 1.6rem; display: flex; align-items: flex-end; justify-content: center; background: #fff; border-radius: 14px; padding: 1rem; }
+.bucket-img-wrap img { height: 100%; width: auto; max-width: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+.bucket-card:hover .bucket-img-wrap img { transform: translateY(-8px) scale(1.04); }
+.bucket-img-wrap .img-placeholder-bucket { width: 70%; aspect-ratio: 1 / 1.15; background: #f5f5f5; border: 2px dashed #ddd; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; color: #999; font-size: 0.82rem; text-align: center; }
+.bucket-img-wrap .img-placeholder-bucket strong { color: #333; display: block; margin-bottom: 0.4rem; font-size: 0.92rem; }
+.bucket-img-wrap .img-placeholder-bucket code { background: #eee; padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.7rem; color: var(--primary); margin-top: 0.6rem; display: inline-block; word-break: break-all; }
+.bucket-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #999; margin-bottom: 0.3rem; }
+.bucket-name .sport { display: block; font-size: 1.55rem; font-style: italic; font-weight: 900; margin-top: 0.15rem; letter-spacing: -0.02em; text-transform: none; }
 .bucket-card.basquetbol .bucket-name .sport { color: #FF6B00; }
-.bucket-card.tenis .bucket-name .sport { color: #4CAF50; }
-.bucket-card.pickleball .bucket-name .sport { color: #A3D62B; }
-.bucket-desc { color: rgba(255,255,255,0.88); font-size: 0.98rem; font-weight: 500; line-height: 1.6; max-width: 260px; margin: 0 auto 1.5rem; }
-.bucket-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; background: rgba(255,255,255,0.16); color: #fff; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; font-weight: 700; font-size: 0.92rem; text-decoration: none; transition: all 0.2s; }
-.bucket-cta:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
-.showcase-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 3rem; padding: 2.5rem 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; }
+.bucket-card.tenis .bucket-name .sport { color: #0D47A1; }
+.bucket-card.pickleball .bucket-name .sport { color: #5a8f00; }
+.bucket-desc { color: #555; font-size: 0.95rem; font-weight: 400; line-height: 1.65; max-width: 260px; margin: 0.6rem auto 1.6rem; }
+.bucket-cta { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.8rem 1.6rem; background: var(--primary); color: #fff; border: none; border-radius: 999px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 14px rgba(255,107,0,0.28); }
+.bucket-cta:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255,107,0,0.38); }
+.showcase-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 3rem; padding: 2.5rem 1.5rem; background: #f8f8f8; border: 1px solid #ebebeb; border-radius: 20px; }
 @media (max-width: 880px) { .showcase-features { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .showcase-features { grid-template-columns: 1fr; } }
-.feature-item { text-align: center; color: #fff; padding: 0.5rem; }
-.feature-icon { width: 48px; height: 48px; margin: 0 auto 0.9rem; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; box-shadow: 0 8px 18px rgba(255,107,0,0.32); }
+.feature-item { text-align: center; padding: 0.5rem; }
+.feature-icon { width: 48px; height: 48px; margin: 0 auto 0.9rem; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; box-shadow: 0 6px 16px rgba(255,107,0,0.25); }
 .feature-icon svg { width: 24px; height: 24px; color: #fff; }
-.feature-title { font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; }
-.feature-desc { font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.9); line-height: 1.6; }
+.feature-title { font-size: 0.93rem; font-weight: 800; color: #1a1a1a; margin-bottom: 0.35rem; }
+.feature-desc { font-size: 0.88rem; font-weight: 400; color: #666; line-height: 1.55; }
 .showcase-claim { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 18px; padding: 2rem 1.8rem; text-align: center; color: #fff; box-shadow: 0 20px 50px rgba(255,107,0,0.32); }
 .showcase-claim .label { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; margin-bottom: 0.6rem; }
 .showcase-claim h3 { font-size: clamp(1.2rem, 2.4vw, 1.55rem); font-weight: 800; line-height: 1.35; max-width: 800px; margin: 0 auto; text-wrap: balance; }
@@ -1234,7 +1234,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
+        <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-naranja.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
         <p>Pintura profesional para canchas deportivas en México. Sistema acrílico antiderrapante y flexible para basquetbol, tenis, pickleball, multicanchas y polideportivas. Cobertura nacional con respuesta en 1 hora hábil por WhatsApp.</p>
       </div>
       <div class="footer-col">
