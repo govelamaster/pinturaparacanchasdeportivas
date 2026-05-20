@@ -407,7 +407,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
 <!-- Navbar -->
 <header class="site-header" id="siteHeader">
   <div class="nav-inner">
-    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-naranja.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-clean.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
     <nav class="nav-menu" aria-label="Principal">
       <div class="nav-dropdown">
         <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
@@ -527,7 +527,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
 <style>
 /* ===== CALCULADORA 2-PANEL ===== */
 .calc-section { background: #f5f5f7; padding: 5rem 1rem; }
-.calc-wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 380px 1fr; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 48px rgba(0,0,0,0.14); }
+.calc-wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 48px rgba(0,0,0,0.14); }
 
 /* LEFT PANEL */
 .calc-left { background: #111318; padding: 48px 40px 44px; display: flex; flex-direction: column; gap: 0; }
@@ -567,7 +567,8 @@ body.has-sticky-cta { padding-bottom: 72px; }
 .calc-shortcuts-head { display: flex; align-items: center; gap: 12px; margin: 6px 0 12px; }
 .calc-shortcuts-line { flex: 1; height: 1px; background: #e5e7eb; }
 .calc-shortcuts-text { font-size: 0.78rem; font-weight: 600; color: #9ca3af; letter-spacing: 0.04em; text-transform: lowercase; }
-.calc-courts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+.calc-courts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 20px; width: 100%; min-width: 0; }
+.calc-court-card { min-width: 0; }
 .calc-court-card { background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 12px; padding: 0; cursor: pointer; font-family: inherit; transition: all .18s; text-align: center; overflow: hidden; position: relative; -webkit-tap-highlight-color: transparent; }
 .calc-court-card:hover { border-color: #FF6B00; background: #fff9f5; }
 .calc-court-card.active { border-color: #FF6B00; background: #fff5ed; box-shadow: 0 0 0 3px rgba(255,107,0,0.12); }
@@ -638,7 +639,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
 @keyframes calcPop { 0%{transform:scale(.85);opacity:0} 65%{transform:scale(1.04)} 100%{transform:scale(1);opacity:1} }
 .calc-pop { animation: calcPop .25s cubic-bezier(.34,1.56,.64,1); }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .calc-wrap { grid-template-columns: 1fr; }
   .calc-left { padding: 36px 28px 32px; }
   .calc-left-divider { margin: 28px 0; }
@@ -1234,7 +1235,7 @@ body.has-sticky-cta { padding-bottom: 72px; }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-naranja.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
+        <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-clean.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
         <p>Pintura profesional para canchas deportivas en México. Sistema acrílico antiderrapante y flexible para basquetbol, tenis, pickleball, multicanchas y polideportivas. Cobertura nacional con respuesta en 1 hora hábil por WhatsApp.</p>
       </div>
       <div class="footer-col">
