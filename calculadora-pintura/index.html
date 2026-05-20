@@ -317,6 +317,81 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
   line-height: 1.55;
 }
 
+/* ===== Price Breakdown Panel ===== */
+.price-breakdown {
+  margin-top: 1.4rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  animation: slideDown .3s var(--ease-out);
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.zone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+}
+.zone-name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-mid);
+}
+.zone-rate {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(255,107,0,.08);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+.price-rows {
+  padding: 0.4rem 0;
+}
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+}
+.price-row span:first-child { color: var(--text-light); }
+.price-row span:last-child  { font-weight: 600; color: var(--text); }
+.price-row + .price-row { border-top: 1px solid var(--border-soft); }
+.price-row.total-row {
+  background: var(--bg-light);
+  border-top: 1.5px solid var(--border) !important;
+  margin-top: 0.2rem;
+  padding: 0.9rem 1.2rem;
+}
+.price-row.total-row span:first-child { font-weight: 800; color: var(--ink); font-size: 1rem; }
+.price-row.total-row span:last-child  { font-weight: 900; color: var(--primary); font-size: 1.15rem; letter-spacing: -0.02em; }
+.price-disclaimer {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  padding: 0.7rem 1.2rem 0.9rem;
+  border-top: 1px solid var(--border-soft);
+  line-height: 1.55;
+  text-align: center;
+}
+.price-disclaimer strong { color: var(--text-mid); }
+.zone-unknown {
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+.zone-unknown strong { color: var(--text); display: block; margin-bottom: 0.2rem; font-weight: 700; }
+
 /* ===== Steps "Qué pasa después" ===== */
 .steps-section { background: #fff; padding: 4.5rem 0; }
 @media (min-width: 768px) { .steps-section { padding: 6rem 0; } }
@@ -746,11 +821,48 @@ footer {
         <div class="result-num" id="resultArea">0 m²</div>
         <div class="result-label">Área total de tu cancha</div>
       </div>
+
+      <!-- PRICE BREAKDOWN -->
+      <div class="price-breakdown" id="priceBreakdown" style="display:none">
+        <div class="zone-header">
+          <span class="zone-name" id="zoneName">Zona 1 — Centro</span>
+          <span class="zone-rate" id="zoneRate">$165/m² + IVA</span>
+        </div>
+        <div class="price-rows" id="priceRows">
+          <div class="price-row">
+            <span>Precio por m²</span>
+            <span id="pricePerM2Display">$165</span>
+          </div>
+          <div class="price-row">
+            <span>Subtotal (<span id="areaDisplay">0</span> m²)</span>
+            <span id="subtotalDisplay">$0</span>
+          </div>
+          <div class="price-row">
+            <span>IVA (16%)</span>
+            <span id="ivaDisplay">$0</span>
+          </div>
+          <div class="price-row total-row">
+            <span>Total estimado</span>
+            <span id="totalDisplay">$0</span>
+          </div>
+        </div>
+        <p class="price-disclaimer">
+          <strong>Precio aproximado.</strong> Considera base en condiciones óptimas. La cotización exacta puede variar según el estado real de la superficie, número de trazos y accesibilidad. Nos ayuda mucho tener <strong>fotografías del área</strong> — envíalas por WhatsApp para una propuesta más precisa.
+        </p>
+      </div>
+
+      <div id="zoneUnknown" class="price-breakdown" style="display:none">
+        <div class="zone-unknown">
+          <strong>Ciudad no encontrada en nuestro catálogo</strong>
+          Escribe tu ciudad o estado y detectaremos la zona automáticamente, o contáctanos por WhatsApp para cotización directa.
+        </div>
+      </div>
+
       <button class="calc-cta" id="calcCta" type="button">
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-        Recibir cotización por WhatsApp →
+        Recibir cotización exacta por WhatsApp →
       </button>
-      <p class="calc-help">El cálculo es referencial. La cotización final considera el estado de la base, deporte, número de trazos y ubicación. No realizamos visitas: toda la evaluación se hace de forma remota por WhatsApp.</p>
+      <p class="calc-help">El cálculo es referencial, asumiendo base en óptimas condiciones. La cotización formal la enviamos por WhatsApp en menos de 1 hora hábil.</p>
     </div>
   </div>
 </section>
@@ -933,24 +1045,184 @@ if ('IntersectionObserver' in window) {
   fadeEls.forEach(el => el.classList.add('visible'));
 }
 
-// CALCULADORA
-const m2totales = document.getElementById('m2totales');
-const deporte = document.getElementById('deporte');
-const ciudad = document.getElementById('ciudad');
-const resultArea = document.getElementById('resultArea');
-const calcCta = document.getElementById('calcCta');
+// ── ZONA PRICING ──────────────────────────────────────────────
+const ZONAS = {
+  1: { label: 'Zona 1 — Centro',                   price: 165 },
+  2: { label: 'Zona 2 — Centro Extendido',          price: 180 },
+  3: { label: 'Zona 3 — Norte / Golfo / Occidente', price: 195 },
+  4: { label: 'Zona 4 — Extremos / Frontera / Sureste', price: 220 },
+};
 
-function updateArea() {
-  const area = parseFloat(m2totales.value) || 0;
-  resultArea.textContent = area > 0 ? `${area.toFixed(0)} m²` : '0 m²';
+const ZONA_MAP = {
+  // ── ZONA 1 ──
+  1: ['cdmx','ciudad de mexico','ciudad de méxico','df','distrito federal','benito juarez','coyoacan','tlalpan','xochimilco','iztapalapa','gustavo','azcapotzalco','cuauhtemoc','miguel hidalgo','alvaro obregon'],
+
+  // ── ZONA 2 ──
+  2: [
+    // Estado de México
+    'estado de mexico','estado de méxico','edomex','toluca','ecatepec','naucalpan','tlalnepantla','nezahualcoyotl','chimalhuacan','texcoco','metepec','atizapan','cuautitlan','tultitlan','coacalco','ixtapaluca','chalco','Valle de México',
+    // Hidalgo
+    'hidalgo','pachuca','tula','tulancingo','actopan','ixmiquilpan',
+    // Puebla
+    'puebla','tehuacan','san martin texmelucan','atlixco','izucar','huejotzingo',
+    // Morelos
+    'morelos','cuernavaca','jiutepec','cuautla','temixco','jojutla',
+    // Tlaxcala
+    'tlaxcala','apizaco','huamantla','chiautempan',
+    // Querétaro
+    'queretaro','querétaro','san juan del rio','corregidora','el marques',
+    // Guanajuato
+    'guanajuato','leon','irapuato','celaya','salamanca','silao','san miguel de allende','acambaro','uriangato',
+    // Michoacán
+    'michoacan','michoacán','morelia','uruapan','zamora','lazaro cardenas','lazaro cárdenas','apatzingan','sahuayo','zitacuaro',
+  ],
+
+  // ── ZONA 3 ──
+  3: [
+    // Nuevo León
+    'nuevo leon','nuevo león','monterrey','guadalupe nl','apodaca','san nicolas','san nicolás','san pedro garza','escobedo','santa catarina','linares','cadereyta','general escobedo',
+    // Tamaulipas
+    'tamaulipas','reynosa','matamoros','tampico','nuevo laredo','ciudad victoria','victoria tamaulipas','madero tamaulipas',
+    // San Luis Potosí
+    'san luis potosi','san luis potosí','slp','ciudad valles','soledad de graciano','rioverde','matehuala',
+    // Durango
+    'durango','gomez palacio','gómez palacio','lerdo durango',
+    // Veracruz
+    'veracruz','xalapa','jalapa','coatzacoalcos','boca del rio','boca del río','orizaba','poza rica','minatitlan','cordoba','veracruz puerto',
+    // Jalisco
+    'jalisco','guadalajara','zapopan','tlaquepaque','tonala','tonal','puerto vallarta','lagos de moreno','tepatitlan','tepatitlán','ameca','autlan','ocotlan','ciudad guzman',
+    // Colima
+    'colima','manzanillo','tecolima','comala',
+    // Nayarit
+    'nayarit','tepic','bahia de banderas','bahía de banderas','bucerías','nuevo vallarta',
+    // Zacatecas
+    'zacatecas','fresnillo','guadalupe zacatecas','jerez','rio grande zacatecas',
+    // Aguascalientes
+    'aguascalientes','calvillo','rincon de romos',
+    // Coahuila
+    'coahuila','saltillo','torreon','torreón','monclova','piedras negras','acuna','acuña','parras',
+    // Sinaloa
+    'sinaloa','culiacan','culiacán','mazatlan','mazatlán','los mochis','guasave','guamuchil','navolato',
+    // Guerrero
+    'guerrero','acapulco','chilpancingo','iguala','zihuatanejo','ixtapa','taxco',
+    // Oaxaca
+    'oaxaca','tuxtepec','salina cruz','juchitan','pochutla','huatulco',
+  ],
+
+  // ── ZONA 4 ──
+  4: [
+    // Baja California
+    'baja california','tijuana','mexicali','ensenada','tecate','rosarito',
+    // Baja California Sur
+    'baja california sur','la paz','los cabos','cabo san lucas','san jose del cabo','loreto','la paz bcs',
+    // Sonora
+    'sonora','hermosillo','ciudad obregon','obregon','nogales','navojoa','guaymas','empalme','agua prieta',
+    // Chihuahua
+    'chihuahua','ciudad juarez','juarez','delicias','cuauhtemoc chihuahua','parral','hidalgo del parral','camargo',
+    // Yucatán
+    'yucatan','yucatán','merida','mérida','valladolid yucatan','tizimin','progreso',
+    // Campeche
+    'campeche','ciudad del carmen','carmen campeche','escarcega',
+    // Quintana Roo
+    'quintana roo','cancun','cancún','playa del carmen','tulum','chetumal','cozumel','isla mujeres','solidaridad','benito juarez qr','bacalar',
+    // Chiapas
+    'chiapas','tuxtla gutierrez','tuxtla gutiérrez','san cristobal','san cristóbal','tapachula','comitan','comitán','palenque',
+    // Tabasco
+    'tabasco','villahermosa','cardenas tabasco','cárdenas tabasco','macuspana','comalcalco','paraiso tabasco',
+  ],
+};
+
+function normalize(str) {
+  return str.toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9\s]/g,' ')
+    .trim();
 }
-m2totales.addEventListener('input', updateArea);
+
+function detectZone(input) {
+  const q = normalize(input);
+  if (!q) return null;
+  for (const [zona, keywords] of Object.entries(ZONA_MAP)) {
+    for (const kw of keywords) {
+      if (q.includes(normalize(kw))) return parseInt(zona);
+    }
+  }
+  return null;
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('es-MX');
+}
+
+// ── DOM REFS ────────────────────────────────────────────────
+const m2totales        = document.getElementById('m2totales');
+const deporte          = document.getElementById('deporte');
+const ciudad           = document.getElementById('ciudad');
+const resultArea       = document.getElementById('resultArea');
+const calcCta          = document.getElementById('calcCta');
+const priceBreakdown   = document.getElementById('priceBreakdown');
+const zoneUnknown      = document.getElementById('zoneUnknown');
+const zoneName         = document.getElementById('zoneName');
+const zoneRate         = document.getElementById('zoneRate');
+const pricePerM2Display= document.getElementById('pricePerM2Display');
+const areaDisplay      = document.getElementById('areaDisplay');
+const subtotalDisplay  = document.getElementById('subtotalDisplay');
+const ivaDisplay       = document.getElementById('ivaDisplay');
+const totalDisplay     = document.getElementById('totalDisplay');
+
+let currentZone = null;
+
+function updateCalc() {
+  const area = parseFloat(m2totales.value) || 0;
+  const ciudadVal = ciudad.value.trim();
+
+  resultArea.textContent = area > 0 ? `${area.toFixed(0)} m²` : '0 m²';
+
+  if (!ciudadVal) {
+    priceBreakdown.style.display = 'none';
+    zoneUnknown.style.display = 'none';
+    currentZone = null;
+    return;
+  }
+
+  const z = detectZone(ciudadVal);
+  currentZone = z;
+
+  if (!z) {
+    priceBreakdown.style.display = 'none';
+    zoneUnknown.style.display = 'block';
+    return;
+  }
+
+  zoneUnknown.style.display = 'none';
+  priceBreakdown.style.display = 'block';
+
+  const { label, price } = ZONAS[z];
+  const subtotal = area * price;
+  const iva = subtotal * 0.16;
+  const total = subtotal + iva;
+
+  zoneName.textContent          = label;
+  zoneRate.textContent          = `$${price}/m² + IVA`;
+  pricePerM2Display.textContent = `$${price}`;
+  areaDisplay.textContent       = area > 0 ? area.toFixed(0) : '0';
+  subtotalDisplay.textContent   = area > 0 ? fmt(subtotal) : '—';
+  ivaDisplay.textContent        = area > 0 ? fmt(iva)      : '—';
+  totalDisplay.textContent      = area > 0 ? fmt(total)    : '—';
+}
+
+m2totales.addEventListener('input', updateCalc);
+ciudad.addEventListener('input', updateCalc);
 
 calcCta.addEventListener('click', () => {
-  const area = parseFloat(m2totales.value) || 0;
-  const d = deporte.value || 'No especificado';
-  const c = ciudad.value.trim() || 'No especificada';
-  const text = `Hola PLAYKO, quiero cotizar pintura para mi cancha:%0A%0A*Área total:* ${area} m²%0A*Deporte:* ${d}%0A*Ciudad:* ${c}`;
+  const area  = parseFloat(m2totales.value) || 0;
+  const d     = deporte.value || 'No especificado';
+  const c     = ciudad.value.trim() || 'No especificada';
+  const z     = currentZone ? ZONAS[currentZone] : null;
+  const priceInfo = z && area > 0
+    ? `%0A*Precio/m²:* $${z.price} + IVA (${z.label})%0A*Total estimado:* ${fmt(area * z.price * 1.16)} MXN`
+    : '';
+  const text = `Hola PLAYKO, quiero cotizar pintura para mi cancha:%0A%0A*Área total:* ${area} m²%0A*Deporte:* ${d}%0A*Ciudad:* ${c}${priceInfo}`;
   window.open(`https://wa.me/525539887615?text=${text}`, '_blank');
 });
 </script>
