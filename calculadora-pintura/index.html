@@ -681,7 +681,7 @@ footer {
     <div class="fade-in">
       <span class="eyebrow">Herramienta · Cotización personalizada</span>
       <h1>Calcula los <span class="em-accent">metros cuadrados</span> de tu cancha</h1>
-      <p class="hero-sub">Ingresa el largo y ancho. Te devolvemos el área exacta y un enlace de WhatsApp con los datos prellenados para que recibas cotización formal en menos de 1 hora hábil.</p>
+      <p class="hero-sub">Ingresa los m² totales de tu cancha y recibe un enlace de WhatsApp con los datos prellenados para cotización formal en menos de 1 hora hábil.</p>
       <div class="hero-ctas">
         <a href="#calc" class="btn btn-primary">Usar la calculadora ↓</a>
         <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="btn btn-outline">Hablar por WhatsApp</a>
@@ -696,11 +696,8 @@ footer {
     <div class="calc-card fade-in">
       <h2>Ingresa las medidas</h2>
       <div class="calc-form">
-        <label>Largo (metros)
-          <input type="number" id="largo" min="1" max="200" step="0.1" placeholder="ej. 28" inputmode="decimal">
-        </label>
-        <label>Ancho (metros)
-          <input type="number" id="ancho" min="1" max="100" step="0.1" placeholder="ej. 15" inputmode="decimal">
+        <label>M² totales de tu cancha
+          <input type="number" id="m2totales" min="1" max="10000" step="1" placeholder="ej. 420" inputmode="decimal">
         </label>
         <label>Deporte
           <select id="deporte">
@@ -899,28 +896,23 @@ if ('IntersectionObserver' in window) {
 }
 
 // CALCULADORA
-const largo = document.getElementById('largo');
-const ancho = document.getElementById('ancho');
+const m2totales = document.getElementById('m2totales');
 const deporte = document.getElementById('deporte');
 const ciudad = document.getElementById('ciudad');
 const resultArea = document.getElementById('resultArea');
 const calcCta = document.getElementById('calcCta');
 
 function updateArea() {
-  const l = parseFloat(largo.value) || 0;
-  const a = parseFloat(ancho.value) || 0;
-  const area = l * a;
-  resultArea.textContent = area > 0 ? `${area.toFixed(2)} m²` : '0 m²';
+  const area = parseFloat(m2totales.value) || 0;
+  resultArea.textContent = area > 0 ? `${area.toFixed(0)} m²` : '0 m²';
 }
-[largo, ancho].forEach(i => i.addEventListener('input', updateArea));
+m2totales.addEventListener('input', updateArea);
 
 calcCta.addEventListener('click', () => {
-  const l = parseFloat(largo.value) || 0;
-  const a = parseFloat(ancho.value) || 0;
-  const area = (l * a).toFixed(2);
+  const area = parseFloat(m2totales.value) || 0;
   const d = deporte.value || 'No especificado';
   const c = ciudad.value.trim() || 'No especificada';
-  const text = `Hola PLAYKO, quiero cotizar pintura para mi cancha:%0A%0A*Medidas:* ${l}m × ${a}m%0A*Área total:* ${area} m²%0A*Deporte:* ${d}%0A*Ciudad:* ${c}`;
+  const text = `Hola PLAYKO, quiero cotizar pintura para mi cancha:%0A%0A*Área total:* ${area} m²%0A*Deporte:* ${d}%0A*Ciudad:* ${c}`;
   window.open(`https://wa.me/525539887615?text=${text}`, '_blank');
 });
 </script>
