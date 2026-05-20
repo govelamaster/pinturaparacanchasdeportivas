@@ -123,7 +123,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-split { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
 @media (min-width: 768px) { .hero-split { grid-template-columns: 1fr 1fr; gap: 3rem; } }
 .hero-img-wrap { display: flex; align-items: center; justify-content: center; }
-.hero-img-wrap img { width: 100%; max-width: 520px; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12)); }
+.hero-img-wrap img { width: 100%; max-width: 520px; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(ellipse 90% 85% at 55% 50%, black 55%, transparent 100%); mask-image: radial-gradient(ellipse 90% 85% at 55% 50%, black 55%, transparent 100%); }
 .page-hero h1 { font-size: clamp(1.85rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 1.1rem; text-wrap: balance; }
 .page-hero h1 .em-accent { color: var(--primary); font-style: italic; font-weight: 800; }
 .page-hero .hero-sub { font-size: 1.05rem; color: var(--text-light); line-height: 1.65; margin-bottom: 1.8rem; }
@@ -852,9 +852,8 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 
       <!-- Card 1 -->
       <article class="cubeta-card fade-in">
-        <div class="img-placeholder">
-          <span class="ph-icon">📷</span>
-          <p>Foto necesaria: cubeta de Pintura acrílica antiderrapante PLAYKO con etiqueta visible</p>
+        <div class="cubeta-img-wrap">
+          <img src="/images/cubeta-pintura-deportiva-todos-playko.png" alt="Cubeta 19L Pintura Acrílica Antiderrapante PLAYKO para canchas deportivas — tenis, basquetbol, voleibol, multicancha" width="400" height="460" loading="lazy" decoding="async">
         </div>
         <div class="cubeta-body">
           <h3>Pintura acrílica antiderrapante PLAYKO</h3>
@@ -871,9 +870,8 @@ footer { background: var(--ink); color: #fff; padding: 4rem 0 1.5rem; border-top
 
       <!-- Card 2 -->
       <article class="cubeta-card fade-in">
-        <div class="img-placeholder">
-          <span class="ph-icon">📷</span>
-          <p>Foto necesaria: cubeta de Resurfacer PLAYKO con etiqueta visible</p>
+        <div class="cubeta-img-wrap">
+          <img src="/images/cubeta-resurfacer-playko.jpg" alt="Cubeta 19L PLAYKO Resurfacer — capa base acrílica para canchas deportivas, sella nivela y prepara" width="400" height="460" loading="lazy" decoding="async">
         </div>
         <div class="cubeta-body">
           <h3>Resurfacer (sello asfáltico en frío)</h3>
