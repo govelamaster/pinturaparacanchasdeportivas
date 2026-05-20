@@ -27,15 +27,43 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color:var(--text); line-height:1.75; overflow-x:hidden; background:#fff; }
 
-header { position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); z-index:999; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
-nav { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
-.logo { font-size:1.8rem; font-weight:900; color:var(--primary); letter-spacing:-0.02em; text-decoration:none; }
-.nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
-.nav-links a { text-decoration:none; color:var(--text); font-weight:600; font-size:0.95rem; transition:color 0.2s; }
-.nav-links a:hover { color:var(--primary); }
-.cta-header { background:var(--whatsapp); color:white; padding:0.75rem 1.5rem; border-radius:8px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:transform 0.2s, box-shadow 0.2s; }
-.cta-header:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(255, 107, 0, 0.35); color:#fff; }
-.menu-toggle { display:none; background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--text); }
+/* Header (NEW navbar) */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:all .25s ease}
+.site-header.compact{box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.25rem;max-width:1280px;margin:0 auto;transition:padding .25s ease}
+.site-header.compact .nav-inner{padding:.7rem 1.25rem}
+@media(min-width:768px){.nav-inner{padding:1.2rem 2rem}.site-header.compact .nav-inner{padding:.75rem 2rem}}
+.brand-mark{font-size:1.7rem;font-weight:900;letter-spacing:-.04em;color:var(--primary)}
+.nav-menu{display:none}
+@media(min-width:1024px){.nav-menu{display:flex;gap:1.8rem;align-items:center}.nav-menu a{font-size:.93rem;font-weight:600;color:var(--text);transition:color .15s;position:relative;text-decoration:none}.nav-menu a:hover,.nav-menu a.active{color:var(--primary)}.nav-menu a::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .2s ease;transform-origin:left}.nav-menu a:hover::after,.nav-menu a.active::after{transform:scaleX(1)}}
+.nav-cta-wrap{display:flex;align-items:center;gap:.75rem}
+.nav-cta{display:none;align-items:center;gap:.5rem;background:var(--primary);color:#fff;padding:.7rem 1.2rem;border-radius:10px;font-weight:700;font-size:.9rem;transition:all .2s ease;text-decoration:none}
+.nav-cta:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,107,0,.32);color:#fff}
+@media(min-width:768px){.nav-cta{display:inline-flex}}
+.nav-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:none;border:none;cursor:pointer}
+@media(min-width:1024px){.nav-toggle{display:none}}
+.nav-toggle span{width:22px;height:2px;background:var(--text);display:block;position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0;width:22px;height:2px;background:var(--text)}
+.nav-toggle span::before{top:-7px}
+.nav-toggle span::after{top:7px}
+.mobile-menu{position:fixed;top:0;right:0;width:88%;max-width:340px;height:100vh;background:#fff;z-index:200;box-shadow:-20px 0 40px rgba(0,0,0,.15);padding:5rem 1.5rem 2rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+.mobile-menu.active{transform:translateX(0)}
+.mobile-menu a{display:block;padding:1rem .5rem;font-size:1.05rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--border);text-decoration:none}
+.mobile-menu a:hover{color:var(--primary)}
+.mobile-menu-close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;background:var(--bg-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--text);border:none;cursor:pointer}
+.mobile-menu .mobile-cta{margin-top:1.5rem;background:var(--whatsapp);color:#fff;text-align:center;border-radius:12px;border-bottom:0;padding:1rem}
+.nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:.3rem;cursor:pointer}
+.nav-chev{font-size:.65rem;transition:transform .2s ease;opacity:.7}
+.nav-dropdown:hover .nav-chev{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(.4rem);background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.12);padding:.5rem;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(.2rem)}
+.nav-dropdown-menu a{display:block;padding:.7rem 1rem;font-size:.92rem;font-weight:600;color:var(--text);border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a.active{background:var(--bg-light);color:var(--primary)}
+@media(max-width:899px){.nav-dropdown{display:none}}
+.mobile-sublinks{display:flex;flex-direction:column;padding-left:.8rem;margin-bottom:.5rem;border-left:2px solid var(--primary)}
+.mobile-sublinks a{font-size:.95rem!important;opacity:.85;padding:.45rem .6rem!important}
+.mobile-sublinks a.active{color:var(--primary);opacity:1}
 
 .post-hero { position:relative; min-height:60vh; display:flex; align-items:center; overflow:hidden; }
 .post-hero-bg { position:absolute; inset:0; background-image:url('/images/pintura-canchas-deportivas-playko-hero.jpg'); background-size:cover; background-position:center; }
@@ -245,9 +273,6 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
   .post-hero { min-height:auto; }
   .hero-stats { grid-template-columns:1fr; max-width:100%; }
   .article-wrap { padding:0 1.25rem; margin-bottom:6rem; }
-  .nav-links { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:white; border-top:1px solid var(--border); padding:1rem 2rem; box-shadow:0 8px 24px rgba(0,0,0,0.1); }
-  .nav-links.active { display:flex; }
-  .menu-toggle { display:block; }
   .whatsapp-float { bottom:90px; right:20px; width:55px; height:55px; }
   table.data { font-size:0.85rem; }
   table.data th, table.data td { padding:0.6rem 0.7rem; }
@@ -301,23 +326,55 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" height="46" loading="eager" decoding="async"></a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/#servicios">Servicios</a></li>
-      <li><a href="/#portafolio">Proyectos</a></li>
-      <li><a href="/#proceso">Proceso</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#faq">FAQ</a></li>
-      <li><a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" target="_blank" rel="noopener" class="cta-header">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- Navbar -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="/" class="logo brand-mark" aria-label="PLAYKO — Inicio"><img src="/images/playko-logo-orange.svg" alt="PLAYKO" width="118" height="26" loading="eager" decoding="async"></a>
+    <nav class="nav-menu" aria-label="Principal">
+      <div class="nav-dropdown">
+        <a href="/#tipos-de-cancha" class="nav-dropdown-trigger">Tipos de Canchas <span class="nav-chev" aria-hidden="true">▾</span></a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/servicios/pintura-cancha-basquetbol" role="menuitem">Cancha de Basquetbol</a>
+          <a href="/servicios/pintura-cancha-tenis" role="menuitem">Cancha de Tenis</a>
+          <a href="/servicios/pintura-cancha-multicancha" role="menuitem">Cancha Multideportiva</a>
+          <a href="/servicios/pintura-cancha-pickleball" role="menuitem">Cancha Pickleball</a>
+        </div>
+      </div>
+      <a href="/calculadora-pintura">Calculadora de Pintura</a>
+      <a href="/pintura-en-cubeta">Pintura en Cubeta</a>
+      <a href="/accesorios">Accesorios</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta-wrap">
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
         Cotizar
-      </a></li>
-    </ul>
-  </nav>
+      </a>
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
 </header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" onclick="closeMenu()" aria-label="Cerrar menú">×</button>
+  <a href="/#tipos-de-cancha" onclick="closeMenu()">Tipos de Canchas</a>
+  <div class="mobile-sublinks">
+    <a href="/servicios/pintura-cancha-basquetbol" onclick="closeMenu()">› Cancha de Basquetbol</a>
+    <a href="/servicios/pintura-cancha-tenis" onclick="closeMenu()">› Cancha de Tenis</a>
+    <a href="/servicios/pintura-cancha-multicancha" onclick="closeMenu()">› Cancha Multideportiva</a>
+    <a href="/servicios/pintura-cancha-pickleball" onclick="closeMenu()">› Cancha Pickleball</a>
+  </div>
+  <a href="/calculadora-pintura" onclick="closeMenu()">Calculadora de Pintura</a>
+  <a href="/pintura-en-cubeta" onclick="closeMenu()">Pintura en Cubeta</a>
+  <a href="/accesorios" onclick="closeMenu()">Accesorios</a>
+  <a href="/blog/" onclick="closeMenu()" class="active">Blog</a>
+  <a href="/#faq" onclick="closeMenu()">FAQ</a>
+  <a href="https://wa.me/525539887615" target="_blank" rel="noopener" class="mobile-cta">Cotizar por WhatsApp</a>
+</div>
 
 <section class="post-hero">
   <div class="post-hero-bg" role="img" aria-label="Cubetas de pintura acrílica deportiva azul verde y naranja para canchas deportivas en obra mexicana"></div>
@@ -847,7 +904,10 @@ footer { background:#1A1A1A; color:white; padding:4rem 2rem 2rem; margin-top:4re
 </div>
 
 <script>
-function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+function toggleMenu(){const m=document.getElementById('mobileMenu');const t=document.querySelector('.nav-toggle');m.classList.toggle('active');const o=m.classList.contains('active');m.setAttribute('aria-hidden',o?'false':'true');t.setAttribute('aria-expanded',o?'true':'false');}
+function closeMenu(){const m=document.getElementById('mobileMenu');const t=document.querySelector('.nav-toggle');m.classList.remove('active');m.setAttribute('aria-hidden','true');t.setAttribute('aria-expanded','false');}
+const siteHeader=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{if(window.scrollY>80)siteHeader.classList.add('compact');else siteHeader.classList.remove('compact');},{passive:true});
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
