@@ -317,74 +317,72 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
   line-height: 1.55;
 }
 
-/* ===== Price Breakdown Panel ===== */
+/* ===== Cotización Card ===== */
 .price-breakdown {
-  margin-top: 1.4rem;
+  margin-top: 1.6rem;
   background: #fff;
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 18px;
   overflow: hidden;
-  animation: slideDown .3s var(--ease-out);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  animation: slideDown .35s var(--ease-out);
 }
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.zone-header {
+/* Quote header con logo */
+.quote-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 1.2rem;
-  background: var(--bg-light);
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.4rem;
+  background: #fff;
+  border-bottom: 1.5px solid #ebebeb;
 }
-.zone-name {
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--text-mid);
+.quote-logo img { height: 32px; width: auto; display: block; }
+.quote-meta { text-align: right; }
+.quote-meta .quote-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #aaa; display: block; }
+.quote-meta .quote-badge { display: inline-block; margin-top: 0.2rem; font-size: 0.7rem; font-weight: 700; color: var(--primary); background: rgba(255,107,0,0.1); border-radius: 999px; padding: 0.15rem 0.6rem; letter-spacing: 0.04em; }
+/* Descripción del servicio */
+.quote-desc {
+  padding: 1rem 1.4rem 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
 }
-.zone-rate {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: rgba(255,107,0,.08);
-  padding: 0.2rem 0.7rem;
-  border-radius: 999px;
-}
-.price-rows {
-  padding: 0.4rem 0;
-}
+.quote-desc-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; margin-bottom: 0.3rem; }
+.quote-desc-text { font-size: 0.92rem; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
+/* Filas de precio */
+.price-rows { padding: 0.3rem 0; }
 .price-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 1.2rem;
-  font-size: 0.95rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.92rem;
 }
-.price-row span:first-child { color: var(--text-light); }
-.price-row span:last-child  { font-weight: 600; color: var(--text); }
-.price-row + .price-row { border-top: 1px solid var(--border-soft); }
+.price-row span:first-child { color: #777; }
+.price-row span:last-child  { font-weight: 600; color: #1a1a1a; }
+.price-row + .price-row { border-top: 1px solid #f3f3f3; }
 .price-row.total-row {
-  background: var(--bg-light);
-  border-top: 1.5px solid var(--border) !important;
-  margin-top: 0.2rem;
-  padding: 0.9rem 1.2rem;
+  background: #fff8f4;
+  border-top: 2px solid #ffe0c8 !important;
+  padding: 1rem 1.4rem;
+  margin-top: 0.1rem;
 }
-.price-row.total-row span:first-child { font-weight: 800; color: var(--ink); font-size: 1rem; }
-.price-row.total-row span:last-child  { font-weight: 900; color: var(--primary); font-size: 1.15rem; letter-spacing: -0.02em; }
+.price-row.total-row span:first-child { font-weight: 800; color: #1a1a1a; font-size: 1rem; }
+.price-row.total-row span:last-child  { font-weight: 900; color: var(--primary); font-size: 1.2rem; letter-spacing: -0.02em; }
 .price-disclaimer {
-  font-size: 0.78rem;
-  color: var(--text-light);
-  padding: 0.7rem 1.2rem 0.9rem;
-  border-top: 1px solid var(--border-soft);
+  font-size: 0.75rem;
+  color: #aaa;
+  padding: 0.65rem 1.4rem 0.8rem;
+  border-top: 1px solid #f0f0f0;
   line-height: 1.55;
   text-align: center;
 }
-.price-disclaimer strong { color: var(--text-mid); }
+.price-disclaimer strong { color: #888; }
 .zone-unknown {
-  padding: 1.2rem;
+  padding: 1.4rem;
   text-align: center;
   font-size: 0.9rem;
   color: var(--text-light);
@@ -746,7 +744,7 @@ footer {
       <a href="/blog/">Blog</a>
     </nav>
     <div class="nav-cta-wrap">
-      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="nav-cta">
+      <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20tengo%20las%20medidas%20de%20mi%20cancha%20listas%20y%20quiero%20una%20cotizaci%C3%B3n%20formal.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener" class="nav-cta">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
         Cotizar
       </a>
@@ -788,9 +786,55 @@ footer {
       <p class="hero-sub">Basquetbol, tenis, pickleball, voleibol o multideportiva — ingresa los m² totales y tu ciudad. Te damos una cotización aproximada al instante y la exacta por WhatsApp en un par de horas.</p>
       <div class="hero-ctas">
         <a href="#calc" class="btn btn-primary">Usar la calculadora ↓</a>
-        <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="btn btn-outline">Hablar por WhatsApp</a>
+        <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20directamente%20sin%20usar%20la%20calculadora.%20%C2%BFMe%20pueden%20orientar%3F" target="_blank" rel="noopener" class="btn btn-outline">Prefiero hablar directo</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CALC INTRO -->
+<style>
+.calc-intro { background: #fff; padding: 3.5rem 1.5rem 3rem; border-bottom: 1px solid #f0f0f0; }
+.calc-intro-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+.calc-intro .eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+.calc-intro h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; color: #1a1a1a; margin-bottom: 1rem; text-wrap: balance; }
+.calc-intro h2 em { font-style: italic; color: var(--primary); }
+.calc-intro .intro-sub { font-size: 1.1rem; color: #555; line-height: 1.65; max-width: 640px; margin: 0 auto 2rem; }
+.calc-intro-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2.2rem; }
+.calc-intro-pills span { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.5rem 1rem; background: #f5f5f5; border-radius: 999px; font-size: 0.83rem; font-weight: 600; color: #333; }
+.calc-intro-pills span svg { width: 14px; height: 14px; color: var(--primary); flex-shrink: 0; }
+.calc-intro-cta { display: inline-flex; align-items: center; gap: 0.55rem; padding: 1rem 2.2rem; background: var(--primary); color: #fff; font-size: 1rem; font-weight: 800; border-radius: 999px; text-decoration: none; box-shadow: 0 6px 22px rgba(255,107,0,0.32); transition: all 0.2s; }
+.calc-intro-cta:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,107,0,0.42); }
+.calc-intro-kicker { margin-top: 1.4rem; font-size: 0.9rem; color: #888; font-weight: 500; }
+.calc-intro-kicker strong { color: #1a1a1a; font-weight: 700; }
+</style>
+
+<section class="calc-intro">
+  <div class="calc-intro-inner fade-in">
+    <span class="eyebrow">Calculadora instantánea</span>
+    <h2>Calcula cuánto te sale<br>pintar tu <em>cancha</em></h2>
+    <p class="intro-sub">Solo escribe los m² y tu ciudad — te decimos el costo muy aproximado de pintura + resurfacer + aplicación. Sin llamadas, sin esperas. Cotizar es fácil. Instalar también.</p>
+
+    <div class="calc-intro-pills">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Estimado al instante
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v6c0 5 3 9 8 11 5-2 8-6 8-11V7l-8-5z"/></svg>
+        Cotización formal con garantía
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Instalación incluida en el precio
+      </span>
+    </div>
+
+    <a href="#calc" class="calc-intro-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      Calcular ahora
+    </a>
+    <p class="calc-intro-kicker"><strong>¿Qué esperas?</strong> Remodelamos tu cancha — sin obra, sin complicaciones.</p>
   </div>
 </section>
 
@@ -822,32 +866,44 @@ footer {
         <div class="result-label">Área total de tu cancha</div>
       </div>
 
-      <!-- PRICE BREAKDOWN -->
+      <!-- COTIZACIÓN ESTIMADA -->
       <div class="price-breakdown" id="priceBreakdown" style="display:none">
-        <div class="zone-header">
-          <span class="zone-name" id="zoneName">Zona 1 — Centro</span>
-          <span class="zone-rate" id="zoneRate">$165/m² + IVA</span>
+        <!-- Logo + label -->
+        <div class="quote-header">
+          <div class="quote-logo">
+            <img src="/images/playko-logo-v2.svg" alt="PLAYKO" height="32" loading="lazy" decoding="async">
+          </div>
+          <div class="quote-meta">
+            <span class="quote-label">Cotización estimada</span>
+            <span class="quote-badge" id="zoneName">Zona Centro</span>
+          </div>
         </div>
-        <div class="price-rows" id="priceRows">
+        <!-- Descripción del servicio -->
+        <div class="quote-desc">
+          <div class="quote-desc-label">Concepto</div>
+          <div class="quote-desc-text" id="quoteConcepto">— m² &nbsp;Suministro e Instalación de Pintura Acrílica Deportiva</div>
+        </div>
+        <!-- Filas de precio -->
+        <div class="price-rows">
           <div class="price-row">
             <span>Precio por m²</span>
-            <span id="pricePerM2Display">$165</span>
+            <span id="pricePerM2Display">$—</span>
           </div>
           <div class="price-row">
             <span>Subtotal (<span id="areaDisplay">0</span> m²)</span>
-            <span id="subtotalDisplay">$0</span>
+            <span id="subtotalDisplay">$—</span>
           </div>
           <div class="price-row">
             <span>IVA (16%)</span>
-            <span id="ivaDisplay">$0</span>
+            <span id="ivaDisplay">$—</span>
           </div>
           <div class="price-row total-row">
             <span>Total estimado</span>
-            <span id="totalDisplay">$0</span>
+            <span id="totalDisplay">$—</span>
           </div>
         </div>
         <p class="price-disclaimer">
-          <strong>Precio aproximado.</strong> Considera base en condiciones óptimas. La cotización exacta puede variar según el estado real de la superficie, número de trazos y accesibilidad. Nos ayuda mucho tener <strong>fotografías del área</strong> — envíalas por WhatsApp para una propuesta más precisa.
+          Precio referencial · base en condiciones óptimas. La propuesta definitiva puede variar según estado de la superficie y accesibilidad. <strong>Sin costo ni compromiso.</strong>
         </p>
       </div>
 
@@ -860,9 +916,9 @@ footer {
 
       <button class="calc-cta" id="calcCta" type="button">
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-        Recibir cotización exacta por WhatsApp →
+        Quiero esta cotización — enviar por WhatsApp →
       </button>
-      <p class="calc-help">El cálculo es referencial, asumiendo base en óptimas condiciones. La cotización formal la enviamos por WhatsApp en menos de 1 hora hábil.</p>
+      <p class="calc-help">Estimado referencial. Respuesta con propuesta formal en menos de 1 hora hábil — sin compromiso.</p>
     </div>
   </div>
 </section>
@@ -939,11 +995,11 @@ footer {
 <!-- FINAL CTA -->
 <section class="cta-banner">
   <div class="cta-banner-inner fade-in">
-    <h2>¿Listo para cotizar tu cancha?</h2>
-    <p>Manda tus medidas por WhatsApp y recibe cotización formal en menos de 1 hora hábil. Cobertura nacional.</p>
-    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="btn btn-white btn-lg" style="padding: 1.1rem 2rem; font-size: 1.05rem; min-height: 56px;">
+    <h2>Tu cancha puede estar lista antes de lo que crees</h2>
+    <p>Manda tus m² y ciudad — en menos de 1 hora tienes propuesta formal con precio, garantía y tiempo de entrega. Sin visita previa, sin compromiso.</p>
+    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20remodelar%20mi%20cancha%20deportiva.%20Tengo%20las%20medidas%20listas%20%E2%80%94%20%C2%BFme%20pueden%20enviar%20la%20propuesta%3F" target="_blank" rel="noopener" class="btn btn-white btn-lg" style="padding: 1.1rem 2rem; font-size: 1.05rem; min-height: 56px;">
       <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-      Cotizar por WhatsApp
+      Iniciar mi cotización ahora
     </a>
   </div>
 </section>
@@ -991,15 +1047,12 @@ footer {
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp PLAYKO">
-  <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 
 <!-- Sticky CTA bar (mobile only) -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20deportiva" target="_blank" rel="noopener">
+  <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20tengo%20las%20medidas%20de%20mi%20cancha%20listas%20y%20quiero%20una%20cotizaci%C3%B3n%20formal.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">
     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-    Cotiza por WhatsApp
+    Pedir cotización ahora
   </a>
 </div>
 
@@ -1163,7 +1216,7 @@ const calcCta          = document.getElementById('calcCta');
 const priceBreakdown   = document.getElementById('priceBreakdown');
 const zoneUnknown      = document.getElementById('zoneUnknown');
 const zoneName         = document.getElementById('zoneName');
-const zoneRate         = document.getElementById('zoneRate');
+const quoteConcepto    = document.getElementById('quoteConcepto');
 const pricePerM2Display= document.getElementById('pricePerM2Display');
 const areaDisplay      = document.getElementById('areaDisplay');
 const subtotalDisplay  = document.getElementById('subtotalDisplay');
@@ -1202,9 +1255,12 @@ function updateCalc() {
   const iva = subtotal * 0.16;
   const total = subtotal + iva;
 
+  const ciudadNombre = ciudadVal ? ciudadVal : '';
   zoneName.textContent          = label;
-  zoneRate.textContent          = `$${price}/m² + IVA`;
-  pricePerM2Display.textContent = `$${price}`;
+  quoteConcepto.textContent     = area > 0
+    ? `${area.toFixed(0)} m²  ·  Suministro e Instalación de Pintura Acrílica Deportiva${ciudadNombre ? ' en ' + ciudadNombre : ''}`
+    : `— m²  ·  Suministro e Instalación de Pintura Acrílica Deportiva${ciudadNombre ? ' en ' + ciudadNombre : ''}`;
+  pricePerM2Display.textContent = `$${price} + IVA`;
   areaDisplay.textContent       = area > 0 ? area.toFixed(0) : '0';
   subtotalDisplay.textContent   = area > 0 ? fmt(subtotal) : '—';
   ivaDisplay.textContent        = area > 0 ? fmt(iva)      : '—';
@@ -1222,7 +1278,7 @@ calcCta.addEventListener('click', () => {
   const priceInfo = z && area > 0
     ? `%0A*Precio/m²:* $${z.price} + IVA (${z.label})%0A*Total estimado:* ${fmt(area * z.price * 1.16)} MXN`
     : '';
-  const text = `Hola PLAYKO, quiero cotizar pintura para mi cancha:%0A%0A*Área total:* ${area} m²%0A*Deporte:* ${d}%0A*Ciudad:* ${c}${priceInfo}`;
+  const text = `Hola PLAYKO, usé la calculadora de su sitio y quiero mi cotización formal:%0A%0A*Deporte:* ${d}%0A*Área total:* ${area} m²%0A*Ciudad:* ${c}${priceInfo}%0A%0A¿Cuándo me pueden enviar la propuesta definitiva?`;
   window.open(`https://wa.me/525539887615?text=${text}`, '_blank');
 });
 </script>

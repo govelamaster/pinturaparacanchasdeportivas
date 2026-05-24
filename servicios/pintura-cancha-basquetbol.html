@@ -223,12 +223,20 @@ section{padding:5rem 2rem}
 .banner-final .btn{font-size:1.15rem;padding:1.1rem 2.2rem}
 
 /* ===== Footer ===== */
-footer{background:#0F0F0F;color:#9CA3AF;padding:4rem 2rem 2rem}
-.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem;margin-bottom:2.5rem}
-.footer-section h3{color:#fff;font-size:1.1rem;font-weight:800;margin-bottom:1rem;letter-spacing:.3px}
-.footer-section p,.footer-section a{display:block;color:#9CA3AF;text-decoration:none;font-size:.93rem;margin-bottom:.55rem;line-height:1.6;transition:color .2s}
-.footer-section a:hover{color:var(--primary)}
-.footer-bottom{max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid #1F1F1F;text-align:center;font-size:.85rem}
+footer{background:#0F0F0F;color:#9CA3AF;padding:0 0 2rem;border-top:3px solid #FF6B00}
+.footer-inner{max-width:1200px;margin:0 auto;padding:3.5rem 2rem 0}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:2.5rem}
+.footer-section h3{color:#fff;font-size:.8rem;font-weight:700;margin-bottom:1.1rem;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+.footer-section p,.footer-section a{display:block;color:#9CA3AF;text-decoration:none;font-size:.92rem;margin-bottom:.55rem;line-height:1.65;transition:color .2s}
+.footer-section a:hover{color:#FF6B00}
+.footer-section .footer-brand-desc{color:#6B7280;font-size:.88rem;line-height:1.65;margin-top:.75rem}
+.footer-wa-btn{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;background:#25D366;color:#fff!important;font-weight:700;font-size:.88rem;padding:.6rem 1.1rem;border-radius:8px;transition:all .2s}
+.footer-wa-btn:hover{background:#1ebe5d;transform:translateY(-1px);box-shadow:0 6px 16px rgba(37,211,102,.3)}
+.footer-cobertura{display:flex;align-items:center;gap:.5rem;margin-top:.75rem;font-size:.82rem;color:#4B5563}
+.footer-cobertura svg{flex-shrink:0;opacity:.6}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:2rem 2rem 0;border-top:1px solid #1A1A1A;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;font-size:.82rem}
+.footer-bottom a{color:#4B5563;transition:color .2s;text-decoration:none}
+.footer-bottom a:hover{color:#FF6B00}
 
 /* ===== WhatsApp float + sticky bar ===== */
 .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,.4);z-index:998;text-decoration:none;transition:transform .2s,box-shadow .2s;animation:pulseWA 2.4s infinite}
@@ -597,43 +605,55 @@ Cotizar pintura ahora</a>
 
 <!-- ===== FOOTER ===== -->
 <footer>
+<div class="footer-inner">
 <div class="footer-content">
-<div class="footer-section">
-<a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;margin-bottom:0.9rem;"><img src="/images/playko-logo-v2.svg" alt="PLAYKO" height="40" loading="lazy" decoding="async" style="height:40px;width:auto;display:block;"></a>
-<p>Pintura profesional para canchas deportivas en México. Sistema acrílico antiderrapante para basquetbol, tenis, pickleball, multicanchas y polideportivos.</p>
-</div>
-<div class="footer-section">
-<h3>Navegación</h3>
-<a href="/">Inicio</a>
-<a href="/#servicios">Servicios</a>
-<a href="/#portafolio">Proyectos</a>
-<a href="/#proceso">Proceso</a>
-<a href="/blog/">Blog</a>
-</div>
-<div class="footer-section">
-<h3>Servicios</h3>
-<a href="/servicios/pintura-cancha-basquetbol">Pintura cancha basquetbol</a>
-<a href="/servicios/pintura-cancha-tenis">Pintura cancha tenis</a>
-<a href="/servicios/pintura-cancha-pickleball">Pintura cancha pickleball</a>
-<a href="/servicios/pintura-cancha-multicancha">Pintura multicancha</a>
-<a href="/servicios/pintura-cancha-polideportiva">Pintura polideportiva</a>
-</div>
-<div class="footer-section">
-<h3>Contacto</h3>
-<p><strong>WhatsApp:</strong> +52 55 3988 7615</p>
-<p><strong>Email:</strong> contacto@pinturaparacanchasdeportivas.mx</p>
-<p><strong>Cobertura:</strong> Nacional México</p>
+
+  <div class="footer-section">
+    <a href="/" aria-label="PLAYKO — Inicio" style="display:inline-block;">
+      <img src="/images/playko-logo-naranja-dark.svg" alt="PLAYKO" height="38" loading="lazy" decoding="async" style="height:38px;width:auto;display:block;">
+    </a>
+    <p class="footer-brand-desc">Sistemas acrílicos profesionales para canchas deportivas en México. Superficies para grandes partidos.</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Navegación</h3>
+    <a href="/">Inicio</a>
+    <a href="/#servicios">Servicios</a>
+    <a href="/#portafolio">Proyectos</a>
+    <a href="/#proceso">Proceso</a>
+    <a href="/blog/">Blog</a>
+  </div>
+
+  <div class="footer-section">
+    <h3>Servicios</h3>
+    <a href="/servicios/pintura-cancha-basquetbol">Basquetbol</a>
+    <a href="/servicios/pintura-cancha-tenis">Tenis</a>
+    <a href="/servicios/pintura-cancha-pickleball">Pickleball</a>
+    <a href="/servicios/pintura-cancha-multicancha">Multicancha</a>
+    <a href="/servicios/pintura-cancha-polideportiva">Polideportiva</a>
+  </div>
+
+  <div class="footer-section">
+    <h3>Cotiza</h3>
+    <a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20de%20basquetbol" target="_blank" rel="noopener" class="footer-wa-btn" aria-label="Cotizar vía WhatsApp">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotiza vía WhatsApp
+    </a>
+    <p class="footer-cobertura">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Cobertura nacional · México
+    </p>
+  </div>
+
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 PLAYKO — Pintura Deportiva Profesional México. Todos los derechos reservados.</p>
+  <p>&copy; 2026 PLAYKO — Pintura Deportiva Profesional México.</p>
+  <a href="/aviso-de-privacidad">Aviso de privacidad</a>
 </div>
 </footer>
 
 <!-- WhatsApp float -->
-<a href="https://wa.me/525539887615?text=Hola%20PLAYKO%2C%20quiero%20cotizar%20pintura%20para%20mi%20cancha%20de%20basquetbol" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Cotizar por WhatsApp">
-<svg width="32" height="32" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 
 <!-- Sticky bar mobile -->
 <div class="sticky-bar">
