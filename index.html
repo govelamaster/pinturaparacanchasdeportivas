@@ -6,11 +6,11 @@
 <title>Pintura para Canchas Deportivas | Basketball, Tenis, Pickleball | PLAYKO México</title>
 <meta name="description" content="Pintura profesional para canchas deportivas en México. Basketball, tenis, pickleball, multicanchas y canchas polivalentes. Sistema acrílico antiderrapante antiderrapante para colegios, clubes y gobierno. Cobertura nacional.">
 <meta name="keywords" content="pintura para canchas deportivas, pintura cancha basketball, pintura cancha tenis, pintura cancha pickleball, pintura acrílica canchas, pintura antiderrapante canchas, pintura deportiva México">
-<link rel="canonical" href="https://www.pinturaparacanchasdeportivas.mx">
+<link rel="canonical" href="https://www.pinturaparacanchasdeportivas.mx/">
 <meta property="og:title" content="Pintura para Canchas Deportivas | PLAYKO México">
 <meta property="og:description" content="Pintura profesional para canchas de basketball, tenis, pickleball y multicanchas. Sistema acrílico antiderrapante. Cobertura nacional.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.pinturaparacanchasdeportivas.mx">
+<meta property="og:url" content="https://www.pinturaparacanchasdeportivas.mx/">
 <meta property="og:image" content="https://www.pinturaparacanchasdeportivas.mx/images/pintura-canchas-deportivas-playko-hero.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -1739,6 +1739,70 @@ footer {
 .logo, .brand-mark { display:inline-flex; align-items:center; height:34px; text-decoration:none; padding:0; }
 .logo img, .brand-mark img { height:46px; width:auto; display:block; }
 </style>
+
+<!-- Google Ads Conversion Tracking (pinturaparacanchasdeportivas.mx)
+     Recovery 2026-05-25: AW + labels reales instalados.
+     AW-859315777                    → Conversion ID Olga Govela
+     3Xf0CM7r67ECEMG84JkD            → label "Lead Formulario"
+     2B6zCP-pk44YEMG84JkD            → label "Lead WhatsApp"
+     nnyPCN7UlW8QwbzgmQM             → label "Lead Llamada"
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+
+  window.trackConversion = function(type) {
+    var labels = {
+      'form_submit':    'AW-859315777/3Xf0CM7r67ECEMG84JkD',
+      'whatsapp_click': 'AW-859315777/2B6zCP-pk44YEMG84JkD',
+      'phone_click':    'AW-859315777/nnyPCN7UlW8QwbzgmQM'
+    };
+    if (typeof gtag !== 'function' || !labels[type]) return;
+    gtag('event', 'conversion', { 'send_to': labels[type] });
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Inyectar URL de página actual en todos los WhatsApp + formato Playko unificado
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      try {
+        var url = new URL(a.getAttribute('href'));
+        var currentText = url.searchParams.get('text') || '';
+        // Limpiar prefijos viejos ("Hola PLAYKO," etc.) preservando solo la petición específica
+        var specificMsg = currentText
+          .replace(/^Hola\s+PLAYKO[,\s.]*/i, '')
+          .replace(/^Hola\s+Playko\s*👋?\s*/i, '')
+          .replace(/Vengo de su página:[\s\S]*?(https?:\/\/\S+)?\s*/i, '')
+          .trim();
+        if (!specificMsg) {
+          specificMsg = 'Quiero cotizar instalación de pintura deportiva para una cancha.';
+        }
+        var newText = 'Hola Playko 👋\n'
+                    + 'Vengo de su página:\n'
+                    + window.location.href + '\n'
+                    + specificMsg + '\n'
+                    + 'Me interesa lo siguiente:';
+        url.searchParams.set('text', newText);
+        a.setAttribute('href', url.toString());
+      } catch(e) { /* link malformado, ignorar */ }
+    });
+
+    // 2. Tracking listeners (gtag conversion fire)
+    ['cotizacionForm','leadForm','prefooterForm','contactForm','quoteForm'].forEach(function(id) {
+      var f = document.getElementById(id);
+      if (f) f.addEventListener('submit', function(){ window.trackConversion('form_submit'); });
+    });
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(){ window.trackConversion('whatsapp_click'); });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){ window.trackConversion('phone_click'); });
+    });
+  });
+</script>
+<!-- /Google Ads Conversion Tracking -->
 </head>
 <body>
 
@@ -2827,12 +2891,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "PLAYKO - Pintura Deportiva México",
-  "url": "https://www.pinturaparacanchasdeportivas.mx",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.pinturaparacanchasdeportivas.mx/buscar?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "url": "https://www.pinturaparacanchasdeportivas.mx"
 }
 </script>
 
