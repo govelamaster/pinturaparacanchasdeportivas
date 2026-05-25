@@ -54,10 +54,10 @@ body { font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-
 .mobile-menu-close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;background:var(--bg-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--text);border:none;cursor:pointer}
 .mobile-menu .mobile-cta{margin-top:1.5rem;background:var(--whatsapp);color:#fff;text-align:center;border-radius:12px;border-bottom:0;padding:1rem}
 .nav-dropdown{position:relative;display:inline-flex;align-items:center}
-.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:.3rem;cursor:pointer}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;padding:6px 0}
 .nav-chev{font-size:.65rem;transition:transform .2s ease;opacity:.7}
 .nav-dropdown:hover .nav-chev{transform:rotate(180deg)}
-.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(.4rem);background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.12);padding:.5rem;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:100}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;background:transparent}.nav-dropdown-menu{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%) translateY(.4rem);background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.12);padding:.5rem;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:100}
 .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(.2rem)}
 .nav-dropdown-menu a{display:block;padding:.7rem 1rem;font-size:.92rem;font-weight:600;color:var(--text);border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease}
 .nav-dropdown-menu a:hover,.nav-dropdown-menu a.active{background:var(--bg-light);color:var(--primary)}
