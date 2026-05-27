@@ -1084,6 +1084,70 @@ body { padding-bottom: 84px; }
 @media (min-width: 768px) { body { padding-bottom: 76px; } }
 
 </style>
+
+<!-- Google Ads Conversion Tracking (pinturaparacanchasdeportivas.mx/landing1/)
+     Recovery 2026-05-25: AW + labels reales instalados.
+     AW-859315777                    → Conversion ID Olga Govela
+     3Xf0CM7r67ECEMG84JkD            → label "Lead Formulario"
+     2B6zCP-pk44YEMG84JkD            → label "Lead WhatsApp"
+     nnyPCN7UlW8QwbzgmQM             → label "Lead Llamada"
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-859315777"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-859315777', { 'conversion_linker': true });
+
+  window.trackConversion = function(type) {
+    var labels = {
+      'form_submit':    'AW-859315777/3Xf0CM7r67ECEMG84JkD',
+      'whatsapp_click': 'AW-859315777/2B6zCP-pk44YEMG84JkD',
+      'phone_click':    'AW-859315777/nnyPCN7UlW8QwbzgmQM'
+    };
+    if (typeof gtag !== 'function' || !labels[type]) return;
+    gtag('event', 'conversion', { 'send_to': labels[type] });
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Inyectar URL de página actual en todos los WhatsApp + formato Playko unificado
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      try {
+        var url = new URL(a.getAttribute('href'));
+        var currentText = url.searchParams.get('text') || '';
+        var specificMsg = currentText
+          .replace(/^Hola\s+PLAYKO[,\s.]*/i, '')
+          .replace(/^Hola\s+Playko\s*👋?\s*/i, '')
+          .replace(/Vengo de su página:[\s\S]*?(https?:\/\/\S+)?\s*/i, '')
+          .trim();
+        if (!specificMsg) {
+          specificMsg = 'Quiero cotizar instalación de pintura deportiva para una cancha.';
+        }
+        var newText = 'Hola Playko 👋\n'
+                    + 'Vengo de su página:\n'
+                    + window.location.href + '\n'
+                    + specificMsg + '\n'
+                    + 'Me interesa lo siguiente:';
+        url.searchParams.set('text', newText);
+        a.setAttribute('href', url.toString());
+      } catch(e) { /* link malformado, ignorar */ }
+    });
+
+    // 2. Tracking listeners (gtag conversion fire)
+    ['cotizacionForm','leadForm','prefooterForm','contactForm','quoteForm'].forEach(function(id) {
+      var f = document.getElementById(id);
+      if (f) f.addEventListener('submit', function(){ window.trackConversion('form_submit'); });
+    });
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(a){
+      a.addEventListener('click', function(){ window.trackConversion('whatsapp_click'); });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){ window.trackConversion('phone_click'); });
+    });
+  });
+</script>
+<!-- /Google Ads Conversion Tracking -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="lXEe7Y+oD5msdWqfCs4y6w" async></script>
 </head>
 <body>
 
